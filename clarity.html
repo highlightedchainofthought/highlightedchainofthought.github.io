@@ -64,7 +64,7 @@
                     </div>
                     <p class="author"><a href="">Tin Nguyen</a>, <a href="">Logan Bolton</a>, <a href="">Mohammad Reza Taesiri</a>, <a href="">Anh Totti Nguyen</a></p>
                     <p class="abstract">
-                        An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain-of-Thought Prompting (HoT), a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in few-shot settings, HoT outperforms vanilla chain of thought prompting (CoT) (Wei et al., 2022)on a wide range of 17 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they help time-limited human participants to more accurately and efficiently recognize when LLMs are correct. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
+                        An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain-of-Thought Prompting (HoT), <b>a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query</b>. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in few-shot settings, <b>HoT outperforms vanilla chain of thought prompting</b> (CoT) (Wei et al., 2022)on a wide range of 17 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they <b>help time-limited human participants to more accurately and efficiently recognize when LLMs are correct</b>. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
                     </p>
                    
                 </div>
@@ -79,6 +79,7 @@
 
             <div class="blog-cover">
                 <img class="foreground" src="assets/figures/teaser2.png">
+                <p class="caption">HoT consistently improves accuracy across 5 models and 17 datasets. In arithmetic, question-answering, and logical reasoning problems, HoT achieves +1.60, +2.58, and +2.53 percentage points, respectively, as compared to vanilla few-shot CoT.</p>
                 <!-- <img class="background" src="assets/figures/teaser2.png"> -->
                 <!-- <img class="foreground" src="assets/figures/clarity.png"> -->
                 <!-- <img class="background" src="assets/figures/clarity.png"> -->
@@ -148,19 +149,22 @@
     </div> -->
 
 
-    <div class="container blog main gray">
+    <div class="container blog main">
+        <h2 >
+            Benchmark Improvements
+        </h2>
         <img src="assets/images/math.png">
         <p class="caption">
             HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (+14.64 for ) and r-GSM (+12.73 for ).  
         </p>
     </div>
-    <div class="container blog main gray">
+    <div class="container blog main">
         <img src="assets/images/qa.png">
         <p class="caption">
             HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (+14.64 for ) and r-GSM (+12.73 for ).  
         </p>
     </div>
-    <div class="container blog main gray">
+    <div class="container blog main">
         <img src="assets/images/logic.png">
         <p class="caption">
             HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (+14.64 for ) and r-GSM (+12.73 for ).  
@@ -168,7 +172,7 @@
     </div>
     
 
-    <div class="container blog main">
+    <div class="container blog main gray">
         <h2 >
             Container Layouts
         </h2>
@@ -182,133 +186,38 @@
     </div>
 
     <div class="container blog extra-large gray">
+        <div class="columns-2">
+            <img src="assets/images/ex1.png" style="width: 100%">
+            <img src="assets/images/ex2.png" style="width: 100%">
+        </div>
+    </div>
+    <!-- <div class="container blog extra-large gray">
         <img src="clarity/images/prismer.png">
         <p class="caption">
             Prismer has two main trainable components: the <b>Experts Resampler</b> that converts variable multi-task signals to a fixed number of outputs, and the <b>Adaptor</b> that enhances the model's expressivity for vision-language reasoning. To ensure that the model takes advantage of the rich domain-specific knowledge encoded in the pre-trained experts, the majority of network weights are frozen during training, as represented by the snowflake icon.
         </p>
-    </div>
-
+    </div> -->
     <div class="container blog main">
-        <h2>
-            Container Colour
-        </h2>
-
+        <h2>Method</h2>
         <p class="text">
-            In both visual diagram examples above, I used the <code>gray</code> option for the container to apply a subtle tint of gray, helping to distinguish it from the main container. This option is ideal for visual diagrams with a transparent background. For visual diagrams with a white background, I included the <code>gray-linear</code> option. This feature adds a tint of gray only to the edges of the container while keeping the center white, maintaining a clean and cohesive appearance while still providing distinct visual separation.  
+            HoT is a simple yet effective technique for prompting LLMs to generate highlighted responses. Given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input.
         </p>
-
-        <p class="text">
-            Here is an example illustrated in <a href="https://shikun.io/projects/variational-shape-learner">VSL</a> using the <code>gray-linear</code> container colour.
-        </p>
-    </div>
-
-    <div class="container blog extra-large gray-linear">
-        <p class="caption inline">
-          <b>Inter-Class Shape Morphing</b>  
-        </p>
-        <div class="columns-6">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter1.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter2.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter3.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter4.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter5.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_inter6.gif">
+        <div class="container blog extra-large">
+            <div class="columns-1">
+                <img src="assets/images/tags.png" style="width: 100%">
+            </div>
         </div>
-        <p class="caption inline">
-            <b>Intra-Class Shape Morphing</b>
-        </p>
-        <div class="columns-6">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra1.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra2.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra3.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra4.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra5.gif">
-            <img src="https://shikun.io/projects/vsl/shape_morph/morph_intra6.gif">
-        </div>
-        <p class="caption">Note that, although these animations have a white background, they beautifully blend within this container. </p>
     </div>
-
     <div class="container blog main">
-        <h1>
-            Design Features
-        </h1>
-
-        <p class="text">
-            Here, I will briefly introduce each design feature included in the Clarity template.
-        </p>
 
         <h2>
-            Fundamentals
+            Human Study
         </h2>
 
         <p class="text">
-            In Clarity, I have selected <a href="https://fonts.google.com/specimen/Poppins">Poppins</a> as the main sans-serif font and <a href="https://practicaltypography.com/charter.html">Charter</a> as the main serif font. Both fonts are freely distributed and without license restrictions. (Note that these two fonts differ from the licensed fonts used on my personal website.) All font sizes and weights are carefully tuned to be visually balanced and responsive across various screen sizes.
-        </p>
-
-        <p class="text">
-            Additionally, a simple grid system is provided in a separate CSS file. This can be easily applied by using a div with class <code>columns-x</code> (e.g., <code>columns-6</code> for creating the above VSL example). This CSS file is designed to be separate from the main CSS file, allowing for project-specific customisations on top of the broadly used features included in the Clarity template.
-        </p>
-
-        <h2>
-            Mathematics
-        </h2>
-
-        <p class="text">
-            Clarity supports $\LaTeX$ using the <a href="https://www.mathjax.org/">MathJax</a> JavaScript engine. It can elegantly render simple inline mathematical equations such as $y=ax+b$, as well as more complex displayed equations such as used in <a href="https://arxiv.org/abs/1312.6114">Variational Auto-Encoder (VAEs)</a>:
-            $$
-            L_{VAE}(x^{(i)}, \theta, \phi) = -\mathbb{E}_{z}\left[\log p_{\theta} \left(x^{(i)}|z\right) \right] + \text{KL}\left(q_\phi(z|x^{(i)}) \|\, p_\theta(z) \right).
-            $$
-        </p>
-
-        <p class="text">
-            I have chosen to use the <a href="https://ctan.org/pkg/tex-gyre-pagella?lang=en">Gyre-Pagella</a> font for $\LaTeX$, which blends well with the current serif font, ensuring a consistent and visually appealing presentation of mathematical content.
-        </p>
-
-        <h2>
-            Code
-        </h2>
-
-        <p class="text">
-            Clarity supports inline code blocks such as <code>python train.py</code>, as well as display code blocks. The display code blocks also support syntax highlighting using the <a href="https://highlightjs.org/">highlight.js</a> library. Here is an example using Classifier-Free Guidance with Rescale implementation proposed in <a href="https://arxiv.org/pdf/2305.08891">this paper</a>.
-
-<pre><code class="python">def apply_cfg(pos, neg, weight=7.5, rescale=0.7):
-    # Apply regular classifier-free guidance.
-    cfg = neg + weight * (pos - neg)
-
-    # Calculate standard deviations.
-    std_pos = pos.std([1,2,3], keepdim=True)
-    std_cfg = cfg.std([1,2,3], keepdim=True)
-
-    # Apply guidance rescale with fused operations.
-    factor = std_pos / std_cfg
-    factor = rescale * factor + (1 - rescale)
-    return cfg * factor</code></pre>      
-        </p>
-
-        <p class="text">
-            The display code block can also used for bibliographies, such as:
-        </p>
-
-<pre><code class="plaintext">@article{lecun2015deep,
-    title={Deep learning},
-    author={LeCun, Yann and Bengio, Yoshua and Hinton, Geoffrey},
-    journal={nature},
-    year={2015},
-    publisher={Nature Publishing Group UK London}
-}</code></pre>
-
-        <p class="text">
-            Clarity uses my personal favourite monospaced font: <a href="https://github.com/tonsky/FiraCode">Fira Code</a> in code blocks. It also supports rendering beautifully coding literatures such as <code>--> ++ != ## <<>></code>.
-        </p>
-
-        <h2>
-            Tables
-        </h2>
-
-        <p class="text">
-            Clarity provides table blocks where every odd row is re-coloured with a gray tint. This helps to easily distinguish information within different rows, particularly with very wide tables. Here is an example using different model variants proposed in <a href="https://arxiv.org/pdf/2302.13971">Llama-1</a>.
+            We conducted a human study to evaluate the effectiveness of HoT in helping users detect when LLMs are correct. We found that HoT helps time-limited human participants to more accurately and efficiently recognize when LLMs are correct. However, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
             
-            <div class="table-wrapper">
+            <!-- <div class="table-wrapper">
                 <table>
                     <thead class="center">
                         <tr>
@@ -360,290 +269,55 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-        </p>
-
-        <h2>
-            Slide Display 
-        </h2>
-
-        <p class="text">  
-           The Slide Display feature is designed to allow readers to easily navigate and visualise multiple sequential or related visual elements, abstracted by a slide menu with dots. Here is an example using videos generated in <a href="https://nvlabs.github.io/stylegan3/">StyleGAN-3</a>.
-        </p>
-    </div>
-
-    <div class="container blog main gray">
-        <div class="slide-menu">
-            <ul class="dots" id="slide-menu">
-                <li class="dot active"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
-            </ul>
-        </div>
-       
-        <div class="slide-content", style="display: block;">
-            <video loop playsinline muted autoplay src="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/videos/video_2_metfaces_interpolations.mp4" style="width: 100%"> </video>
-        </div>
-
-        <div class="slide-content", style="display: none;">
-            <video loop playsinline muted autoplay src="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/videos/video_3_afhq_interpolations.mp4" style="width: 100%"> </video>
-        </div>
-
-        <div class="slide-content", style="display: none;">
-            <video loop playsinline muted autoplay src="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/videos/video_4_beaches_interpolations.mp4" style="width: 100%"> </video>
-        </div>
-
-
-        <p class="caption">
-            The videos show interpolations between hand-picked latent points in several datasets. Observe again how the textural detail appears fixed in the StyleGAN-2 result, but transforms smoothly with the rest of the scene in the alias-free StyleGAN-3.
-        </p>
-    </div>
-
-    <div class="container blog main">
-        <h2>
-            Auto Slideshow Display
-        </h2>
-        <p class="text">
-            Alternatively, the Auto Slideshow Display feature enables readers to enjoy a large array of visual elements through an automated, slideshow-like presentation. Users can also navigate through the slideshow manually with "Left" and "Right" buttons. Below is an example using videos generated in <a href="https://mardini-vidgen.github.io/">MarDini</a>.
-        </p>
-        <!-- 
-        1. You may add another row of visual elements by simply adding a video element in each "slider-item" div. Correspondingly, you need to change the following in the scss file (under Slideshow Control): height: 440px into 440px * num_rows. 
-        2. You may also change the fixed image size by changing the following:
-            a. scss: .slider-item width: 400px -> changed width; 
-            b. scss: height: 440px -> changed width + padding_bottom;
-            c. javascript: item.style.left = `${(i-1) * 440}px`) -> changed width + padding_left
-        -->
-    </div>
-
-    <div class="container blog main">
-        <h2>
-            Selection Display
-        </h2>
-        
-        <p class="text">
-            The Selection Display feature is designed to visualise multiple visual elements based on a user-selectable menu. This feature is commonly used for images visualised with conditional prompts, allowing users to explore different visual outputs by selecting various conditions or prompts from the menu. Here is an example using images generated in <a href="https://sites.research.google/parti/">Google Parti</a>.
-        </p>
-    </div>
-
-    <div class="container blog main gray">
-        <div class="columns-2">
-            <div>
-                 <img id="parti" src="https://sites.research.google/parti/paper_images_green_watermark_outputs/figures/cherries/tornado/tiger_cubism.jpg">
-                 <p class="caption selection">
-                    <b>Input Prompt: </b>  <br>
-                     A tornado made of 
-                     <Select id="image-selector1">
-                         <option value="sharks" selected>sharks</option>
-                         <option value="tiger">tigers</option>
-                         <option value="bees">bees</option>
-                      </Select>
-                      <select id="image-selector1-temp" style="display: none;">
-                         <option id="image-selector1-temp-option"></option>
-                     </select>
-                      crashing into a skyscraper. Painting in the style of
-                      <Select id="image-selector2">
-                         <option value="hokusai" selected>Hokusai</option>
-                         <option value="cubism"> abstract cubism</option>
-                         <option value="watercolor">watercolor</option>
-                      </Select>
-                      <select id="image-selector2-temp" style="display: none;">
-                         <option id="image-selector2-temp-option"></option>
-                     </select>
-                      .
-                 </p>
-            </div>
-
-            <div>
-                <img id="parti2" src="https://sites.research.google/parti/paper_images_green_watermark_outputs/figures/cherries/cherry2/panda_tennis.jpg">
-                <p class="caption selection">
-                   <b>Input Prompt: </b>  <br>
-                    A photo of an Athenian vase with a painting of 
-                    <Select id="image-selector3">
-                        <option value="panda" selected>pandas</option>
-                        <option value="toucan">toucans</option>
-                        <option value="pangolin">pangolins</option>
-                     </Select>
-                     <select id="image-selector3-temp" style="display: none;">
-                        <option id="image-selector3-temp-option"></option>
-                    </select>
-                     playing
-                     <Select id="image-selector4">
-                        <option value="tennis" selected>tennis</option>
-                        <option value="soccer"> soccer</option>
-                        <option value="basketball">basketball</option>
-                     </Select>
-                     <select id="image-selector4-temp" style="display: none;">
-                        <option id="image-selector4-temp-option"></option>
-                    </select>
-                    in the style of Egyptian hieroglyphics.
-                </p>
-           </div>
-        </div>
-    </div>
-
-    <div class="container blog main">
-        <h2>
-            Comparison Display
-        </h2>
-        
-        <p class="text">
-            The Comparison Display feature allows users to visualise two images side by side with a controllable slider, making it easy to compare visual results against a baseline. This feature is particularly useful for showcasing improvements or differences between two images. Here is an example using upsampled images generated with <a href="https://mingukkang.github.io/GigaGAN/">GigaGAN</a>.
-        </p>
-    </div>
-    <div class="container blog main gray extra-large">
-        <div class="columns-2">
-            <img-comparison-slider class="slider-container white">
-                <figure slot="first" class="before">
-                    <img src="https://mingukkang.github.io/GigaGAN/static/images/iguana_input.jpg">
-                    <figcaption class="white">Input Image (128px)</figcaption>
-                </figure>
-                <figure slot="second" class="after">
-                    <img src="https://mingukkang.github.io/GigaGAN/static/images/iguana_output.jpg">
-                    <figcaption class="white">GigaGAN Upsampled (1024px)</figcaption>
-                </figure>
-            </img-comparison-slider>
-            <img-comparison-slider class="slider-container">
-                <figure slot="first" class="before">
-                    <img src="https://mingukkang.github.io/GigaGAN/static/images/plant_input.jpg">
-                    <figcaption>Input Image (128px)</figcaption>
-                </figure>
-                <figure slot="second" class="after">
-                    <img src="https://mingukkang.github.io/GigaGAN/static/images/plant_output.jpg">
-                    <figcaption>GigaGAN Upsampled (1024px)</figcaption>
-                </figure>
-            </img-comparison-slider>
-        </div>
-        
-        <p class="caption">
-            Our GigaGAN framework can also be used to train an efficient, higher-quality upsampler. This can be applied to real images, or to the outputs of other text-to-image models like diffusion. GigaGAN can synthesize ultra high-res images at 4k resolution in 3.66 seconds.
-        </p>
-    </div>
-
-    <div class="container blog main">
-        <h2 >    
-            Video Control / Buttons
-        </h2>
-
-        <p class="text">
-            Clarity supports video controls through a set of intuitive navigation buttons, making it easier for readers to pause, resume, and adjust playback speed as needed. This functionality is particularly useful for projects involving 3D vision and neural rendering. This feature was recently developed to support the <a href="https://kxhit.github.io/EscherNet">EscherNet</a> project, with an example demonstrating this control functionality below.
-        </p>
-    </div>
-
-
-    <div class="container blog extra-large gray-linear">
-        <div class="video-control">
-            <a class="button"onclick="SlowVideo('eschernet')"><i class="fa-solid fa-backward"></i></a>
-            <!-- Using FontAwesome Pro -->
-            <!-- <a class="button"onclick="ToggleVideo('eschernet')"><i class="fa-solid fa-play-pause"></i></a> -->
-
-            <!-- Using FontAwesome Free -->
-            <a class="button"onclick="ToggleVideo('eschernet')"><i class="fa-solid fa-play"></i></a>
-
-            <a class="button"onclick="FastVideo('eschernet')"><i class="fa-solid fa-forward"></i></a>
-            <a class="button"onclick="RestartVideo('eschernet')"><i class="fa-solid fa-rotate-left"></i></a>
-        </div>
-
-        <div class="columns-6">
-            <div>
-                <p class="caption inline center">Zero-1-to-3-XL</p>
-                <video loop playsinline muted autoplay class="eschernet-video" src="https://kxhit.github.io/eschernet/GSO100/Zero123/output_GSO-xl/backpack/output.mp4">
-                </video>
-            </div>
-            <div>
-                <p class="caption inline center">EscherNet (1 View)</p>
-                <video loop playsinline muted autoplay class="eschernet-video" src="https://kxhit.github.io/eschernet/GSO100/EscherNet/N2M100/backpack/output.mp4" >
-                </video>
-            </div>
-            <div>
-                <p class="caption inline center">EscherNet (2 Views)</p>
-                <video loop playsinline muted autoplay class="eschernet-video" src="https://kxhit.github.io/eschernet/GSO100/EscherNet/N2M100/backpack/output.mp4" >
-                </video>
-            </div>
-            <div>
-                <p class="caption inline center">EscherNet (3 Views)</p>
-                <video loop playsinline muted autoplay class="eschernet-video" src="https://kxhit.github.io/eschernet/GSO100/EscherNet/N3M100/backpack/output.mp4" >
-                </video>
-            </div>
-            <div>
-                <p class="caption inline center">EscherNet (5 Views)</p>
-                <video loop playsinline muted autoplay class="eschernet-video" src="https://kxhit.github.io/eschernet/GSO100/EscherNet/N5M100/backpack/output.mp4">
-                </video>
-            </div>
-            <div>
-                <p class="caption inline center">EscherNet (10 Views)</p>
-                <video loop playsinline muted autoplay class="eschernet-video" src="https://kxhit.github.io/eschernet/GSO100/EscherNet/N10M100/backpack/output.mp4">
-                </video>
-            </div>
-        </div>
-
-        <p class="video-speed" id="eschernet-msg">
-            Speed: ×1.00
-        </p>
-    </div>
-
-    <div class="container blog main">
-        <h1 >
-            Other Design Tips
-        </h1>
-
-        <h2 >
-            Colour
-        </h2>
-
-        <p class="text">
-            Colour is one of the most crucial visual elements in design and visualisation, and it is the main reason in making the <a href="https://www.theolympicdesign.com/olympic-games/the-look-of-the-games/paris-2024/">Paris Olympics 2024</a> such visually memorable and refreshing. While I'm not a colour expert, and there're always more to learn, I generally prefer using low-contrast, pastel-like colours in my designs. I typically use variants of gray and dark blue to represent common features, and employ warmer colours such as orange and red to highlight important design elements, as illustrated in the neural architecture design example from this blog post.
-        </p>
-
-        <p class="text">
-            For a more detailed understanding of colour design, I highly recommend the <a href="https://m3.material.io/styles/color/system/overview">Material Design Colour Guidelines</a> and <a href="https://www.molecularecologist.com/2020/04/23/simple-tools-for-mastering-color-in-scientific-figures/">this blog post</a> — which provide valuable insights and are definitely worth exploring.
-        </p>
-        
-        <h2 >
-            Icons
-        </h2>
-        <p class="text">  
-            In Clarity, all icons are integrated using <a href="https://fontawesome.com/">FontAwesome</a>. As one of the largest and most comprehensive icon libraries available, FontAwesome offers a vast collection of clean and minimalist icons that perfectly align with Clarity's design style and a wide range of use cases. I have found FontAwesome particularly valuable for many of my design projects, and its integration ensures that Clarity maintains a modern and consistent visual style throughout.
+            </div> -->
             
-            <!-- I highly recommend purchasing the FontAwesome Pro version, as it offers a wider selection of icons and styles that integrate beautifully with this template. -->
-        <h2 >
-            Data Plots and Visualisation
-        </h2>
-
-        <p class="text">
-            I try to provide consistently high-quality plots useable for both $\LaTeX$ papers and websites using the <a href="https://www.overleaf.com/learn/latex/TikZ_package">TikZ</a> library. However, as many researchers know, TiKz offers stunning vector graphics but is notoriously difficult to use, and $\LaTeX$'s syntax design can be quite a headache (which makes new layout tools like  <a href="https://typst.app/">Typst</a> quite intriguing).
-
+            <div class="table-wrapper">
+                <table>
+                <thead class="center">
+                    <tr>
+                    <th>Prompt</th>
+                    <th>Avg Time (seconds)</th>
+                    <th>Accuracy (%)<br>LLM is Correct ✓</th>
+                    <th>Accuracy (%)<br>LLM is Incorrect ✗</th>
+                    </tr>
+                </thead>
+                <tbody class="center">
+                    <tr>
+                    <td>HoT</td>
+                    <td><b>47.26</b></td>
+                    <td><b>84.48 &plusmn; 20.28</b></td>
+                    <td>54.83 &plusmn; 30.13</td>
+                    </tr>
+                    <tr>
+                    <td>CoT</td>
+                    <td>62.38</td>
+                    <td>78.82 &plusmn; 28.26</td>
+                    <td><b>72.21 &plusmn; 21.99</b></td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            
         </p>
-
-        <p class="text">
-            To balance efficiency with quality, I typically use  <a href="https://matplotlib.org/">matplotlib</a> and other Python tools to quickly prototype plots. I then use <a href="https://github.com/nschloe/tikzplotlib">tikzplotlib</a> to convert these plots into TiKz code. Finally, I refine the generated Tikz code for the final presentation. Although this process isn't always perfect, it has proven to be my most efficient solution, allowing me to create high-quality plots within a reasonable time (such as this example of raw TiKz code <a href="https://www.dropbox.com/scl/fi/fsiz2il9yoiymk94v55v8/vqav2.tex?rlkey=9yb86m8aar91a8tijcgf6pq3w&dl=0">here</a>).
-        </p>
-    </div>
-
-    <div class="container blog extra-large">
-        <div class="columns-2">
-            <img src="https://shikun.io/projects/prismer/vqav2.png" style="width: 100%">
-            <img src="https://shikun.io/projects/prismer/nocaps.png" style="width: 100%">
-        </div>
     </div>
 
     <div class="container blog main">
-        <h1 >
-            Open-Source Contribution and Future Plans
-        </h1>
-
+        <h2>
+           Adding XML Tags to LLM Responses Boosts Performance
+        </h2>
         <p class="text">
-            The current version of Clarity already includes a range of design features suitable for many use cases. However, I plan to continue improving Clarity with new features and design elements as long as I am still working in AI research (and/or AGI is not solved :/). Since Clarity is open-source, I also welcome contributions from the community. Some example features that would be valuable additions include: 1. A content menu and hover citation system similar to those found in <a href="https://distill.pub/2021/understanding-gnns/">Distill blogs</a>, and 2. Music and sound layouts as demonstrated in <a href="https://openai.com/index/jukebox/">OpenAI Jukebox</a>.
-        </p>
-
-        <h1 >
-            License
-        </h1>
-
-        <p class="text">
-            Following <a href="https://nerfies.github.io/">Nerfie</a>, arguably one of the most popular website templates currently available, Clarity is also licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/"><b>Creative Commons Attribution-ShareAlike 4.0 International License</b></a>. This allows you to freely modify and distribute the template in any way you like. Similarly, I kindly ask that you link back to this page in the footer to acknowledge my work and efforts. Enjoy!
+            We found that adding XML tags to LLM responses significantly boosts performance across a wide range of tasks. In particular, we observed that the highlights generated by HoT closely mirror human annotations
         </p>
     </div>
 
+    <div class="container blog main">
+        <h2>
+            Limitations
+        </h2>
+        <p class="text">
+            HoT is not a silver bullet. It is important to note that HoT is not a panacea for all LLM problems. In some cases, HoT may not be able to generate highlights that accurately reflect the user query. In such cases, it is recommended to use other techniques, such as fine-tuning or data augmentation, to improve the model's performance.
+        </p>
+    </div>
 
     <!-- Footer Page -->
     <footer>

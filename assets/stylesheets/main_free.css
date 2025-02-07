@@ -1562,3 +1562,13 @@ select {
   min-width: 20%;
   border: 1px solid gray;
 }
+
+.blog-cover {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 60vh; /* Takes full viewport height */
+  margin: 0;
+  padding: 20px;
+}
