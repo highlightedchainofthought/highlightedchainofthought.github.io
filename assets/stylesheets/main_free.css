@@ -1580,3 +1580,20 @@ ul li {
 table th b, table td b {
   font-weight: 700;
 }
+
+.llm {
+  height: 1em;              /* roughly match text size */
+  width: 1em;
+  vertical-align: middle;   /* center icon vertically */
+  display: inline;
+  padding-bottom: 5px !important;
+}
+
+
+.flash-llm {
+  height: 1em;              /* roughly match text size */
+  width: 1.5em;
+  vertical-align: middle;   /* center icon vertically */
+  display: inline;
+  padding-bottom: 5px !important;
+}
