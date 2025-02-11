@@ -40,7 +40,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 }
 
 .logoContainer {
-  width: 20% !important;
+  width: 25% !important;
   height: 20% !important;
 }
 
@@ -1554,7 +1554,7 @@ select {
 
 
 .good {
-  color: #22c55e;
+  color: #0f893c;
   font-weight: 500;
 }
 
@@ -1571,4 +1571,12 @@ select {
   min-height: 60vh; /* Takes full viewport height */
   margin: 0;
   padding: 20px;
+}
+
+ul li {
+  padding-bottom: 8px;
+}
+
+table th b, table td b {
+  font-weight: 700;
 }
