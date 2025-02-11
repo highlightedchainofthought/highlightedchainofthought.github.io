@@ -155,25 +155,24 @@
         </h1>
 
         <p class="text">
-            We evaluate HoT on 17 tasks across arithmetic, question-answering, and logical reasoning datasets using Gemini-1.5-Pro (<img class="llm" src="assets/images/models/gemini.png">), Gemini-1.5-Flash (<img class="flash-llm" src="assets/images/models/geminiflash.png">), Llama-3.1-70B (<img class="llm" src="assets/images/models/llama70b.png">), Llama-3.1-405B (<img class="llm" src="assets/images/models/llama405b.png">) and GPT-4o (<img class="llm" src="assets/images/models/openai.png">).
+            We evaluate HoT on <b>17 tasks</b> across arithmetic, question-answering, and logical reasoning datasets using Gemini-1.5-Pro (<img class="llm" src="assets/images/models/gemini.png">), Gemini-1.5-Flash (<img class="flash-llm" src="assets/images/models/geminiflash.png">), Llama-3.1-70B (<img class="llm" src="assets/images/models/llama70b.png">), Llama-3.1-405B (<img class="llm" src="assets/images/models/llama405b.png">) and GPT-4o (<img class="llm" src="assets/images/models/openai.png">).
         </p>    
 
         <img src="assets/images/math.png">
         <p class="caption">
-            HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (+14.64 for ) and r-GSM (+12.73 for ).  
+            HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (<span class="good">+14.64</span> for Gemini-1.5-Flash) and r-GSM ((<span class="good">+12.73</span> for Gemini-1.5-Pro).  
         </p>
     </div>
     <div class="container blog main">
         <img src="assets/images/qa.png">
         <p class="caption">
-            HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (+14.64 for ) and r-GSM (+12.73 for ).  
+            HoT demonstrates consistent accuracy improvements over CoT across QA tasks (StrategyQA, SpartQA, Date) and Reading Comprehension tasks (DROP (Break) and DROP (Cencus)). The largest gains are observed in StrategyQA (<span class="good">15.07</span> for Llama-3.1-70B) and SpartQA (<span class="good">11.88</span> for Gemini-1.5-Flash).
         </p>
     </div>
     <div class="container blog main">
         <img src="assets/images/logic.png">
         <p class="caption">
-            HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (+14.64 for ) and r-GSM (+12.73 for ).  
-        </p>
+            \hot outperforms CoT across logical reasoning BBH subsets, with notable gains in Judgment ( \increasenoparent{15.5} for \gptlogo) and Five Object tasks (\increasenoparent{6.00} for \geminilogo).         </p>
     </div>
     <div class="container blog main">
         <h2>
@@ -253,7 +252,7 @@
         </h1>
 
         <p class="text">
-            We conduct a study with 63 people to evaluate the effectiveness of HoT in helping users verify the correctness of LLM answers. Users are randomly assigned to see exclusively HoT or CoT LLM response and then have to predict if the given answer is correct or incorrect. We found that HoT helps time-limited human participants to more accurately and efficiently recognize when LLMs are correct. However, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
+            We conduct a study with <b>63 people</b> to evaluate the effectiveness of HoT in helping users verify the correctness of LLM answers. Users are randomly assigned to see exclusively HoT or CoT LLM response and then have to predict if the given answer is correct or incorrect. We found that HoT helps time-limited human participants to more accurately and efficiently recognize when LLMs are correct. However, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
             
             <!-- <div class="table-wrapper">
                 <table>
