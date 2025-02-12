@@ -1597,3 +1597,16 @@ table th b, table td b {
   display: inline;
   padding-bottom: 5px !important;
 }
+
+.center-div {
+  display: flex;
+  justify-content: center;
+}
+
+.small-text {
+  font-size: 13.5px;
+}
+
+ul {
+  margin-left: 1em;
+}
