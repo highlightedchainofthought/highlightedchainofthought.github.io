@@ -64,7 +64,7 @@
                     </div>
                     <p class="author"><a href="https://ngthanhtin.github.io/">Tin Nguyen</a>, <a href="https://loganbolton.github.io/">Logan Bolton</a>, <a href="https://taesiri.com/">Mohammad Reza Taesiri</a>, <a href="https://anhnguyen.me/research/">Anh Totti Nguyen</a></p>
                     <p class="abstract">
-                        An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain-of-Thought Prompting (HoT), <b>a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query</b>. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in few-shot settings, <b>HoT outperforms vanilla chain of thought prompting</b> (CoT) (Wei et al., 2022)on a wide range of 17 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they <b>help time-limited human participants to more accurately and efficiently recognize when LLMs are correct</b>. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
+                        An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain-of-Thought Prompting (HoT), <b>a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query</b>. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in few-shot settings, <b>HoT outperforms vanilla chain of thought prompting</b> (CoT) (<a class="small-text" href="https://arxiv.org/abs/2201.11903">Wei et al., 2022</a>) on a wide range of 17 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they <b>help time-limited human participants to more accurately and efficiently recognize when LLMs are correct</b>. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
                     </p>
                    
                 </div>
@@ -93,7 +93,7 @@
             Introduction
         </h1>
         <p class='text'>
-           Modern LLMs can bold, italicize or underline their text. Why not highlight as well? We propose Highlighted Chain-of-Thought Prompting (HoT), a technique for prompting LLMs to generate highlights around their responses that links specific information from the user query to the LLM response. This method <b>improves user experiences</b> and <b>improves answer accuracy</b> when compared to CoT. 
+           Modern LLMs can bold, italicize or underline their text. Why not highlight as well? We propose Highlighted Chain-of-Thought (HoT), a technique for prompting LLMs to generate highlights around their responses that links specific information from the user query to the LLM response. This method <b>improves user experiences</b> and <b>improves answer accuracy</b> when compared to vanilla Chain of Thought. 
         </p>
 
     </div>
@@ -107,9 +107,11 @@
         </p> -->
 
         <ul>
-            <li><b>HoT consistently improves accuracy</b> across 5 models and 17 datasets. 
-                In arithmetic, question-answering, and logical reasoning problems, HoT achieves <span class="good">+1.60</span>, <span class="good">+2.58</span>, and <span class="good">+2.53</span> percentage points, respectively, as compared to vanilla few-shot CoT.</li>
-            <li>Highlighted answers from HoT <b>improve human verification accuracy</b> by <span class="good">5.66</span> points (78.82% to 84.48%) and <b>reduce verification time</b> by <span class="good">-15.12 seconds</span> per question (62.38 seconds to 47.26 seconds) when assessing correct LLM responses compared to CoT answers</li>
+            <li><b>HoT consistently improves accuracy</b> on arithmetic, question-answering, and logical reasoning problems across 5 different models and 17 datasets.
+
+            <li>Highlighted answers from HoT <b>improves humans' ability to verify correct LLM answers</b> by <span class="good">5.66</span> points (78.82% to 84.48%).</li>
+            <li>HoT <b>reduces the amount of time needed to verify LLM answers</b> by <span class="good">-15.12 seconds</span> per question as compared to CoT (62.38 seconds to 47.26 seconds).</li>
+
             <li>Larger models generate highlights that <b>closely mirror human annotations</b> without requiring fine tuning.</li>
         </ul>
 
@@ -118,6 +120,13 @@
         </p> -->
     </div>
 
+    
+    <div class="container blog large">
+        <div class="columns-1">
+            <img src="assets/images/figure_hot_transform.png" style="width: 100%">
+            <p class="caption">LLMs generate HoT responses by wrapping XML tags around the information the model determines is the most important. Regex and CSS is then used to add color highlighting for the user to easily understand the response.</p>
+        </div>
+    </div>
 
 
     <!-- <div class="container blog main">
@@ -160,35 +169,21 @@
 
         <img src="assets/images/math.png">
         <p class="caption">
-            HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (<span class="good">+14.64</span> for Gemini-1.5-Flash) and r-GSM ((<span class="good">+12.73</span> for Gemini-1.5-Pro).  
+            HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (<span class="good">+14.64</span> for Gemini-1.5-Flash <img class="flash-llm" src="assets/images/models/geminiflash.png">) and r-GSM (<span class="good">+12.73</span> for Gemini-1.5-Pro <img class="llm" src="assets/images/models/gemini.png">).  
         </p>
     </div>
     <div class="container blog main">
         <img src="assets/images/qa.png">
         <p class="caption">
-            HoT demonstrates consistent accuracy improvements over CoT across QA tasks (StrategyQA, SpartQA, Date) and Reading Comprehension tasks (DROP (Break) and DROP (Cencus)). The largest gains are observed in StrategyQA (<span class="good">15.07</span> for Llama-3.1-70B) and SpartQA (<span class="good">11.88</span> for Gemini-1.5-Flash).
+            HoT demonstrates consistent accuracy improvements over CoT across QA tasks (StrategyQA, SpartQA, Date) and Reading Comprehension tasks (DROP (Break) and DROP (Cencus)). The largest gains are observed in StrategyQA (<span class="good">+15.07</span> for Llama-3.1-70B <img class="llm" src="assets/images/models/llama70b.png">) and SpartQA (<span class="good">+11.88</span> for Gemini-1.5-Flash <img class="flash-llm" src="assets/images/models/geminiflash.png">).
         </p>
     </div>
     <div class="container blog main">
         <img src="assets/images/logic.png">
         <p class="caption">
-            \hot outperforms CoT across logical reasoning BBH subsets, with notable gains in Judgment ( \increasenoparent{15.5} for \gptlogo) and Five Object tasks (\increasenoparent{6.00} for \geminilogo).         </p>
-    </div>
-    <div class="container blog main">
-        <h2>
-           Adding XML Tags to LLM Responses Boosts Performance
-        </h2>
-        <p class="text">
-            We found that adding XML tags to LLM responses significantly boosts performance across a wide range of tasks. In particular, we observed that the highlights generated by HoT closely mirror human annotations
-        </p>
+            HoT outperforms CoT across the logical reasoning BBH subsets, with notable gains in Causal Judgment (<span class="good">+15.5</span> for for GPT-4o <img class="llm" src="assets/images/models/openai.png">) and Five Object tasks (<span class="good">+6.00</span> for Gemini-1.5-Pro <img class="llm" src="assets/images/models/gemini.png">).</p>
     </div>
     
-    <div class="container blog main">
-        <div class="columns-2">
-            <img src="assets/images/ex1.png" style="width: 100%">
-            <img src="assets/images/ex2.png" style="width: 100%">
-        </div>
-    </div>
     <div class="container blog main">
         <h1>
             What's the Point?
@@ -197,18 +192,21 @@
             In Clarity, I have provided container widths with five options: <code>main</code>, <code>large</code>, <code>extra-large</code>, <code>extra-extra-large</code>, and <code>max</code>. These container layouts are designed to be responsive, automatically adjusting based on the screen size.  The default width is <code>main</code>, which is used for this blog post. Be cautious when using the <code>max</code> option, as it has zero padding. Unless you are certain of the design, it's always recommended to leave some space for visual aesthetic purposes.
         </p> -->
         <p class="text">
-            LLMs are great at giving you intelligent responses to any question you have. However, it can be annoying to read through huge blocks of text. Humans frequently add color highlighting to our writing to make it easier to read, so why not allow LLMs to do the same thing?
+            LLMs are great at answering a wide variety of questions, but it can be annoying to read through the huge blocks of text that they tend to generate. Humans frequently add color highlighting to our writing to make it easier to read, so why not allow LLMs to do the same thing?
         </p>
     </div>
     <div class="container blog main">
         <div class="columns-2">
-            <img src="assets/images/cot_response.png" style="width: 100%">
+            <img src="cot_response.png" style="width: 100%">
             <img src="assets/images/hot_response.png" style="width: 100%">
+        </div>
+        <div class = "center-div">
+            <p class="caption">HoT responses are easier to quickly read through than CoT responses.</p>
         </div>
     </div>
     <div class="container blog main">
         <p class="text">
-            Consider this example. Which of these two responses are easier to read? For the response on the left, you have to parse through all the irrelevant context to find the part of the conversation that you care about. For the HoT response, you can almost instantly scan over the LLM responses to see exactly where it drew its answer from. 
+            Consider the previous example. Which of these two responses are easier to read? For the response on the left, you have to parse through all the irrelevant context to find the part of the conversation that you care about. For the HoT response, you can almost instantly scan over the LLM responses to see exactly where it drew its answer from. 
         </p>
 
         <!-- <p class="text">
@@ -225,23 +223,23 @@
     <div class="container blog main">
         <h1>How do you make these highlights?</h1>
         <p class="text">
-            Given an input question, LLMs first repeat the original question but with XML tags wrapped around the key facts needed to answer the question. Then, the model generates answers using the information in the question. The model is able to understand what types of information to tag using fewshot examples given in the HoT instruction prompt.
+            Given an input question, the LLM first repeats the original question but with XML tags wrapped around the key facts needed to answer the question. Then, the model generates answers using the information in the question. The model is able to understand what types of information to tag using fewshot examples given in the HoT instruction prompt.
         </p>
     </div>  
     
-    <div class="container blog large">
-        <div class="columns-1">
-            <img src="assets/images/figure_hot_transform.png" style="width: 100%">
-        </div>
-    </div>
 
     <div class="container blog main">
+        <div class="columns-2">
+            <img src="assets/images/ex1.png" style="width: 100%">
+            <img src="assets/images/ex2.png" style="width: 100%">
+        </div>
+        <div class = "center-div">
+            <p class="caption">For HoT responses, the same information that is highlighted in the question is then highlighted in the answer.</p>
+        </div>
+    </div>
+    <div class="container blog main">
         <p class="text">
-            Take this question for example. First, the model reads over the original question. Then it repeats the question with XML tags wrapped around the most important facts. Since the model wrapped "2 books" with the <code>fact1</code> tag in the reformatted question, it knows to wrap any references to "2 books" in the answer with the same <code>fact1</code> tag.
-        </p>
-
-        <p class="text">
-            Then using regex and CSS, we can easily strip out these XML tags and assign a highlight color to each unique tag. 
+            For example, if the model wrapped "1 step right" with the <code>fact1</code> tag in the reformatted question, it knows to then wrap any references to "1 step right" in the answer with the same <code>fact1</code> tag. Then using regex and CSS, we can easily strip out these XML tags and assign a highlight color to each unique tag (see the first image under Key Takeaways for an example). 
         </p>
     </div>
     <div class="container blog main">
@@ -252,7 +250,7 @@
         </h1>
 
         <p class="text">
-            We conduct a study with <b>63 people</b> to evaluate the effectiveness of HoT in helping users verify the correctness of LLM answers. Users are randomly assigned to see exclusively HoT or CoT LLM response and then have to predict if the given answer is correct or incorrect. We found that HoT helps time-limited human participants to more accurately and efficiently recognize when LLMs are correct. However, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
+            We conduct a study with <b>63 users</b> to evaluate the effectiveness of HoT in helping humans verify the correctness of LLM answers. Users are randomly assigned to see exclusively HoT or CoT LLM response and then have to predict if the given answer is correct or incorrect. We found that HoT helps time-limited human participants to more accurately and efficiently recognize when LLMs are correct. However, when LLMs are wrong, HoTs tend to fool users into believing that an answer is actually correct.
             
             <!-- <div class="table-wrapper">
                 <table>
@@ -314,22 +312,22 @@
                     <tr>
                     <th>Prompt</th>
                     <th>Avg Time <br>(seconds)</th>
-                    <th>Accuracy (%)<br>LLM is Correct ✓</th>
-                    <th>Accuracy (%)<br>LLM is Incorrect ✗</th>
+                    <th>Verification Accuracy for<br>Correct LLM Responses ✓</th>
+                    <th>Verification Accuracy for<br>Incorrect LLM Responses ✗</th>
                     </tr>
                 </thead>
                 <tbody class="center">
                     <tr>
                     <td>HoT</td>
                     <td><b>47.26</b></td>
-                    <td><b>84.48 &plusmn; 20.28</b></td>
-                    <td>54.83 &plusmn; 30.13</td>
+                    <td><b>84.48% &plusmn; 20.28%</b></td>
+                    <td>54.83% &plusmn; 30.13%</td>
                     </tr>
                     <tr>
                     <td>CoT</td>
                     <td>62.38</td>
-                    <td>78.82 &plusmn; 28.26</td>
-                    <td><b>72.21 &plusmn; 21.99</b></td>
+                    <td>78.82% &plusmn; 28.26%</td>
+                    <td><b>72.21% &plusmn; 21.99%</b></td>
                     </tr>
                 </tbody>
                 </table>
@@ -348,11 +346,11 @@
             Why does HoT work?
         </h2>
         <p class="text">
-            Part of the increase of accuracy in HoT can likely be attributed to repeating the question. Several papers (<a href="https://arxiv.org/abs/2309.06275">Xu et al., 2024</a> and <a href="https://arxiv.org/abs/2309.10687">Mekala et al., 2024</a>) have shown that having the LLM repeat the input question before generating a response can improve performance. However, in our full paper we show that HoT has a higher performance than just repeating the question. 
+            Part of the increase of benchmark accuracy in HoT can likely be attributed to the LLM repeating the input question in its response. Several papers (<a href="https://arxiv.org/abs/2309.06275">Xu et al., 2024</a> and <a href="https://arxiv.org/abs/2309.10687">Mekala et al., 2024</a>) have shown that having the LLM repeat the input question before generating a response can improve performance. However, in our full paper we show that HoT has a higher performance than just repeating the question. 
         </p>
 
         <p class="text">
-            We theorize that by generating extra tokens (in this case XML tags) around key facts helps the LLM to focus its attention to the most important context. Its also possible that by adding the XML tags, the LLM is more effectively able to recall specific information from earlier in its context window with less frequent hallucinations. However, more research is needed to verify these claims.
+            We theorize that by generating extra tokens (in this case XML tags) around key facts helps the LLM to focus its attention to the most important part of the context. Its also possible that by adding the XML tags, the LLM is more effectively able to recall specific information from earlier in its context window with less frequent hallucinations. However, more experimentation is needed to verify these claims.
         </p>
         <h2>
             What about Reasoning Models?
@@ -443,7 +441,7 @@
         </p>
 
         <p class="text">
-            Given that HoT relies on fewshot examples, the negative results for Deepseek align with the warnings from the creators of R1 explicitly claim that fewshot examples can actually R1's performance. Interestingly, the <code>thinking</code> tokens for R1, do NOT contain XML tags, but its final answer does include XML tags. Gemini Flash 2.0 Thinking does not provide thinking tokens over the API, so we are not able to analyze its internal Chain of Thought.
+            Given that HoT relies on fewshot examples, the negative results for Deepseek align with the warnings from the creators of R1 that fewshot examples can actually R1's performance (<a href="https://arxiv.org/abs/2501.12948">DeepSeek-AI, 2025</a>). Interestingly, the <code>thinking</code> tokens for R1 only contains XML tags about 10% of the time, regardless of whether or not its final answer does actually include XML tags. Gemini Flash 2.0 Thinking does not provide thinking tokens over the API, so we are not able to analyze its internal Chain of Thought.
         </p>
 
         <p class="text">
@@ -456,7 +454,7 @@
             Limitations
         </h2>
         <p class="text">
-            The biggest limitation for HoT is its reliance on few shot examples. On our Github, we have gathered plenty of fewshot examles that can be applied to most domains. However if you have a niche task that you want to apply HoT on, you have to first construct the fewshot examples yourself. However, this could be easily fixed in future work with a finetuned model that produces HoT responses by default. 
+            HoT relies on few shot examples in order to demonstrate the desired output format to the LLM. On our Github, we have gathered plenty of fewshot examples that can be applied to most domains. However, if you have a niche task that you want to use HoT on, you must first construct fewshot examples (whether manually or through LLM generated examples). Future work could easily alleviate this issue with a finetuned model that produces HoT responses by default. 
         </p>
     </div>
 
@@ -473,7 +471,7 @@
     <footer>
         <div class="container">
             <p>
-                This website is built on the <a href="https://shikun.io/projects/clarity">Clarity Template</a>, designed by <a href="https://shikun.io/">Shikun Liu</a>. Web page content was written by Logan Bolton.
+                This website is built on the <a href="https://shikun.io/projects/clarity">Clarity Template</a>, designed by <a href="https://shikun.io/">Shikun Liu</a>. Website content was written by Logan Bolton.
             </p>
         </div>    
     </footer>
