@@ -64,7 +64,7 @@
                     </div>
                     <p class="author"><a href="https://ngthanhtin.github.io/">Tin Nguyen</a>, <a href="https://loganbolton.github.io/">Logan Bolton</a>, <a href="https://taesiri.com/">Mohammad Reza Taesiri</a>, <a href="https://anhnguyen.me/research/">Anh Totti Nguyen</a></p>
                     <p class="abstract">
-                        An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain-of-Thought Prompting (HoT), <b>a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query</b>. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in few-shot settings, <b>HoT outperforms vanilla chain of thought prompting</b> (CoT) (<a class="small-text" href="https://arxiv.org/abs/2201.11903">Wei et al., 2022</a>) on a wide range of 17 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they <b>help time-limited human participants to more accurately and efficiently recognize when LLMs are correct</b>. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
+                        An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain of Thought Prompting (HoT), <b>a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query</b>. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in few-shot settings, <b>HoT outperforms vanilla chain of thought prompting</b> (CoT) (<a class="small-text" href="https://arxiv.org/abs/2201.11903">Wei et al., 2022</a>) on a wide range of 17 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they <b>help time-limited human participants to more accurately and efficiently recognize when LLMs are correct</b>. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
                     </p>
                    
                 </div>
@@ -93,7 +93,7 @@
             Introduction
         </h1>
         <p class='text'>
-           Modern LLMs can bold, italicize or underline their text. Why not highlight as well? We propose Highlighted Chain-of-Thought (HoT), a technique for prompting LLMs to generate highlights around their responses that links specific information from the user query to the LLM response. This method <b>improves user experiences</b> and <b>improves answer accuracy</b> when compared to vanilla Chain of Thought. 
+           Modern LLMs can bold, italicize or underline their text. Why not highlight as well? We propose Highlighted Chain of Thought (HoT), a technique for prompting LLMs to generate highlights around their responses that links specific information from the user query to the LLM response. This method <b>improves user experiences</b> and <b>improves answer accuracy</b> when compared to vanilla Chain of Thought prompting. 
         </p>
 
     </div>
@@ -441,7 +441,7 @@
         </p>
 
         <p class="text">
-            Given that HoT relies on fewshot examples, the negative results for Deepseek align with the warnings from the creators of R1 that fewshot examples can actually R1's performance (<a href="https://arxiv.org/abs/2501.12948">DeepSeek-AI, 2025</a>). Interestingly, the <code>thinking</code> tokens for R1 only contains XML tags about 10% of the time, regardless of whether or not its final answer does actually include XML tags. Gemini Flash 2.0 Thinking does not provide thinking tokens over the API, so we are not able to analyze its internal Chain of Thought.
+            Given that HoT relies on fewshot examples, the negative results for Deepseek align with the warnings from the creators of R1 that fewshot examples can actually R1's performance (<a href="https://arxiv.org/abs/2501.12948">DeepSeek-AI, 2025</a>). Interestingly, the <code>thinking</code> tokens for R1 only contains XML tags about 10% of the time, regardless of whether or not its final answer does actually include XML tags. Gemini Flash 2.0 Thinking does not provide thinking tokens over the API, so we are not able to analyze its internal Chain-of-Thought.
         </p>
 
         <p class="text">
