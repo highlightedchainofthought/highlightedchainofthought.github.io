@@ -64,7 +64,7 @@
                     </div>
                     <p class="author"><a href="https://ngthanhtin.github.io/">Tin Nguyen</a>, <a href="https://loganbolton.github.io/">Logan Bolton</a>, <a href="https://taesiri.com/">Mohammad Reza Taesiri</a>, <a href="https://anhnguyen.me/research/">Anh Totti Nguyen</a></p>
                     <p class="abstract">
-                        An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain of Thought Prompting (HoT), <b>a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query</b>. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in few-shot settings, <b>HoT outperforms vanilla chain of thought prompting</b> (CoT) (<a class="small-text" href="https://arxiv.org/abs/2201.11903">Wei et al., 2022</a>) on a wide range of 17 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they <b>help time-limited human participants to more accurately and efficiently recognize when LLMs are correct</b>. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
+                        An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain of Thought Prompting (HoT), <b>a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query</b>. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in fewshot settings, <b>HoT outperforms vanilla chain of thought prompting</b> (CoT) (<a class="small-text" href="https://arxiv.org/abs/2201.11903">Wei et al., 2022</a>) on a wide range of 17 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they <b>help time-limited human participants to more accurately and efficiently recognize when LLMs are correct</b>. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
                     </p>
                    
                 </div>
@@ -110,7 +110,7 @@
             <li><b>HoT consistently improves accuracy</b> on arithmetic, question-answering, and logical reasoning problems across 5 different models and 17 datasets.
 
             <li>Highlighted answers from HoT <b>improves humans' ability to verify correct LLM answers</b> by <span class="good">5.66</span> points (78.82% to 84.48%).</li>
-            <li>HoT <b>reduces the amount of time needed to verify LLM answers</b> by <span class="good">-15.12 seconds</span> per question as compared to CoT (62.38 seconds to 47.26 seconds).</li>
+            <li>HoT <b>reduces the amount of time needed to verify LLM answers</b> by <span class="good">+15.12 seconds</span> per question as compared to CoT (62.38 seconds to 47.26 seconds).</li>
 
             <li>Larger models generate highlights that <b>closely mirror human annotations</b> without requiring fine tuning.</li>
         </ul>
@@ -124,7 +124,7 @@
     <div class="container blog large">
         <div class="columns-1">
             <img src="assets/images/figure_hot_transform.png" style="width: 100%">
-            <p class="caption">LLMs generate HoT responses by wrapping XML tags around the information that the model determines is the most important. Regex and CSS is then used to add color highlighting for the user to easily understand the response.</p>
+            <p class="caption">LLMs generate HoT responses by wrapping XML tags around the information that the model determines is the most important. Regex and CSS are then used to add color highlighting for the user to easily understand the response.</p>
         </div>
     </div>
 
@@ -181,7 +181,7 @@
     <div class="container blog main">
         <img src="assets/images/logic.png">
         <p class="caption">
-            HoT outperforms CoT across the logical reasoning BBH subsets, with notable gains in Causal Judgment (<span class="good">+15.5</span> for for GPT-4o <img class="llm" src="assets/images/models/openai.png">) and Five Object tasks (<span class="good">+6.00</span> for Gemini-1.5-Pro <img class="llm" src="assets/images/models/gemini.png">).</p>
+            HoT outperforms CoT across the logical reasoning BBH subsets, with notable gains in Causal Judgment (<span class="good">+15.5</span> for GPT-4o <img class="llm" src="assets/images/models/openai.png">) and Five Object tasks (<span class="good">+6.00</span> for Gemini-1.5-Pro <img class="llm" src="assets/images/models/gemini.png">).</p>
     </div>
     
     <div class="container blog main">
