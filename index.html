@@ -109,7 +109,7 @@
         <ul>
             <li><b>HoT consistently improves accuracy</b> on arithmetic, question-answering, and logical reasoning problems across 5 different models and 17 datasets.
 
-            <li>Highlighted answers from HoT <b>improves humans' ability to verify correct LLM answers</b> by <span class="good">5.66</span> points (78.82% to 84.48%).</li>
+            <li>The highlighted answers from HoT <b>improve humans' ability to verify correct LLM answers</b> by <span class="good">5.66</span> points (78.82% to 84.48%).</li>
             <li>HoT <b>reduces the amount of time needed to verify LLM answers</b> by <span class="good">+15.12 seconds</span> per question as compared to CoT (62.38 seconds to 47.26 seconds).</li>
 
             <li>Larger models generate highlights that <b>closely mirror human annotations</b> without requiring fine tuning.</li>
@@ -175,7 +175,7 @@
     <div class="container blog main">
         <img src="qa.png">
         <p class="caption">
-            HoT demonstrates consistent accuracy improvements over CoT across QA tasks (StrategyQA, SpartQA, Date) and Reading Comprehension tasks (DROP (Break) and DROP (Cencus)). The largest gains are observed in StrategyQA (<span class="good">+15.07</span> for Llama-3.1-70B <img class="llm" src="assets/images/models/llama70b.png">) and SpartQA (<span class="good">+11.88</span> for Gemini-1.5-Flash <img class="flash-llm" src="assets/images/models/geminiflash.png">).
+            HoT demonstrates consistent accuracy improvements over CoT across QA tasks (StrategyQA, SpartQA, Date) and Reading Comprehension tasks (DROP (Break) and DROP (Census)). The largest gains are observed in StrategyQA (<span class="good">+15.07</span> for Llama-3.1-70B <img class="llm" src="assets/images/models/llama70b.png">) and SpartQA (<span class="good">+11.88</span> for Gemini-1.5-Flash <img class="flash-llm" src="assets/images/models/geminiflash.png">).
         </p>
     </div>
     <div class="container blog main">
@@ -350,7 +350,7 @@
         </p>
 
         <p class="text">
-            We theorize that generating extra tokens (in this case XML tags) around key facts helps the LLM to focus its attention to the most important part of the context. Its also possible that by adding the XML tags, the LLM is more effectively able to recall specific information from earlier in its context window with less frequent hallucinations. However, more experimentation is needed to verify these claims.
+            We theorize that generating extra tokens (in this case XML tags) around key facts helps the LLM to focus its attention to the most important part of the context. It's also possible that by adding the XML tags, the LLM is more effectively able to recall specific information from earlier in its context window with less frequent hallucinations. However, more experimentation is needed to verify these claims.
         </p>
         <h2>
             What about Reasoning Models?
@@ -441,7 +441,7 @@
         </p>
 
         <p class="text">
-            Given that HoT relies on fewshot examples, the negative results for Deepseek align with the warnings from the creators of R1 that fewshot examples can actually hurt R1's performance (<a href="https://arxiv.org/abs/2501.12948">DeepSeek-AI, 2025</a>). Interestingly, the <code>thinking</code> tokens for R1 only contains XML tags about 10% of the time, regardless of whether or not its final answer does actually include XML tags. Gemini Flash 2.0 Thinking does not provide thinking tokens over the API, so we are not able to analyze its internal Chain-of-Thought.
+            Given that HoT relies on fewshot examples, the negative results for Deepseek align with the warnings from the creators of R1 that fewshot examples can actually hurt R1's performance (<a href="https://arxiv.org/abs/2501.12948">DeepSeek-AI, 2025</a>). Interestingly, the <code>thinking</code> tokens for R1 only contain XML tags about 10% of the time, regardless of whether or not its final answer does actually include XML tags. Gemini Flash 2.0 Thinking does not provide thinking tokens over the API, so we are not able to analyze its internal Chain-of-Thought.
         </p>
 
         <p class="text">
