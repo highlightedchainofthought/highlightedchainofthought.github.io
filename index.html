@@ -53,63 +53,86 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <!-- Title Page -->
-    <!-- Dark Theme Example: Change the background colour dark and change the following div "blog-title" into "blog-title white". -->
     <div class="container blog" id="first-content" style="background-color: #E0E4E6;">
-        <!-- If you don't have a project cover: Change "blog-title" into "blog-title no-cover"  -->
-        <div class="blog-title">
-            <div class="blog-intro">
-                <div>
-                    <div class="titleContainer">
-                        <h1 class="title">HoT: Highlighted Chain of Thought for Referencing Supporting Facts from Inputs</h1>
-                        <img class="logoContainer" src="assets/images/highlighter_hot2.png">
-                    </div>
-                    <p class="author"><a href="https://ngthanhtin.github.io/">Tin Nguyen</a>, <a href="https://loganbolton.github.io/">Logan Bolton</a>, <a href="https://taesiri.com/">Mohammad Reza Taesiri</a>, <a href="https://anhnguyen.me/research/">Anh Totti Nguyen</a></p>
-                    <p class="abstract">
-                        An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain of Thought Prompting (HoT), <b>a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query</b>. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in fewshot settings, <b>HoT outperforms vanilla chain of thought prompting</b> (CoT) (<a class="small-text" href="https://arxiv.org/abs/2201.11903">Wei et al., 2022</a>) on a wide range of 17 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they <b>help time-limited human participants to more accurately and efficiently recognize when LLMs are correct</b>. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
-                    </p>
-                   
-                </div>
-               
-                <div class="info flex">
-                    <div class="main-buttons">
-                        <a href="https://arxiv.org/pdf/2503.02003v4" class="button icon" style="background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Paper <i class="fa-solid fa-book"></i></a>
-                        <a href="https://github.com/anguyen8/hot" class="button icon" style="background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Source Code <i class="fa-solid fa-code"></i></a>
-                    </div>
-                </div>
-            </div>
+        <div class="titleContainer">
+            <h1 class="title"><img class="logoContainer" src="assets/images/highlighter_hot2.png" alt="HoT Logo">HoT: Highlighted Chain of Thought for Referencing Supporting Facts from Inputs
+            </h1>
+        </div>
+        <p class="author">
+            <a href="https://tin-xai.github.io/">Tin Nguyen</a><sup>1,*</sup>, 
+            <a href="https://loganbolton.github.io/">Logan Bolton</a><sup>1,*</sup>, 
+            <a href="https://taesiri.com/">Mohammad Reza Taesiri</a><sup>2</sup>, 
+            <a href="https://scholar.google.com/citations?user=FpFTduYAAAAJ&hl=en">Trung Bui</a><sup>3</sup>,
+            <a href="https://anhnguyen.me/research/">Anh Totti Nguyen</a><sup>1</sup>
+        </p>
+        <p class="affiliations">
+            <sup>*</sup>Equal contribution
+        </p>
+        <p class="affiliations">
+            <sup>1</sup>Auburn University, <sup>2</sup>University of Alberta, <sup>3</sup>Adobe Research
+        </p>
+        <div class="university-logos">
+            <img src="assets/figures/auburn_logo.png" alt="Auburn University">
+            <img src="assets/figures/alberta_logo.png" alt="University of Alberta">
+            <img src="assets/figures/adobe_logo.png" alt="Adobe Research">
+        </div>
 
-            <div class="blog-cover">
-                <img class="foreground" src="assets/figures/teaser2.png">
-                <p class="caption">A HoT response from Gemini 1.5 Pro <img class="llm" src="assets/images/models/gemini.png"> in response to a question from GSM8K.</p>
-                <!-- <img class="background" src="assets/figures/teaser2.png"> -->
-                <!-- <img class="foreground" src="assets/figures/clarity.png"> -->
-                <!-- <img class="background" src="assets/figures/clarity.png"> -->
+
+        <div class="main-buttons">
+            <a href="https://arxiv.org/pdf/2503.02003v4" class="button">
+                Paper <i class="fa-solid fa-book"></i>
+            </a>
+            <a href="https://github.com/anguyen8/hot" class="button">
+                Source Code <i class="fa-solid fa-code"></i>
+            </a>
+        </div>
+
+        <div class="blog-cover">
+            <div class="teaser-slideshow">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img class="foreground" src="assets/figures/teaser_cot_hot.png" alt="HoT Teaser - MATH500 Example">
+                        <p class="caption">CoT and HoT (ours) responses for a MATH500 question in ReasoningTrap benchmarks, both generated by <img class="llm" src="assets/images/models/geminiflash.png" alt="Gemini">. Left: With CoT prompting, the LLM misses the provided facts $a=10, b=c=d=0$, resulting in an incorrect answer. Right: With HoT prompting, the model highlights the key constraint $b=c=d=0$ and plugs it into the expression $ab^2c^3d^4$ to produce the correct answer of 0. </p>
+                    </div>
+                    <div class="slide">
+                        <img class="foreground" src="assets/figures/puzzletrivial_example.png" alt="HoT Teaser - Puzzle Example">
+                        <p class="caption">Left: After finetuned via SFT on CoT examples, Qwen-2.5-1.5B answers incorrectly an adversarial question from PuzzleTrivial as it does not factor in the key fact of permanently infertile lions.
+                            Right:
+                            In contrast, HoT-finetuned counterpart LLM can highlight facts and answer correctly using the fact the lions would never reproduce.</p>
+                    </div>
+                </div>
+                <div class="slideshow-navigation">
+                    <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="slide-indicators">
+                        <span class="indicator active" onclick="currentSlide(1)"></span>
+                        <span class="indicator" onclick="currentSlide(2)"></span>
+                    </div>
+                    <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-
-    <div class="container blog main first" id="blog-main">
-        <h1>
-            Introduction
-        </h1>
-        <p class='text'>
-           Modern LLMs can bold, italicize or underline their text. Why not highlight as well? We propose Highlighted Chain of Thought (HoT), a technique for prompting LLMs to generate highlights around their responses that links specific information from the user query to the LLM response. This method <b>improves user experiences</b> and <b>improves answer accuracy</b> when compared to vanilla Chain of Thought prompting. 
+    <div class="container blog main">
+        <h1 id="abstract">📜 Abstract</h1>
+        <p class="abstract">
+            An Achilles heel of Large Language Models (LLMs) is their tendency to hallucinate non-factual statements. A response mixed of factual and non-factual statements poses a challenge for humans to verify and accurately base their decisions on. To combat this problem, we propose Highlighted Chain of Thought Prompting (HoT), <b>a technique for prompting LLMs to generate responses with XML tags that ground facts to those provided in the query</b>. That is, given an input question, LLMs would first re-format the question to add XML tags highlighting key facts, and then, generate a response with highlights over the facts referenced from the input. Interestingly, in fewshot settings, <b>HoT outperforms vanilla chain of thought prompting</b> (CoT) (<a class="small-text" href="https://arxiv.org/abs/2201.11903">Wei et al., 2022</a>) on a wide range of 22 tasks from arithmetic, reading comprehension to logical reasoning. We also test how much highlights help users detect when LLMs are correct. As expected, they <b>help time-limited human participants to more accurately and efficiently recognize when LLMs are correct</b>. However, interestingly, when LLMs are wrong, HoTs tend to fool users into believing that an answer is correct.
         </p>
-
     </div>
 
     <div class="container blog main">
         <h1>
             Key Takeaways
         </h1>
-        <!-- <p class="text">
-            In Clarity, I have provided container widths with five options: <code>main</code>, <code>large</code>, <code>extra-large</code>, <code>extra-extra-large</code>, and <code>max</code>. These container layouts are designed to be responsive, automatically adjusting based on the screen size.  The default width is <code>main</code>, which is used for this blog post. Be cautious when using the <code>max</code> option, as it has zero padding. Unless you are certain of the design, it's always recommended to leave some space for visual aesthetic purposes.
-        </p> -->
 
         <ul>
             <li><b>HoT consistently improves accuracy</b> on arithmetic, question-answering, and logical reasoning problems across 5 different models and 17 datasets.</li>
@@ -120,48 +143,15 @@
             <li>Larger models generate highlights that <b>closely mirror human annotations</b> without requiring fine tuning.</li>
         </ul>
 
-        <!-- <p class="text">
-        Here is an example I designed, illustrating the architectural details in <a href="https://shikun.io/projects/prismer">Prismer</a> using the <code>extra-large</code> container width.
-        </p> -->
     </div>
 
     
-    <div class="container blog large">
+    <!-- <div class="container blog large">
         <div class="columns-1">
-            <img src="assets/images/figure_hot_transform.png" style="width: 100%">
+            <img src="assets/figures/flow.png" style="width: 100%">
             <p class="caption">LLMs generate HoT responses by wrapping XML tags around the information that the model determines is the most important. Regex and CSS are then used to add color highlighting for the user to easily understand the response.</p>
         </div>
-    </div>
-
-
-    <!-- <div class="container blog main">
-        <h1 >
-            Containers and Visual Diagrams
-        </h1>
-
-        <p class="text">
-            Most AI projects incorporate visual diagrams to effectively communicate complex concepts. These diagrams often highlight new neural architecture designs and ML training pipelines, which are central to the project's contributions and research highlights. Clear and well-designed diagrams can significantly enhance the reader's understanding and engagement with the research. In Clarity, texts and visual diagrams are wrapped within a div container to maintain consistent design layouts.
-        </p>      
-        
-        <p class="text">
-            Simple design modules, such as minor adjustments to a neural network block, can be directly embedded within the text in the same container, without additional captions. This approach helps readers comprehend the proposed concept in a seamless and integrated manner.
-        </p>
-
-        <p class="text">
-            Here is an example I redesigned, illustrating the difference between standard and bottleneck residual blocks as proposed in <a href="https://arxiv.org/abs/1512.03385">Residual Networks</a>.
-        </p>
-
-        <img src="clarity/images/residual.png" style="width: 80%;">
-
-        <p class="text">
-            For more complex visual diagrams, such as detailed neural architecture designs, it is recommended to use a separate container with a distinct background colour. This ensures that diagrams stand out and are easily distinguishable from the main text. Additionally, a new caption style is provided to help explain each design detail clearly.
-        </p>
-
-        <p class="text">
-        Here is an example I redesigned, illustrating the architectural details in <a href="https://arxiv.org/abs/2010.11929">Vision Transformers (ViTs)</a>.
-        </p>
     </div> -->
-
 
     <div class="container blog main">
         <h1 >
@@ -169,8 +159,13 @@
         </h1>
 
         <p class="text">
-            We evaluate HoT on <b>17 tasks</b> across arithmetic, question-answering, and logical reasoning datasets using Gemini-1.5-Pro (<img class="llm" src="assets/images/models/gemini.png">), Gemini-1.5-Flash (<img class="flash-llm" src="assets/images/models/geminiflash.png">), Llama-3.1-70B (<img class="llm" src="assets/images/models/llama70b.png">), Llama-3.1-405B (<img class="llm" src="assets/images/models/llama405b.png">) and GPT-4o (<img class="llm" src="assets/images/models/openai.png">).
+            We evaluate HoT on <b>22 tasks</b> across arithmetic, question-answering, and logical reasoning datasets using Gemini-1.5-Pro (<img class="llm" src="assets/images/models/gemini.png">), Gemini-1.5-Flash (<img class="flash-llm" src="assets/images/models/geminiflash.png">), Llama-3.1-70B (<img class="llm" src="assets/images/models/llama70b.png">), Llama-3.1-405B (<img class="llm" src="assets/images/models/llama405b.png">) and GPT-4o (<img class="llm" src="assets/images/models/openai.png">).
         </p>    
+
+        <img src="assets/images/reasoningtrap_results.png">
+        <p class="caption">
+            HoT outperforms CoT across 3 ReasoningTrap tasks, with significant gains in MATH500 (Conditioned Math) (<span class="good">+18.00</span> <img class="flash-llm" src="assets/images/models/geminiflash.png">, an example shown in <img class="llm" src="assets/images/models/gemini.png">) and PuzzleTrivial (<span class="good">+12.50</span> <img class="flash-llm" src="assets/images/models/geminiflash.png">, an example shown in <img class="llm" src="assets/images/models/gemini.png">).  
+        </p>
 
         <img src="assets/images/math.png">
         <p class="caption">
@@ -191,11 +186,8 @@
     
     <div class="container blog main">
         <h1>
-            What's the Point?
+            HoT helps users to read Long Context Questions easier
         </h1>
-        <!-- <p class="text">
-            In Clarity, I have provided container widths with five options: <code>main</code>, <code>large</code>, <code>extra-large</code>, <code>extra-extra-large</code>, and <code>max</code>. These container layouts are designed to be responsive, automatically adjusting based on the screen size.  The default width is <code>main</code>, which is used for this blog post. Be cautious when using the <code>max</code> option, as it has zero padding. Unless you are certain of the design, it's always recommended to leave some space for visual aesthetic purposes.
-        </p> -->
         <p class="text">
             LLMs are great at answering a wide variety of questions, but it can be annoying to read through the huge blocks of text that they tend to generate. Humans frequently add color highlighting to our writing to make it easier to read, so why not allow LLMs to do the same thing?
         </p>
@@ -206,111 +198,27 @@
             <img src="assets/images/hot_response.png" style="width: 100%">
         </div>
         <div class = "center-div">
-            <p class="caption">HoT responses are easier to quickly read through than CoT responses.</p>
+            <p class="caption">Which of these two responses are easier to read? <br> (Left) CoT: you have to parse through all the irrelevant context to find the part of the conversation that you care about. (Right) HoT: you can almost instantly scan over the LLM response to see exactly where it drew its answer from. </p>
         </div>
     </div>
-    <div class="container blog main">
-        <p class="text">
-            Consider the previous example. Which of these two responses are easier to read? For the response on the left, you have to parse through all the irrelevant context to find the part of the conversation that you care about. For the HoT response, you can almost instantly scan over the LLM response to see exactly where it drew its answer from. 
-        </p>
 
-        <!-- <p class="text">
-        Here is an example I designed, illustrating the architectural details in <a href="https://shikun.io/projects/prismer">Prismer</a> using the <code>extra-large</code> container width.
-        </p> -->
-    </div>
-
-    <!-- <div class="container blog extra-large gray">
-        <img src="clarity/images/prismer.png">
-        <p class="caption">
-            Prismer has two main trainable components: the <b>Experts Resampler</b> that converts variable multi-task signals to a fixed number of outputs, and the <b>Adaptor</b> that enhances the model's expressivity for vision-language reasoning. To ensure that the model takes advantage of the rich domain-specific knowledge encoded in the pre-trained experts, the majority of network weights are frozen during training, as represented by the snowflake icon.
-        </p>
-    </div> -->
     <div class="container blog main">
-        <h1>How do you make these highlights?</h1>
+        <h1>Recipe to make these highlights?</h1>
         <p class="text">
-            Given an input question, the LLM first repeats the original question but with XML tags wrapped around the key facts needed to answer the question. Then, the model generates answers using the information in the question. The model is able to understand what types of information to tag using fewshot examples given in the HoT instruction prompt.
+            To prompt LLMs to generate HoTs, we create the 8-shot demonstration examples (which are CoT demonstrations but with XML tags) would show LLMs how to insert tags and answer questions. Second, the HoT instruction would be a short, explicit request that asks LLMs to insert tags into questions and answer it. 
+            <img src="assets/figures/flow.png" style="width: 100%">
+
         </p>
     </div>  
     
-
-    <div class="container blog main">
-        <div class="columns-2">
-            <img src="assets/images/ex1.png" style="width: 100%">
-            <img src="assets/images/ex2.png" style="width: 100%">
-        </div>
-        <div class = "center-div">
-            <p class="caption">For HoT responses, the same information that is highlighted in the question is then highlighted in the answer.</p>
-        </div>
-    </div>
-    <div class="container blog main">
-        <p class="text">
-            For example, if the model wrapped "1 step right" with the <code>fact1</code> tag in the reformatted question, it knows to then wrap any references to "1 step right" in the answer with the same <code>fact1</code> tag. Then using regex and CSS, we can easily strip out these XML tags and assign a highlight color to each unique tag (see the first image under Key Takeaways for an example). 
-        </p>
-    </div>
-    <div class="container blog main">
-    </div>
     <div class="container blog main">
         <h1>
             How does this affect the user experience?
         </h1>
 
         <p class="text">
-            We conduct a study with <b>63 users</b> to evaluate the effectiveness of HoT in helping humans verify the correctness of LLM answers. Users are randomly assigned to see exclusively HoT or CoT LLM response and then have to predict if the given answer is correct or incorrect. We find that HoT helps time-limited human participants to more accurately and efficiently recognize when LLMs are correct. However, when LLMs are wrong, HoT responses tend to fool users into believing that an answer is actually correct.
-            
-            <!-- <div class="table-wrapper">
-                <table>
-                    <thead class="center">
-                        <tr>
-                            <th>Params</th>
-                            <th >Dimension</th>
-                            <th>$n$ heads</th>
-                            <th>$n$ layers</th>
-                            <th >Learning Rate</th>
-                            <th>Batch Size</th>
-                            <th>$n$ Tokens</th>
-                        </tr>
-                    </thead>
-                    <tbody class="center">
-                        <tr>
-                            <td>6.7B</td>
-                            <td>4096</td>
-                            <td>32</td>
-                            <td>32</td>
-                            <td>$3e^{-4}$</td>
-                            <td>4M</td>
-                            <td>1T</td>
-                        </tr>
-                        <tr>
-                            <td>13.0B</td>
-                            <td>5120</td>
-                            <td>40</td>
-                            <td>40</td>
-                            <td>$3e^{-4}$</td>
-                            <td>4M</td>
-                            <td>1T</td>
-                        </tr>
-                        <tr>
-                            <td>32.5B</td>
-                            <td>6656</td>
-                            <td>52</td>
-                            <td>60</td>
-                            <td>$1.5e^{-4}$</td>
-                            <td>4M</td>
-                            <td>1T</td>
-                        </tr>
-                        <tr>
-                            <td>65.2B</td>
-                            <td>8192</td>
-                            <td>64</td>
-                            <td>80</td>
-                            <td>$1.5e^{-4}$</td>
-                            <td>4M</td>
-                            <td>1T</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> -->
-            
+            We find that HoT helps time-limited human participants to more accurately and efficiently recognize when LLMs are correct. However, when LLMs are wrong, HoT responses tend to fool users into believing that an answer is actually correct.
+
             <div class="table-wrapper">
                 <table>
                 <thead class="center">
@@ -342,7 +250,7 @@
     </div>
 
 
-    <div class="container blog main">
+    <!-- <div class="container blog main">
         <h1>
            Discussion
         </h1>
@@ -362,87 +270,6 @@
         </h2>
         <p class="text">
             So if HoT can help LLMs to more effectively reason, how do reasoning models respond to this prompting strategy? Given the relatively high cost to run Deepseek R1 and the low rate limits of Gemini-2.0-Flash-Thinking, we were only able to run evaluations on a subset of benchmarks. However, we see no benefit to using HoT with these reasoning models. 
-            
-            <!-- <div class="table-wrapper">
-                <table>
-                  <thead class="center">
-                    <tr>
-                      <th colspan="5"><h3>DeepSeek R1</h3></th>
-                    </tr>
-                    <tr>
-                      <th>Prompt</th>
-                      <th>r-GSM</th>
-                      <th>DROP <br>(Break)</th>
-                      <th>GSM <br>Symbolic</th>
-                      <th>BBH: <br>Seven Objects</th>
-                    </tr>
-                  </thead>
-                  <tbody class="center">
-                    <tr>
-                      <td>CoT (0-shot)</td>
-                      <td>92</td>
-                      <td>84</td>
-                      <td><b>90</b></td>
-                      <td>90.5</td>
-                    </tr>
-                    <tr>
-                      <td>CoT (fewshot)</td>
-                      <td>92.5</td>
-                      <td>87</td>
-                      <td>83</td>
-                      <td><b>94.5</b></td>
-                    </tr>
-                    <tr>
-                      <td>HoT (fewshot)</td>
-                      <td><b>93</b></td>
-                      <td><b>90</b></td>
-                      <td>85.5</td>
-                      <td><b>94.5</b></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div> -->
-              
-              <!-- <div class="table-wrapper">
-                <table>
-                  <thead class="center">
-                    <tr>
-                      <th colspan="5"><h3>Gemini-Flash-2.0-Thinking</h3></th>
-                    </tr>
-                    <tr>
-                      <th>Prompt</th>
-                      <th>r-GSM</th>
-                      <th>DROP <br>(Break)</th>
-                      <th>GSM <br>Symbolic</th>
-                      <th>BBH: <br>Seven Objects</th>
-                    </tr>
-                  </thead>
-                  <tbody class="center">
-                    <tr>
-                      <td>CoT (0-shot)</td>
-                      <td>91</td>
-                      <td>85</td>
-                      <td><b>91.5</b></td>
-                      <td><b>100</b></td>
-                    </tr>
-                    <tr>
-                      <td>CoT (fewshot)</td>
-                      <td><b>92</b></td>
-                      <td><b>90.5</b></td>
-                      <td>88</td>
-                      <td>97.5</td>
-                    </tr>
-                    <tr>
-                      <td>HoT (fewshot)</td>
-                      <td>91.5</td>
-                      <td>90</td>
-                      <td>89.5</td>
-                      <td>97</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div> -->
-              
         </p>
 
         <p class="text">
@@ -461,20 +288,24 @@
         <p class="text">
             HoT relies on few shot examples in order to demonstrate the desired output format to the LLM. On our Github, we have gathered plenty of fewshot examples that can be applied to most domains. However, if you have a niche task that you want to use HoT on, you must first construct fewshot examples (whether manually or through LLM generated examples). Future work could easily alleviate this issue with a finetuned model that produces HoT responses by default. 
         </p>
-    </div>
+    </div> -->
 
 
     <div class="container blog main">
         <h1>
-           Conclusion 
+            <i class="fa-solid fa-book"></i> BibTeX
         </h1>
-        <p class="text">
-            We present Highlighted Chain of Thought, a novel prompting approach that enables LLMs to directly reference text from the input question in their responses. Our experiments show that on average, HoT improves arithmetic, question answering, and logical reasoning tasks by <span class="good">+1.6</span>, <span class="good">+2.58</span>, and <span class="good">+2.53</span> percentage points over CoT while also enabling users to verify correct LLM answers <span class="good">24% faster</span> than CoT LLM answers.
-        </p>
+        <pre><code>@article{nguyen2025hot,
+            title={HoT: Highlighted Chain of Thought for Referencing Supporting Facts from Inputs},
+            author={Nguyen, Tin and Bolton, Logan and Taesiri, Mohammad Reza and Trung, Bui and Nguyen, Anh Totti},
+            journal={arXiv preprint arXiv:2503.02003},
+            year={2025}
+          }</code></pre>
     </div>
     <!-- Footer Page -->
     <footer>
         <div class="container">
+            <h1>Acknowledgments</h1>
             <p>
                 This website is built on the <a href="https://shikun.io/projects/clarity">Clarity Template</a>, designed by <a href="https://shikun.io/">Shikun Liu</a>. Website content was written by Logan Bolton.
             </p>
@@ -485,6 +316,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="clarity/clarity.js"></script>    
-    <script src="assets/scripts/main.js"></script>    
+    <script src="assets/scripts/main.js"></script>
+    
+    <!-- Teaser Slideshow JavaScript -->
+    <script>
+        let currentSlideIndex = 1;
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            if (n < 1) {
+                currentSlideIndex = slides.length;
+            }
+            
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Remove active from all indicators
+            indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+            
+            // Show current slide and activate indicator
+            if (slides[currentSlideIndex - 1]) {
+                slides[currentSlideIndex - 1].classList.add('active');
+            }
+            if (indicators[currentSlideIndex - 1]) {
+                indicators[currentSlideIndex - 1].classList.add('active');
+            }
+        }
+        
+        function changeSlide(n) {
+            currentSlideIndex += n;
+            showSlide(currentSlideIndex);
+        }
+        
+        function currentSlide(n) {
+            currentSlideIndex = n;
+            showSlide(currentSlideIndex);
+        }
+        
+        // Initialize slideshow
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(currentSlideIndex);
+        });
+    </script>
     </html>
 </body>

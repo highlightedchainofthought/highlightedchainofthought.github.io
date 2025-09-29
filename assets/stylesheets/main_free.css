@@ -1610,3 +1610,337 @@ table th b, table td b {
 ul {
   margin-left: 1em;
 }
+
+/* ======================== Title to Abstract Section Styling ===================== */
+body {
+  background-color: #E0E4E6 !important;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.titleContainer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1px !important;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  text-align: center !important;
+  max-width: 900px;
+}
+
+.logoContainer {
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: contain;
+}
+
+.author {
+  text-align: center !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 30px !important;
+  color: #555 !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.author a {
+  color: #2563eb !important;
+  text-decoration: none !important;
+  transition: color 0.2s !important;
+}
+
+.author a:hover {
+  color: #1d4ed8 !important;
+  text-decoration: underline !important;
+}
+
+.affiliations {
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  color: #666 !important;
+  margin: 5px 0 !important;
+}
+
+.university-logos {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 40px !important;
+  margin: 20px 0 30px 0 !important;
+}
+
+.university-logos img {
+  height: 50px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.blog-cover {
+  width: 100% !important;
+  margin-bottom: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.blog-cover img.foreground {
+  width: 70% !important;
+  max-width: 800px !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.caption {
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  color: #666 !important;
+  margin-top: 15px !important;
+  font-style: italic !important;
+}
+
+.caption .llm {
+  width: 20px !important;
+  height: 20px !important;
+  vertical-align: middle !important;
+  margin: 0 4px !important;
+}
+
+.abstract {
+  font-size: 1.05rem !important;
+  line-height: 1.8 !important;
+  color: #444 !important;
+  margin-bottom: 30px !important;
+  text-align: justify !important;
+}
+
+/* Override for abstract in main container */
+div.container.blog.main .abstract {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 1.5vh 0 !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* Ensure abstract always uses Poppins font */
+p.abstract {
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* ======================== Teaser Slideshow ===================== */
+.teaser-slideshow {
+  width: 100%;
+  position: relative;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.slide img.foreground {
+  width: 70% !important;
+  max-width: 800px !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+.slide .caption {
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  color: #666 !important;
+  margin-top: 15px !important;
+  font-style: italic !important;
+}
+
+.slideshow-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  font-size: 14px;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #333;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+.slide-indicators {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #333;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive design for slideshow */
+@media (max-width: 768px) {
+  .slide img.foreground {
+    width: 90% !important;
+  }
+  
+  .nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+  
+  .slideshow-navigation {
+    gap: 15px;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Remove top padding for the first main container after title section */
+div.container.blog.main:first-of-type {
+  padding-top: 0 !important;
+}
+
+.abstract b {
+  color: #1a1a1a !important;
+}
+
+.abstract .small-text {
+  color: #2563eb !important;
+  text-decoration: none !important;
+}
+
+.abstract .small-text:hover {
+  text-decoration: underline !important;
+}
+
+.main-buttons {
+  display: flex !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+.button {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 20px !important;
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  color: #1a1a1a !important;
+  text-decoration: none !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-size: 0.85rem !important;
+  transition: all 0.3s !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ======================== Responsive Design for Title Section ===================== */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem !important;
+  }
+
+  .titleContainer {
+    flex-direction: column !important;
+  }
+
+  .logoContainer {
+    width: 25px !important;
+    height: 25px !important;
+    object-fit: contain !important;
+  }
+
+  .author {
+    font-size: 1rem !important;
+  }
+
+  .abstract {
+    font-size: 1rem !important;
+  }
+
+  .main-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .button {
+    width: 100% !important;
+    max-width: 250px !important;
+    justify-content: center !important;
+    font-size: 0.8rem !important;
+  }
+}
