@@ -149,13 +149,16 @@
 
     </div>
 
-    
-    <!-- <div class="container blog large">
+    <div class="container blog main">
+        <h1>Recipe to make these highlights?</h1>
+        <p class="text">
+            To prompt LLMs to generate HoTs, we create the 8-shot demonstration examples (which are CoT demonstrations but with XML tags) would show LLMs how to insert tags and answer questions. Second, the HoT instruction would be a short, explicit request that asks LLMs to insert tags into questions and answer it. 
+        </p>
         <div class="columns-1">
             <img src="assets/figures/flow.png" style="width: 100%">
             <p class="caption">LLMs generate HoT responses by wrapping XML tags around the information that the model determines is the most important. Regex and CSS are then used to add color highlighting for the user to easily understand the response.</p>
         </div>
-    </div> -->
+    </div>  
 
     <div class="container blog main">
         <h1 >
@@ -205,15 +208,6 @@
             <p class="caption">Which of these two responses are easier to read? <br> (Left) CoT: you have to parse through all the irrelevant context to find the part of the conversation that you care about. (Right) HoT: you can almost instantly scan over the LLM response to see exactly where it drew its answer from. </p>
         </div>
     </div>
-
-    <div class="container blog main">
-        <h1>Recipe to make these highlights?</h1>
-        <p class="text">
-            To prompt LLMs to generate HoTs, we create the 8-shot demonstration examples (which are CoT demonstrations but with XML tags) would show LLMs how to insert tags and answer questions. Second, the HoT instruction would be a short, explicit request that asks LLMs to insert tags into questions and answer it. 
-            <img src="assets/figures/flow.png" style="width: 100%">
-
-        </p>
-    </div>  
     
     <div class="container blog main">
         <h1>
@@ -253,6 +247,50 @@
         </p>
     </div>
 
+
+    <div class="container blog main">
+        <h1>
+            HoT reduces hallucinations compared to CoT
+        </h1>
+
+        <p class="text">
+            HoT prompting makes LLMs, here <img class="flash-llm" src="assets/images/models/geminiflash.png">, hallucinates consistently less over a diverse set of tasks.
+            Table shows the SelfCheckGPT hallucination scores. 
+        Lower is better.
+        </p>
+        <div class="columns-1">
+            <img src="assets/figures/hallucination_rate.png" style="width: 70%">
+            <p class="caption">An example of a question and answer from StrategyQA, where CoT hallucinates the fact "Vietnam War lasted from 1955 to 1975" whereas HoT detects the fact within the question that "War in Vietnam (1945-46)".</p>
+            <img class="foreground" src="assets/figures/strategyqa_example.png">
+        </div>
+        
+            
+            <!-- <p class="caption">Left: After finetuned via SFT on CoT examples, Qwen-2.5-1.5B answers incorrectly an adversarial question from PuzzleTrivial as it does not factor in the key fact of permanently infertile lions.
+                Right:
+                In contrast, HoT-finetuned counterpart LLM can highlight facts and answer correctly using the fact the lions would never reproduce.</p> -->
+    </div>
+
+    <div class="container blog main">
+        <h1>
+            HoT outperforms other advanced prompting techniques
+        </h1>
+
+        <p class="text">
+            Over 5 runs across 22 benchmarks, HoT consistently outperforms both CoT and Repeating Questions (RQ), and even CoT + Self-Consistency (SC), and ComplexCoT.
+            HoT and HoT + SC also outperforms their counterparts (ComplexCoT and CoT + SC) showing that HoT can complement these methods.
+        </p>
+        <div class="columns-1">
+            <img src="assets/figures/selfconsistency.png" style="width: 100%">
+        </div>
+
+        <p class="text">
+            On average over 5 runs and 3 datasets, HoT alone is still the most performing method compared to all other advanced prompting methods of CoT, LtM, CoVE, Self-Refine, and ToT. Under other prompting techniques, we observe LLMs often miss critical facts (e.g., overlooking temporal indicators like "yesterday" in Date), causing incorrect answers.
+            In contrast, LLMs tend to focus better on key facts under HoT prompting.
+        </p>
+        <div class="columns-1">
+            <img src="assets/figures/advance_prompting.png" style="width: 100%">
+        </div>
+    </div>
 
     <!-- <div class="container blog main">
         <h1>
