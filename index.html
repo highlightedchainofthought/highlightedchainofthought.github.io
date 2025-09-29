@@ -135,12 +135,16 @@
         </h1>
 
         <ul>
-            <li><b>HoT consistently improves accuracy</b> on arithmetic, question-answering, and logical reasoning problems across 5 different models and 17 datasets.</li>
+            <li><b>HoT consistently improves accuracy</b> on arithmetic, question-answering, and logical reasoning problems across 5 different models and 22 datasets.</li>
 
             <li>The highlighted answers from HoT <b>improve humans' ability to verify correct LLM answers</b> by <span class="good">5.66</span> points (78.82% to 84.48%).</li>
             <li>HoT <b>reduces the amount of time needed to verify LLM answers</b> by <span class="good">+15.12 seconds</span> per question as compared to CoT (62.38 seconds to 47.26 seconds).</li>
 
-            <li>Larger models generate highlights that <b>closely mirror human annotations</b> without requiring fine tuning.</li>
+            <li>HoT reduces hallucinations compared to CoT as measured by SelfCheckGPT.</li>
+            <li>HoT outperforms other advanced prompting techniques (Least-to-Most (LtM),
+                Tree-of-Thought (ToT), Self-Refine, and Chain-of-Verification
+                (CoVE).
+                Furthermore, when combined with Self-Consistency, ComplexCoT methods, HoT achieves superior performance than each of these methods alone and HoT alone</li>
         </ul>
 
     </div>
