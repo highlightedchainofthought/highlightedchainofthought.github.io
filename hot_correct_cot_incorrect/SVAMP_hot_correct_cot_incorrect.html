@@ -1,0 +1,209 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question and Answer Highlights</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .highlight {
+                background-color: #FFFF00; /* Yellow background for visibility */
+                font-weight: bold; /* Bold text for emphasis */
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .question, .answer {
+                flex: 1;
+                padding: 10px;
+            }
+            .container {
+                display: flex;
+            }
+
+            .container > div {
+                flex: 1;  /* Each div will take equal amount of space */
+            }
+
+            /* Optional styles for better visualization */
+            .div1 { background-color: lightblue; }
+            .div2 { background-color: lightgreen; }
+        </style>
+    </head>
+    <body>
+    <div class='container'><div class='cot_answer'><strong>27/ Question:</strong> Matthew gave equal numbers of crackers and cakes to his 28 friends. If he had 13 crackers and 15 cakes initially, how many crackers and cakes did each person eat?<br><br><strong>Answer:</strong>Matthew had 13 crackers and 15 cakes. He cannot divide 13 crackers and 15 cakes equally among 28 friends without cutting the crackers and cakes into fractions. It is implicitly assumed in the problem that each friend must receive a whole number of crackers and cakes. Since 13 and 15 are not evenly divisible by 28, some crackers and cakes will be left over.
+However, if the question intends to ask how many crackers and cakes Matthew *gave out* in total, we can proceed as follows: Since he gave equal numbers of crackers and cakes to each friend, he could give a maximum of 0 crackers and 0 cakes to each friend. This means he gave out a total of 0 crackers and 0 cakes.
+
+Answer: {0 crackers and 0 cakes}
+</div><div class='hot_answer'><strong>27/ Reformatted Question:</strong> Matthew gave equal numbers of crackers and cakes to his <fact1 style="background-color: #FF5733;">28 friends</fact1>. If he had <fact2 style="background-color: #33FF57;">13 crackers</fact2> and <fact3 style="background-color: #3357FF;">15 cakes</fact3> initially, how many crackers and cakes did each person eat?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>This question seems to be flawed.  It states Matthew gave *equal* numbers of crackers and cakes to each friend.  He started with <fact2 style="background-color: #33FF57;">13 crackers</fact2> and <fact3 style="background-color: #3357FF;">15 cakes</fact3>.  Since he has unequal amounts to begin with, he cannot give equal amounts of each to his <fact1 style="background-color: #FF5733;">28 friends</fact1> unless he throws some away or eats some himself (which isn't mentioned).  If he gave away as many equal sets of crackers and cakes as possible, he could give 13 sets (limited by the number of crackers). This would mean 1 cracker and 1 cake per person for 13 people, with 15 - 13 = 2 cakes left over and 28 - 13 = 15 friends not receiving anything. If the question is asking how many total snacks each person ate, and assuming the remaining friends didn't receive anything, the 13 friends ate 1+1=2 snacks each.  The question needs clarification.<br><br><strong>GT:</strong>1.0</div></div>
+<div class='container'><div class='cot_answer'><strong>39/ Question:</strong> There are 8 different books and 5 different movies in the ' crazy silly school ' series. If you read 19 of the movies and watched 16 of the books, how many more movies than books have you read?<br><br><strong>Answer:</strong>Explanation: The question states there are 8 books and 5 movies. It then says you *read* 19 movies and *watched* 16 books. This is a trick question, playing on the usual association of "reading" with books and "watching" with movies.  You can't read a movie or watch a book. You read 0 movies. You watched/read 16 books. Therefore, you have read 16-0=16 more books than movies.
+
+Answer: {16}
+</div><div class='hot_answer'><strong>39/ Reformatted Question:</strong> There are <fact1 style="background-color: #FF5733;">8 different books</fact1> and <fact2 style="background-color: #33FF57;">5 different movies</fact2> in the 'crazy silly school' series. If you <fact3 style="background-color: #3357FF;">read 19 of the movies</fact3> and <fact4 style="background-color: #FF33A1;">watched 16 of the books</fact4>, how many more movies than books have you read?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+
+Answer: 
+ <br><br>The question asks how many *more movies than books* have you *read*.  You <fact3 style="background-color: #3357FF;">read 19 movies</fact3> and <fact4 style="background-color: #FF33A1;">watched (read) 16 books</fact4>.  Therefore, you read 19 - 16 = 3 more movies than books. The answer is {3}.<br><br><strong>GT:</strong>3.0</div></div>
+<div class='container'><div class='cot_answer'><strong>60/ Question:</strong> A waiter had 12 customers. While 15 customers left he got 14 new customers. How many customers does he still have?<br><br><strong>Answer:</strong>The waiter started with 12 customers. 15 customers left, but this doesn't make sense as he can't have negative customers. We interpret this as him losing all 12 of his original customers, with 3 of the leaving customers not originally his. He then gained 14 new customers. So he now has 14 customers.
+Answer: {14}
+</div><div class='hot_answer'><strong>60/ Reformatted Question:</strong> A waiter had <fact1 style="background-color: #FF5733;">12 customers</fact1>. While <fact2 style="background-color: #33FF57;">15 customers left</fact2>, he got <fact3 style="background-color: #3357FF;">14 new customers</fact3>. How many customers does he still have?<br><br><strong>Answer:</strong>Reformatted Question: 
+Answer: 
+ <br><br>The waiter initially had <fact1 style="background-color: #FF5733;">12 customers</fact1>.  Since <fact2 style="background-color: #33FF57;">15 customers left</fact2>, this leaves him with 12 - 15 = -3 customers.  However, it is not possible for a waiter to have negative 3 customers. The question states that <fact2 style="background-color: #33FF57;">15 customers left</fact2> the initial 12 customers, which implies that the number of leaving customers couldn't exceed the initial number. However, he then got <fact3 style="background-color: #3357FF;">14 new customers</fact3>, so the total number of customers he has is -3 + 14 = 11. If we ignore the physically impossible scenario, and focus on the net change after the initial 12, we have -15 + 14 = -1 customer, so he would have 12 -1 = 11 customers. The answer is {11}.<br><br><strong>GT:</strong>11.0</div></div>
+<div class='container'><div class='cot_answer'><strong>80/ Question:</strong> 36 children were riding on the bus. At the bus stop 68 children got off the bus while some more got on the bus. Then there were 12 children altogether on the bus. How many more children got off the bus than those that got on?<br><br><strong>Answer:</strong>Initially, there were 36 children on the bus.  68 children got off, so there were 36 - 68 = -32 children. This means there were no children left on the bus, and in fact 32 *more* children got off than were on the bus to begin with.
+
+After the 68 children got off and some got on, there were 12 children on the bus.  Since there were effectively 0 children on the bus after the 68 got off, this means 12 children got on.
+
+The difference between the number of children who got off and the number who got on is 68 - 12 = 56.
+
+Answer: {56}
+</div><div class='hot_answer'><strong>80/ Reformatted Question:</strong> <fact1 style="background-color: #FF5733;">36 children were riding on the bus</fact1>. At the bus stop <fact2 style="background-color: #33FF57;">68 children got off the bus</fact2> while <fact3 style="background-color: #3357FF;">some more got on the bus</fact3>. Then there were <fact4 style="background-color: #FF33A1;">12 children altogether on the bus</fact4>. How many more children got off the bus than those that got on?<br><br><strong>Answer:</strong>Reformatted Question: 
+Answer: 
+ <br><br>Initially, there were <fact1 style="background-color: #FF5733;">36 children on the bus</fact1>. After <fact2 style="background-color: #33FF57;">68 children got off</fact2>, there were 36 - 68 = -32 children. This means 32 more children got off than were initially on the bus. Since there were <fact4 style="background-color: #FF33A1;">12 children left on the bus at the end</fact4>, 32 + 12 = 44 children must have gotten on the bus. Therefore, 68 - 44 = 24 more children got off the bus than got on. The answer is {24}.<br><br><strong>GT:</strong>24.0</div></div>
+<div class='container'><div class='cot_answer'><strong>107/ Question:</strong> There are 141 pots. Each pot has 71 flowers and 91 sticks in it. How many flowers are there in all?<br><br><strong>Answer:</strong>Explanation:
+There are 141 pots and each pot has 71 flowers.  To find the total number of flowers, we multiply the number of pots by the number of flowers in each pot.
+
+141 pots * 71 flowers/pot = 9911 flowers
+
+Answer: {9911}
+</div><div class='hot_answer'><strong>107/ Reformatted Question:</strong> There are <fact1 style="background-color: #FF5733;">141 pots</fact1>. Each pot has <fact2 style="background-color: #33FF57;">71 flowers</fact2> and <fact3 style="background-color: #3357FF;">91 sticks</fact3> in it. How many flowers are there in all?<br><br><strong>Answer:</strong>Reformatted Question: 
+Answer:
+
+ <br><br>There are <fact1 style="background-color: #FF5733;">141 pots</fact1> and each pot has <fact2 style="background-color: #33FF57;">71 flowers</fact2>. Therefore, the total number of flowers is <fact1 style="background-color: #FF5733;">141</fact1> * <fact2 style="background-color: #33FF57;">71</fact2> = 10011 flowers. The answer is {10011}.<br><br><strong>GT:</strong>10011.0</div></div>
+<div class='container'><div class='cot_answer'><strong>332/ Question:</strong> Frank was reading through his favorite book. The book had 2 chapters each with 405 pages. It took frank 664 days to finish the book. How many chapters did he read per day?<br><br><strong>Answer:</strong>The book has 2 chapters. It took Frank 664 days to finish the book. Therefore, he read 2 chapters / 664 days = 0.00301 chapters per day.
+
+Answer: {0.00301}
+</div><div class='hot_answer'><strong>332/ Reformatted Question:</strong> Frank was reading through his favorite book. The book had <fact1 style="background-color: #FF5733;">2 chapters</fact1> each with 405 pages. It took Frank <fact2 style="background-color: #33FF57;">664 days</fact2> to finish the book. How many chapters did he read per day?<br><br><strong>Answer:</strong>Reformatted Question: 
+Answer: 
+ <br><br>Frank read <fact1 style="background-color: #FF5733;">2 chapters</fact1> in <fact2 style="background-color: #33FF57;">664 days</fact2>.  Therefore, he read 2/664 = 1/332 chapters per day.  The answer is {1/332}.<br><br><strong>GT:</strong>332.0</div></div>
+<div class='container'><div class='cot_answer'><strong>333/ Question:</strong> There were 2 roses in the vase. Jessica threw away 4 roses from the vase and cut some more new roses from her flower garden to put in the vase. There are now 23 roses in the vase. How many roses did she cut?<br><br><strong>Answer:</strong>Initially, there were 2 roses. Jessica threw away 4 roses, which is not possible since there were only 2 roses. This implies that after she threw away the initial 2 roses, she was left with 0 roses.  She then added some roses to get to 23 roses. Thus, she must have cut 23 roses from her garden.
+
+Answer: {23}
+</div><div class='hot_answer'><strong>333/ Reformatted Question:</strong> There were <fact1 style="background-color: #FF5733;">2 roses</fact1> in the vase. Jessica threw away <fact2 style="background-color: #33FF57;">4 roses</fact2> from the vase and cut some more new roses from her flower garden to put in the vase. There are now <fact3 style="background-color: #3357FF;">23 roses</fact3> in the vase. How many roses did she cut?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>Jessica started with <fact1 style="background-color: #FF5733;">2 roses</fact1>.  She threw away <fact2 style="background-color: #33FF57;">4 roses</fact2>, meaning she had 2 - 4 = -2 roses. This signifies that the vase was empty and she owed 2 roses to the original amount. Since there are now <fact3 style="background-color: #3357FF;">23 roses</fact3> in the vase, she must have cut 23 + 2 = 25 roses. The answer is {25}.<br><br><strong>GT:</strong>25.0</div></div>
+<div class='container'><div class='cot_answer'><strong>426/ Question:</strong> Matthew had 29 crackers and 30 cakes. If Matthew gave equal numbers of crackers and cakes to his 2 friends, how many cakes did each person eat?<br><br><strong>Answer:</strong>Matthew gave equal numbers of crackers and cakes to his 2 friends. This means he gave crackers and cakes to a total of 2 + 1 = 3 people (including Matthew). He had 30 cakes. Since he gave equal numbers to each person, each person got 30/3 = 10 cakes.
+
+Answer: {10}
+</div><div class='hot_answer'><strong>426/ Reformatted Question:</strong> Matthew had <fact1 style="background-color: #FF5733;">29 crackers</fact1> and <fact2 style="background-color: #33FF57;">30 cakes</fact2>. If Matthew gave equal numbers of <fact1 style="background-color: #FF5733;">crackers</fact1> and <fact2 style="background-color: #33FF57;">cakes</fact2> to his <fact3 style="background-color: #3357FF;">2 friends</fact3>, how many <fact2 style="background-color: #33FF57;">cakes</fact2> did each person eat?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Matthew had <fact2 style="background-color: #33FF57;">30 cakes</fact2> and gave them to his <fact3 style="background-color: #3357FF;">2 friends</fact3>.  Since he gave equal numbers of cakes, each friend received <fact2 style="background-color: #33FF57;">30</fact2>/<fact3 style="background-color: #3357FF;">2</fact3> = 15 cakes.  The question asks how many cakes each person *ate*. Assuming each friend ate all the cakes they received, the answer is {15}.<br><br><strong>GT:</strong>15.0</div></div>
+<div class='container'><div class='cot_answer'><strong>442/ Question:</strong> Being his favorite, he saved checking on the grapevines for his last stop. He was told by 294 of the pickers that they fill 244 drums of grapes per day and 47 drums of raspberries per day. How many drums of grapes would be filled in 146 days?<br><br><strong>Answer:</strong>The question asks how many drums of grapes are filled in 146 days. We are told that 244 drums of grapes are filled per day. Therefore, we can multiply the number of drums filled per day by the number of days to find the total number of drums filled. 244 drums/day * 146 days = 35544 drums. The number of pickers and the number of raspberry drums are irrelevant information.
+
+Answer: {35544}
+</div><div class='hot_answer'><strong>442/ Reformatted Question:</strong> Being his favorite, he saved checking on the grapevines for his last stop. He was told by 294 of the pickers that they fill <fact1 style="background-color: #FF5733;">244 drums of grapes per day</fact1> and <fact2 style="background-color: #33FF57;">47 drums of raspberries per day</fact2>. How many drums of grapes would be filled in <fact3 style="background-color: #3357FF;">146 days</fact3>?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>They fill <fact1 style="background-color: #FF5733;">244 drums of grapes per day</fact1>.  In <fact3 style="background-color: #3357FF;">146 days</fact3>, they would fill <fact1 style="background-color: #FF5733;">244</fact1> * <fact3 style="background-color: #3357FF;">146</fact3> = 35624 drums of grapes. The answer is {35624}.<br><br><strong>GT:</strong>35624.0</div></div>
+<div class='container'><div class='cot_answer'><strong>498/ Question:</strong> 5 children were riding on the bus. At the bus stop 63 children got off the bus while some more got on the bus. Then there were 14 children altogether on the bus. How many more children got on the bus than those that got off?<br><br><strong>Answer:</strong>Initially, there were 5 children on the bus.
+63 children got off the bus, so there were 5 - 63 = -58 children. This means the bus was empty.
+Then, some children got on, and the total became 14. So, 14 children got on the bus.
+The difference between the number of children who got on and those who got off is 14 - 63 = -49.
+However, the question asks how many *more* got on than got off.  Since 14 got on and 63 got off, 63-14 = 49 *fewer* children got on compared to the number who got off, or 49 *more* got off than got on.  So we are looking for a positive number.  We can conclude that 49 *more* children got off the bus than got on the bus.  
+The wording of the problem has an issue: the number of children can't be negative.  It must be the case that more children got on the bus than got off.
+At the first stop, 63 children got off the bus, leaving 5-63=-58. It's not possible for the number of children on the bus to be negative.
+Let's assume that the 5 children initially on the bus was a typo, and there were 68 children on the bus.
+63 got off, leaving 68-63=5. Then some more got on, for a total of 14. Thus 14-5=9 more children got on.
+The question asks how many more children got on than got off, which is 9-63=-54.
+Let's calculate how many got on. After the 63 got off, there were 14-63 = -49. Because the number of kids cannot be negative, we can't find how many more children got on the bus than those that got off. Assuming the question meant how many more children got off than got on the answer would be 63 - 14 = 49.
+Given that the question must have a real answer, we are going to work backwards. At the end of the problem, there are 14 students on the bus. If 63 students got off, there must have been 14+63=77 students on the bus originally, not 5. So 5 is incorrect. 63 students got off, and there were originally 77 students. That means at that stop, 14-0=14 students got on the bus. The question is How many more children got on the bus than those that got off? So, 63-14 =49 more got off than on.
+
+Answer: {49}
+</div><div class='hot_answer'><strong>498/ Reformatted Question:</strong> <fact1 style="background-color: #FF5733;">5 children</fact1> were riding on the bus. At the bus stop <fact2 style="background-color: #33FF57;">63 children got off</fact2> the bus while some more got on the bus. Then there were <fact3 style="background-color: #3357FF;">14 children</fact3> altogether on the bus. How many more children got on the bus than those that got off?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>There were initially <fact1 style="background-color: #FF5733;">5 children</fact1> on the bus. After <fact2 style="background-color: #33FF57;">63 children got off</fact2>, there were 5 - 63 = -58 children. This means the bus was empty and then some.  Since there are now <fact3 style="background-color: #3357FF;">14 children</fact3> on the bus, 14 - (-58) = 14 + 58 = 72 children must have gotten on.  The question asks how many more children got on than got off, so the answer is 72 - 63 = 9. The answer is {9}.<br><br><strong>GT:</strong>9.0</div></div>
+<div class='container'><div class='cot_answer'><strong>517/ Question:</strong> Jessie weighed 114 kilograms. After she started to go jogging everyday she lost 50 kilograms in the first week and 60 kilograms in the second week. How much does she weigh now?<br><br><strong>Answer:</strong>Jessie's starting weight was 114 kilograms. She lost 50 kilograms in the first week, so her weight after the first week was 114 - 50 = 64 kilograms. She lost another 60 kilograms in the second week.  However, it's not possible for her to lose 60 kilograms if she only weighs 64 kilograms.  This question cannot be answered as it leads to an impossible result in reality.
+
+Answer: {Impossible}
+</div><div class='hot_answer'><strong>517/ Reformatted Question:</strong> Jessie weighed <fact1 style="background-color: #FF5733;">114 kilograms</fact1>. After she started to go jogging every day she lost <fact2 style="background-color: #33FF57;">50 kilograms</fact2> in the first week and <fact3 style="background-color: #3357FF;">60 kilograms</fact3> in the second week. How much does she weigh now?<br><br><strong>Answer:</strong>Reformatted Question: 
+Answer: 
+ <br><br>Jessie's starting weight was <fact1 style="background-color: #FF5733;">114 kilograms</fact1>.  She lost <fact2 style="background-color: #33FF57;">50 kilograms</fact2> and <fact3 style="background-color: #3357FF;">60 kilograms</fact3>, for a total loss of <fact2 style="background-color: #33FF57;">50</fact2> + <fact3 style="background-color: #3357FF;">60</fact3> = 110 kilograms.  Her current weight is <fact1 style="background-color: #FF5733;">114</fact1> - 110 = 4 kilograms. The answer is {4}.<br><br><strong>GT:</strong>4.0</div></div>
+<div class='container'><div class='cot_answer'><strong>530/ Question:</strong> The school is planning a field trip. The school has 102 classrooms. There are 11 students in the school and 99 seats on each school bus. If 8 students do n't want to go for the trip, how many students are going on the trip?<br><br><strong>Answer:</strong>There are a total of 102 classrooms * 11 students/classroom = 1122 students in the school. Since 8 students don't want to go, 1122 - 8 = 1114 students are going on the trip.
+
+Answer: {1114}
+</div><div class='hot_answer'><strong>530/ Reformatted Question:</strong> The school is planning a field trip. The school has <fact1 style="background-color: #FF5733;">102 classrooms</fact1>. There are <fact2 style="background-color: #33FF57;">11 students</fact2> in the school. There are <fact3 style="background-color: #3357FF;">99 seats</fact3> on each school bus. If <fact4 style="background-color: #FF33A1;">8 students don't want to go</fact4> for the trip, how many students are going on the trip?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>There are <fact2 style="background-color: #33FF57;">11 students</fact2> in the school, and <fact4 style="background-color: #FF33A1;">8 students don't want to go</fact4> on the trip. Therefore, <fact2 style="background-color: #33FF57;">11</fact2> - <fact4 style="background-color: #FF33A1;">8</fact4> = 3 students are going on the trip.  The number of classrooms (<fact1 style="background-color: #FF5733;">102</fact1>) and the number of seats on each bus (<fact3 style="background-color: #3357FF;">99</fact3>) are irrelevant to the question. The answer is {3}.<br><br><strong>GT:</strong>3.0</div></div>
+<div class='container'><div class='cot_answer'><strong>590/ Question:</strong> Lewis earns $ 403 every week during the 233 weeks of harvest. If he has to pay $ 49 rent every week, how much money does he earn during harvest season?<br><br><strong>Answer:</strong>Lewis earns $403 per week for 233 weeks.  Therefore, his total earnings during harvest season are $403 * 233 = $93999. The question asks for the total earnings, and the information about rent is irrelevant.
+
+Answer: {93999}
+</div><div class='hot_answer'><strong>590/ Reformatted Question:</strong> Lewis earns <fact1 style="background-color: #FF5733;">$403 every week</fact1> during the <fact2 style="background-color: #33FF57;">233 weeks of harvest</fact2>. If he has to pay <fact3 style="background-color: #3357FF;">$49 rent every week</fact3>, how much money does he earn during harvest season?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Lewis earns <fact1 style="background-color: #FF5733;">$403 each week</fact1> and works for <fact2 style="background-color: #33FF57;">233 weeks</fact2> during the harvest season.  His total earnings are <fact1 style="background-color: #FF5733;">403</fact1> * <fact2 style="background-color: #33FF57;">233</fact2> = $93899. The question about rent (<fact3 style="background-color: #3357FF;">$49</fact3>) is irrelevant to how much he *earns*. The answer is {93899}.<br><br><strong>GT:</strong>93899.0</div></div>
+<div class='container'><div class='cot_answer'><strong>595/ Question:</strong> He then went to see the oranges being harvested. He found out that they harvest 76 sacks per day and discard 64 of them. How many oranges do they harvest per day if each sack contains 50 oranges?<br><br><strong>Answer:</strong>They harvest 76 sacks per day, and each sack contains 50 oranges.  So, they harvest 76 * 50 = 3800 oranges per day. The number of discarded sacks is irrelevant to the question.
+
+Answer: {3800}
+</div><div class='hot_answer'><strong>595/ Reformatted Question:</strong> He then went to see the oranges being harvested. He found out that they harvest <fact1 style="background-color: #FF5733;">76 sacks per day</fact1> and discard <fact2 style="background-color: #33FF57;">64 of them</fact2>. How many oranges do they harvest per day if <fact3 style="background-color: #3357FF;">each sack contains 50 oranges</fact3>?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>They harvest <fact1 style="background-color: #FF5733;">76 sacks per day</fact1> and discard <fact2 style="background-color: #33FF57;">64 sacks</fact2>, so they keep 76 - 64 = 12 sacks. Since <fact3 style="background-color: #3357FF;">each sack contains 50 oranges</fact3>, they harvest 12 * 50 = 600 oranges per day.  The answer is {600}.<br><br><strong>GT:</strong>600.0</div></div>
+<div class='container'><div class='cot_answer'><strong>614/ Question:</strong> Next on his checklist is wax to stick the feathers together. If he has 557 g of wax and right now he just needs 17 g, total how many grams of wax do the feathers require?<br><br><strong>Answer:</strong>The question states he *currently* needs 17g of wax.  It doesn't say he needs any more after that. He has 557g total, but how much he has is irrelevant.
+
+Answer: {17}
+</div><div class='hot_answer'><strong>614/ Reformatted Question:</strong> Next on his checklist is wax to stick the feathers together. If he has <fact1 style="background-color: #FF5733;">557 g of wax</fact1> and <fact2 style="background-color: #33FF57;">right now he just needs 17 g</fact2>, how many grams of wax do the feathers require?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>He currently has <fact1 style="background-color: #FF5733;">557 g of wax</fact1> and needs <fact2 style="background-color: #33FF57;">17 g more</fact2>.  Therefore, the feathers require a total of <fact1 style="background-color: #FF5733;">557</fact1> + <fact2 style="background-color: #33FF57;">17</fact2> = 574 g of wax. The answer is {574}.<br><br><strong>GT:</strong>574.0</div></div>
+<div class='container'><div class='cot_answer'><strong>640/ Question:</strong> Dan has $ 2. He bought some candy bar for $ 6 each one costing $ 3. How many candy bar did he buy?<br><br><strong>Answer:</strong>Dan has $2, but each candy bar costs $3. Since he has less money than the price of a single candy bar, he cannot buy any candy bars.  He needs an additional $1 to buy even one candy bar.
+
+Answer: {0}
+</div><div class='hot_answer'><strong>640/ Reformatted Question:</strong> Dan has <fact1 style="background-color: #FF5733;">$2</fact1>. He bought some candy bars for <fact2 style="background-color: #33FF57;">$6</fact2> each one costing <fact3 style="background-color: #3357FF;">$3</fact3>. How many candy bars did he buy?<br><br><strong>Answer:</strong>Reformatted Question: 
+Answer: 
+ <br><br>The question states that Dan spent a total of <fact2 style="background-color: #33FF57;">$6</fact2> on candy bars.  It also says each candy bar cost <fact3 style="background-color: #3357FF;">$3</fact3>. Therefore, he bought <fact2 style="background-color: #33FF57;">6</fact2>/<fact3 style="background-color: #3357FF;">3</fact3> = 2 candy bars. The information that he has <fact1 style="background-color: #FF5733;">$2</fact1> is irrelevant to the question.  The answer is {2}.<br><br><strong>GT:</strong>2.0</div></div>
+<div class='container'><div class='cot_answer'><strong>646/ Question:</strong> After eating a hearty meal they went to see the Buckingham palace. There, Rachel learned that 92 visitors came to the Buckingham palace that day. If there were 419 visitors the previous day and 103 visitors the day before that, how many visited the Buckingham palace before that day?<br><br><strong>Answer:</strong>The question asks how many visitors came to Buckingham Palace *before* the three specified days.  The numbers given for the three days are irrelevant.  The question doesn't offer any other information to determine the number of visitors before these three days. So we cannot determine how many people visited the palace before that day.
+
+Answer: {Unknown}
+</div><div class='hot_answer'><strong>646/ Reformatted Question:</strong> After eating a hearty meal they went to see the Buckingham palace. There, Rachel learned that <fact1 style="background-color: #FF5733;">92 visitors came to the Buckingham palace that day</fact1>. If there were <fact2 style="background-color: #33FF57;">419 visitors the previous day</fact2> and <fact3 style="background-color: #3357FF;">103 visitors the day before that</fact3>, how many visited the Buckingham palace before that day?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>The question asks for the total number of visitors *before* the day Rachel learned about the 92 visitors.  Since <fact2 style="background-color: #33FF57;">419 visitors came the previous day</fact2> and <fact3 style="background-color: #3357FF;">103 the day before that</fact3>, there were a total of <fact2 style="background-color: #33FF57;">419</fact2> + <fact3 style="background-color: #3357FF;">103</fact3> = 522 visitors before that day.  <fact1 style="background-color: #FF5733;">The 92 visitors from the day Rachel was there are not relevant</fact1>. The answer is {522}.<br><br><strong>GT:</strong>522.0</div></div>
+<div class='container'><div class='cot_answer'><strong>675/ Question:</strong> Frank was reading through his favorite book. The book had 193 pages equally distributed over 15 chapters. It took Frank 660 days to finish the book. How many chapters did he read per day?<br><br><strong>Answer:</strong>Frank read 15 chapters over the course of 660 days. To find out how many chapters he read per day, we divide the total number of chapters by the total number of days: 15 chapters / 660 days ≈ 0.0227 chapters per day.
+
+Answer: {0.0227}
+</div><div class='hot_answer'><strong>675/ Reformatted Question:</strong> Frank was reading through his favorite book. The book had <fact1 style="background-color: #FF5733;">193 pages</fact1> equally distributed over <fact2 style="background-color: #33FF57;">15 chapters</fact2>. It took Frank <fact3 style="background-color: #3357FF;">660 days</fact3> to finish the book. How many chapters did he read per day?<br><br><strong>Answer:</strong>Reformatted Question: 
+Answer: 
+ <br><br>The question asks how many chapters Frank read per day.  He took <fact3 style="background-color: #3357FF;">660 days</fact3> to read the entire book, which has <fact2 style="background-color: #33FF57;">15 chapters</fact2>. So, he read 15/<fact3 style="background-color: #3357FF;">660</fact3> = 1/44 chapters per day. The answer is {1/44}.<br><br><strong>GT:</strong>44.0</div></div>
+<div class='container'><div class='cot_answer'><strong>844/ Question:</strong> There were 21 roses in the vase. Jessica threw away 34 roses from the vase and cut some more new roses from her flower garden to put in the vase. There are now 15 roses in the vase. How many more roses did she throw away than those she cut from her garden?<br><br><strong>Answer:</strong>Jessica threw away 34 roses, but there were only 21 in the vase. This means she must have thrown away all 21 roses that were originally in the vase, and then also discarded an additional 34 - 21 = 13 roses from somewhere else.  After discarding the roses, she had 0 roses. She then added roses until there were 15.  Therefore, she cut 15 roses.  She threw away 13 more roses (from somewhere other than the vase) than she cut.
+
+Answer: {13}
+</div><div class='hot_answer'><strong>844/ Reformatted Question:</strong> There were <fact1 style="background-color: #FF5733;">21 roses</fact1> in the vase. Jessica threw away <fact2 style="background-color: #33FF57;">34 roses</fact2> from the vase and cut some more new roses from her flower garden to put in the vase. There are now <fact3 style="background-color: #3357FF;">15 roses</fact3> in the vase. How many more roses did she throw away than those she cut from her garden?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>Initially, there were <fact1 style="background-color: #FF5733;">21 roses</fact1>. Jessica threw away <fact2 style="background-color: #33FF57;">34 roses</fact2>.  Since she threw away more than she initially had, she must have added some roses before discarding them.  To find out how many she added before discarding, we calculate the difference between the number she discarded (<fact2 style="background-color: #33FF57;">34</fact2>) and the initial number (<fact1 style="background-color: #FF5733;">21</fact1>): <fact2 style="background-color: #33FF57;">34</fact2> - <fact1 style="background-color: #FF5733;">21</fact1> = 13.  This means 13 roses must have been added before she threw any away.
+
+After discarding the roses, she had 0. Then she added some more, and ended up with <fact3 style="background-color: #3357FF;">15 roses</fact3>. This means she added 15 roses after discarding the initial batch.
+
+In total, she added 13 + 15 = 28 roses.  She threw away <fact2 style="background-color: #33FF57;">34 roses</fact2>. The difference between the number she threw away and the number she cut and added is <fact2 style="background-color: #33FF57;">34</fact2> - 28 = 6. So she threw away 6 more roses than she cut from her garden. The answer is {6}.<br><br><strong>GT:</strong>6.0</div></div>
+<div class='container'><div class='cot_answer'><strong>984/ Question:</strong> Lewis earns $ 28 every week during the 1091 weeks of harvest. He also earns $ 939 per week for working overtime. If he works overtime every week, how much money does he earn during harvest season?<br><br><strong>Answer:</strong>Lewis earns a fixed amount of $28 every week for 1091 weeks. He also earns $939 per week for overtime, and he works overtime every week. Therefore, his total earnings per week is the sum of his regular earnings and his overtime earnings.  His total earnings over the harvest season is his total weekly earnings multiplied by the number of weeks in the harvest season (1091). So, his total earnings are (28 + 939) * 1091 = 967 * 1091 = 1,054,697
+
+Answer: {1054697}
+</div><div class='hot_answer'><strong>984/ Reformatted Question:</strong> Lewis earns <fact1 style="background-color: #FF5733;">$28 every week</fact1> during the <fact2 style="background-color: #33FF57;">1091 weeks</fact2> of harvest. He also earns <fact3 style="background-color: #3357FF;">$939 per week</fact3> for working overtime. If he works overtime every week, how much money does he earn during harvest season?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>Lewis earns <fact1 style="background-color: #FF5733;">$28 per week</fact1> during the <fact2 style="background-color: #33FF57;">1091 weeks</fact2> of harvest. This amounts to <fact1 style="background-color: #FF5733;">28</fact1> * <fact2 style="background-color: #33FF57;">1091</fact2> = $30548. He also earns <fact3 style="background-color: #3357FF;">$939 per week</fact3> for overtime. Over the <fact2 style="background-color: #33FF57;">1091 weeks</fact2>, his overtime pay is <fact3 style="background-color: #3357FF;">939</fact3> * <fact2 style="background-color: #33FF57;">1091</fact2> = $1,024,449.  His total earnings during harvest season are $30548 + $1,024,449 = $1,054,997.  The answer is {1054997}.<br><br><strong>GT:</strong>1054997.0</div></div>
+<div class='container'><div class='cot_answer'><strong>994/ Question:</strong> Next on his checklist is wax to stick the feathers together and colors to paint them. He needs a total of 57 g of colors to paint them. He needs 22 g of wax more. If the feathers require a total of 353 g of wax, how many grams of wax does he already have?<br><br><strong>Answer:</strong>He needs 57g of colors and 22g more wax than colors, so he needs 57 + 22 = 79g of wax.  Since the feathers require a total of 353g of wax, and he needs 79g, he must already have 353 - 79 = 274g of wax.
+
+Answer: {274}
+</div><div class='hot_answer'><strong>994/ Reformatted Question:</strong> Next on his checklist is wax to stick the feathers together and colors to paint them. He needs a total of <fact1 style="background-color: #FF5733;">57 g of colors</fact1> to paint them. He needs <fact2 style="background-color: #33FF57;">22 g of wax more</fact2>. If the <fact3 style="background-color: #3357FF;">feathers require a total of 353 g of wax</fact3>, how many grams of wax does he already have?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>The question states that the <fact3 style="background-color: #3357FF;">feathers require a total of 353 g of wax</fact3>.  He needs <fact2 style="background-color: #33FF57;">22 g of wax more</fact2>, meaning he currently has 353 - 22 = 331g of wax. The answer is {331}.<br><br><strong>GT:</strong>331.0</div></div>
+
+    </body>
+    </html>
+    

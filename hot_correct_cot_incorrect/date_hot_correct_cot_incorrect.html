@@ -1,0 +1,195 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question and Answer Highlights</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .highlight {
+                background-color: #FFFF00; /* Yellow background for visibility */
+                font-weight: bold; /* Bold text for emphasis */
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .question, .answer {
+                flex: 1;
+                padding: 10px;
+            }
+            .container {
+                display: flex;
+            }
+
+            .container > div {
+                flex: 1;  /* Each div will take equal amount of space */
+            }
+
+            /* Optional styles for better visualization */
+            .div1 { background-color: lightblue; }
+            .div2 { background-color: lightgreen; }
+        </style>
+    </head>
+    <body>
+    <div class='container'><div class='cot_answer'><strong>3/ Question:</strong> Yesterday was April 30, 2021. What is the date a month ago in MM/DD/YYYY?<br><br><strong>Answer:</strong>Yesterday was 04/30/2021.  A month ago would be roughly 30 days before 04/30/2021. This would land us in March. Since April has 30 days, a month before April 30 would be March 30.  Therefore, the date a month ago was 03/30/2021.
+
+Answer: {03/30/2021}
+</div><div class='hot_answer'><strong>3/ Reformatted Question:</strong> Yesterday was <fact1 style="background-color: #FF5733;">April 30, 2021</fact1>. What is the date <fact2 style="background-color: #33FF57;">a month ago</fact2> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br><fact1 style="background-color: #FF5733;">Yesterday was April 30, 2021</fact1>. That means today is May 1, 2021.  <fact2 style="background-color: #33FF57;">A month ago</fact2> would be April 1, 2021. The answer is {04/01/2021}.<br><br><strong>GT:</strong>04/01/2021</div></div>
+<div class='container'><div class='cot_answer'><strong>11/ Question:</strong> The deadline is Jun 1, 2021, which is 2 days away from now. What is the date 10 days ago in MM/DD/YYYY?<br><br><strong>Answer:</strong>The deadline is June 1, 2021.  10 days before June 1, 2021 is May 22, 2021.
+
+Answer: {05/22/2021}
+</div><div class='hot_answer'><strong>11/ Reformatted Question:</strong> The deadline is <fact1 style="background-color: #FF5733;">Jun 1, 2021</fact1>, which is <fact2 style="background-color: #33FF57;">2 days away from now</fact2>. What is the date <fact3 style="background-color: #3357FF;">10 days ago</fact3> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>The deadline is <fact1 style="background-color: #FF5733;">June 1, 2021</fact1>. Since the deadline is <fact2 style="background-color: #33FF57;">2 days away</fact2>, today must be May 30, 2021 (two days before June 1, 2021).  We need the date <fact3 style="background-color: #3357FF;">10 days ago</fact3>. 10 days before May 30, 2021 is May 20, 2021. So the answer is {05/20/2021}.<br><br><strong>GT:</strong>05/20/2021</div></div>
+<div class='container'><div class='cot_answer'><strong>12/ Question:</strong> The deadline is Jun 1, 2021, which is 2 days away from now. What is the date a month ago in MM/DD/YYYY?<br><br><strong>Answer:</strong>The deadline is June 1, 2021. A month ago means we subtract one month. One month before June is May. So the date a month ago was May 1, 2021.
+
+Answer: {05/01/2021}
+</div><div class='hot_answer'><strong>12/ Reformatted Question:</strong> The deadline is <fact1 style="background-color: #FF5733;">Jun 1, 2021</fact1>, which is <fact2 style="background-color: #33FF57;">2 days away from now</fact2>. What is the date <fact3 style="background-color: #3357FF;">a month ago</fact3> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>The deadline is <fact1 style="background-color: #FF5733;">June 1st, 2021</fact1>, and it is <fact2 style="background-color: #33FF57;">2 days away</fact2>.  This means today is May 30, 2021 (2 days before June 1st). <fact3 style="background-color: #3357FF;">A month ago</fact3> would be April 30, 2021.  So the answer is {04/30/2021}.<br><br><strong>GT:</strong>04/30/2021</div></div>
+<div class='container'><div class='cot_answer'><strong>16/ Question:</strong> The deadline is Jun 1, 2021, which is 2 days away from now. What is the date 24 hours later in MM/DD/YYYY?<br><br><strong>Answer:</strong>The deadline is June 1, 2021. 24 hours later is one day after the deadline, so the date will be June 2, 2021.
+
+Answer: {06/02/2021}
+</div><div class='hot_answer'><strong>16/ Reformatted Question:</strong> The deadline is <fact1 style="background-color: #FF5733;">Jun 1, 2021</fact1>, which is <fact2 style="background-color: #33FF57;">2 days away</fact2> from now. What is the date <fact3 style="background-color: #3357FF;">24 hours later</fact3> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br><fact2 style="background-color: #33FF57;">Two days from now</fact2> is <fact1 style="background-color: #FF5733;">June 1, 2021</fact1>. This means today is May 30, 2021. <fact3 style="background-color: #3357FF;">24 hours later</fact3> than May 30, 2021 is May 31, 2021. The answer is {05/31/2021}.<br><br><strong>GT:</strong>05/31/2021</div></div>
+<div class='container'><div class='cot_answer'><strong>110/ Question:</strong> In the UK, people usually put the day before the month when formatting the date. Therefore, today is 02/01/1987 to them. What is the date one year ago from today in MM/DD/YYYY?<br><br><strong>Answer:</strong>Today is February 1st, 1987. One year ago would be February 1st, 1986.
+
+Answer: {02/01/1986}
+</div><div class='hot_answer'><strong>110/ Reformatted Question:</strong> In the UK, people usually put the day before the month when formatting the date. Therefore, today is <fact1 style="background-color: #FF5733;">02/01/1987</fact1> to them. What is the date <fact2 style="background-color: #33FF57;">one year ago</fact2> from today in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>The question states that <fact1 style="background-color: #FF5733;">today is 02/01/1987</fact1> (meaning January 2nd, 1987 in US format).  <fact2 style="background-color: #33FF57;">One year ago</fact2> would be 01/02/1986. The answer is {01/02/1986}.<br><br><strong>GT:</strong>01/02/1986</div></div>
+<div class='container'><div class='cot_answer'><strong>113/ Question:</strong> In the UK, people usually put the day before the month when formatting the date. Therefore, today is 02/01/1987 to them. What is the date 24 hours later in MM/DD/YYYY?<br><br><strong>Answer:</strong>Today's date in UK format is 02/01/1987, meaning February 1st, 1987. 24 hours later would be February 2nd, 1987.  In MM/DD/YYYY format, this is 02/02/1987.
+
+Answer: {02/02/1987}
+</div><div class='hot_answer'><strong>113/ Reformatted Question:</strong> In the UK, people usually put the day before the month when formatting the date. Therefore, today is <fact1 style="background-color: #FF5733;">02/01/1987</fact1> to them. What is the date <fact2 style="background-color: #33FF57;">24 hours later</fact2> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>Today's date is given as <fact1 style="background-color: #FF5733;">02/01/1987</fact1> in the UK format (DD/MM/YYYY), which means it's January 2nd, 1987.  <fact2 style="background-color: #33FF57;">24 hours later</fact2> would be January 3rd, 1987.  Therefore, the date in MM/DD/YYYY format is 01/03/1987.  The answer is {01/03/1987}.<br><br><strong>GT:</strong>01/03/1987</div></div>
+<div class='container'><div class='cot_answer'><strong>152/ Question:</strong> Today is Apr 10, 1985. Jane's appointment will be 3 days later. What is the date 10 days ago in MM/DD/YYYY?<br><br><strong>Answer:</strong>Today is 04/10/1985. Jane's appointment is 3 days later, which is 04/13/1985. 10 days before today (04/10/1985) is 04/01/1985.
+
+Answer: {04/01/1985}
+</div><div class='hot_answer'><strong>152/ Reformatted Question:</strong> Today is <fact1 style="background-color: #FF5733;">Apr 10, 1985</fact1>. Jane's appointment will be <fact2 style="background-color: #33FF57;">3 days later</fact2>. What is the date <fact3 style="background-color: #3357FF;">10 days ago</fact3> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br><fact1 style="background-color: #FF5733;">Today is 04/10/1985</fact1>.  The question asks for the date <fact3 style="background-color: #3357FF;">10 days ago</fact3>.  Ten days before <fact1 style="background-color: #FF5733;">04/10/1985</fact1> is 04/00/1985 which doesn't exist so we move to 03/31/1985. The answer is {03/31/1985}.<br><br><strong>GT:</strong>03/31/1985</div></div>
+<div class='container'><div class='cot_answer'><strong>157/ Question:</strong> Today is Apr 10, 1985. Jane's appointment will be 3 days later. What is the date 24 hours later in MM/DD/YYYY?<br><br><strong>Answer:</strong>Today is 04/10/1985.
+Jane's appointment is 3 days later, so her appointment is on 04/13/1985.
+24 hours after 04/13/1985 is 04/14/1985.
+Answer: {04/14/1985}
+</div><div class='hot_answer'><strong>157/ Reformatted Question:</strong> Today is <fact1 style="background-color: #FF5733;">Apr 10, 1985</fact1>. Jane's appointment will be <fact2 style="background-color: #33FF57;">3 days later</fact2>. What is the date <fact3 style="background-color: #3357FF;">24 hours later</fact3> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br><fact1 style="background-color: #FF5733;">Today is 04/10/1985</fact1>.  The question asks for the date <fact3 style="background-color: #3357FF;">24 hours later</fact3>, which is one day after today. Therefore, the date will be 04/11/1985.  The information about Jane's appointment (<fact2 style="background-color: #33FF57;">3 days later</fact2>) is irrelevant to the question.  The answer is {04/11/1985}.<br><br><strong>GT:</strong>04/11/1985</div></div>
+<div class='container'><div class='cot_answer'><strong>161/ Question:</strong> Today is 3/5, and it is Jane's second time in the year 1973 to see a meteor shower. What is the date 10 days ago in MM/DD/YYYY?<br><br><strong>Answer:</strong>Today is 03/05/1973.
+10 days ago is 02/24/1973.
+
+
+Answer: {02/24/1973}
+</div><div class='hot_answer'><strong>161/ Reformatted Question:</strong> Today is <fact1 style="background-color: #FF5733;">3/5</fact1>, and it is Jane's <fact2 style="background-color: #33FF57;">second</fact2> time in the year <fact3 style="background-color: #3357FF;">1973</fact3> to see a meteor shower. What is the date <fact4 style="background-color: #FF33A1;">10 days ago</fact4> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>Today is <fact1 style="background-color: #FF5733;">March 5th, 1973</fact1>. <fact4 style="background-color: #FF33A1;">10 days ago</fact4> would be February 23rd, 1973. The answer is {02/23/1973}.<br><br><strong>GT:</strong>02/23/1973</div></div>
+<div class='container'><div class='cot_answer'><strong>170/ Question:</strong> Yesterday, Jan 21, 2011, Jane ate 2 pizzas and 5 wings. What is the date 10 days ago in MM/DD/YYYY?<br><br><strong>Answer:</strong>Yesterday was January 21, 2011.
+10 days ago means 11 days before yesterday.
+So we are looking for the date 11 days before January 21, 2011.
+That would be January 10, 2011.
+
+Answer: {01/10/2011}
+</div><div class='hot_answer'><strong>170/ Reformatted Question:</strong> Yesterday was <fact1 style="background-color: #FF5733;">Jan 21, 2011</fact1>.  What is the date <fact2 style="background-color: #33FF57;">10 days ago</fact2> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br><fact1 style="background-color: #FF5733;">Yesterday was January 21, 2011</fact1>.  That means today is January 22, 2011. <fact2 style="background-color: #33FF57;">10 days ago</fact2> would be January 12, 2011. The answer is {01/12/2011}.<br><br><strong>GT:</strong>01/12/2011</div></div>
+<div class='container'><div class='cot_answer'><strong>199/ Question:</strong> May 6, 1992 is like yesterday to Jane, but that is actually ten years ago. What is the date one year ago from today in MM/DD/YYYY?<br><br><strong>Answer:</strong>Jane thinks May 6, 1992 is like yesterday, but it's actually 10 years ago. This means "today" for Jane is May 7, 2002 (May 6, 1992 + 10 years). We need to find the date one year ago from today. One year before May 7, 2002 is May 7, 2001.
+
+Answer: {05/07/2001}
+</div><div class='hot_answer'><strong>199/ Reformatted Question:</strong> May 6, 1992 is like yesterday to Jane, but that is actually <fact1 style="background-color: #FF5733;">ten years ago</fact1>. What is the date <fact2 style="background-color: #33FF57;">one year ago</fact2> from today in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+Answer:
+
+ <br><br>Since May 6, 1992 was <fact1 style="background-color: #FF5733;">ten years ago</fact1>, today must be May 6, 2002 (1992 + 10).  The question asks for the date <fact2 style="background-color: #33FF57;">one year ago</fact2> from today, so we subtract one year from May 6, 2002.  Therefore, the date <fact2 style="background-color: #33FF57;">one year ago</fact2> was May 6, 2001. The answer is {05/06/2001}.<br><br><strong>GT:</strong>05/06/2001</div></div>
+<div class='container'><div class='cot_answer'><strong>200/ Question:</strong> May 6, 1992 is like yesterday to Jane, but that is actually ten years ago. What is the date one week ago from today in MM/DD/YYYY?<br><br><strong>Answer:</strong>May 6, 1992 is ten years ago, so today is May 6, 2002.
+One week ago is 7 days before today.
+So one week ago is April 30, 2002.
+
+Answer: {04/30/2002}
+</div><div class='hot_answer'><strong>200/ Reformatted Question:</strong> May 6, 1992 is like yesterday to Jane, but that is actually <fact1 style="background-color: #FF5733;">ten years ago</fact1>. What is the date <fact2 style="background-color: #33FF57;">one week ago</fact2> from today in MM/DD/YYYY?<br><br><strong>Answer:</strong>                    Reformatted Question:                          Answer:
+
+ <br><br>May 6, 1992 was <fact1 style="background-color: #FF5733;">ten years ago</fact1>. Therefore, today is May 6, 2002.  <fact2 style="background-color: #33FF57;">One week ago</fact2> from today would be April 29, 2002. So the answer is {04/29/2002}.<br><br><strong>GT:</strong>04/29/2002</div></div>
+<div class='container'><div class='cot_answer'><strong>201/ Question:</strong> May 6, 1992 is like yesterday to Jane, but that is actually ten years ago. What is the date one week from today in MM/DD/YYYY?<br><br><strong>Answer:</strong>May 6, 1992 is ten years ago from Jane's perspective. This means "yesterday" for Jane is 05/06/1992, and today for Jane is 05/07/1992. However, that day was actually 10 years ago, meaning today is 10 years after 05/07/1992, which is 05/07/2002.
+One week from today is 7 days after 05/07/2002, which is 05/14/2002.
+
+Answer: {05/14/2002}
+</div><div class='hot_answer'><strong>201/ Reformatted Question:</strong> May 6, 1992 is like yesterday to Jane, but that is actually <fact1 style="background-color: #FF5733;">ten years ago</fact1>. What is the date <fact2 style="background-color: #33FF57;">one week from today</fact2> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>If May 6, 1992 was <fact1 style="background-color: #FF5733;">ten years ago</fact1>, then today is May 6, 2002.  <fact2 style="background-color: #33FF57;">One week from today</fact2> would be May 13, 2002. The answer is {05/13/2002}.<br><br><strong>GT:</strong>05/13/2002</div></div>
+<div class='container'><div class='cot_answer'><strong>202/ Question:</strong> May 6, 1992 is like yesterday to Jane, but that is actually ten years ago. What is the date 24 hours later in MM/DD/YYYY?<br><br><strong>Answer:</strong>May 6, 1992 is like yesterday to Jane, meaning Jane thinks of May 6, 1992 as yesterday.  But that date is actually ten years ago.  So, for Jane, "today" is May 7, 1992.  However, since this is actually ten years ago, the real today is May 7, 2002. 24 hours later would be May 8, 2002.
+
+Answer: {05/08/2002}
+</div><div class='hot_answer'><strong>202/ Reformatted Question:</strong> May 6, 1992 is like yesterday to Jane, but that is actually <fact1 style="background-color: #FF5733;">ten years ago</fact1>. What is the date <fact2 style="background-color: #33FF57;">24 hours later</fact2> in MM/DD/YYYY?<br><br><strong>Answer:</strong>                    Reformatted Question:                          Answer:
+
+
+ <br><br>May 6, 1992 was <fact1 style="background-color: #FF5733;">ten years ago</fact1>, which means today is May 6, 2002. <fact2 style="background-color: #33FF57;">24 hours later</fact2> would be May 7, 2002. The answer is {05/07/2002}.<br><br><strong>GT:</strong>05/07/2002</div></div>
+<div class='container'><div class='cot_answer'><strong>242/ Question:</strong> Jane scheduled 3 apointments with 5 poeple for tomorrow (Tue, 7/9/1972). What is the date a month ago in MM/DD/YYYY?<br><br><strong>Answer:</strong>Jane's appointments and the number of people she's meeting with are irrelevant to the question. Tomorrow is Tuesday, July 9th, 1972.  One month prior would be June 9th, 1972.
+
+Answer: {06/09/1972}
+</div><div class='hot_answer'><strong>242/ Reformatted Question:</strong> Jane scheduled 3 apointments with 5 poeple for <fact1 style="background-color: #FF5733;">tomorrow</fact1> (<fact2 style="background-color: #33FF57;">Tue, 7/9/1972</fact2>). What is the date <fact3 style="background-color: #3357FF;">a month ago</fact3> in MM/DD/YYYY?<br><br><strong>Answer:</strong>                    Reformatted Question:                          Answer:
+
+
+ <br><br><fact2 style="background-color: #33FF57;">Tomorrow is Tue, 7/9/1972</fact2>, so today is 07/08/1972. <fact3 style="background-color: #3357FF;">A month ago</fact3> was 06/08/1972.  The answer is {06/08/1972}.<br><br><strong>GT:</strong>06/08/1972</div></div>
+<div class='container'><div class='cot_answer'><strong>245/ Question:</strong> Jane scheduled 3 apointments with 5 poeple for tomorrow (Tue, 7/9/1972). What is the date one week from today in MM/DD/YYYY?<br><br><strong>Answer:</strong>Jane scheduled appointments for tomorrow, which is Tuesday, July 9, 1972.  This means today is Monday, July 8, 1972. One week from today would be 7 days later, which is Monday, July 16, 1972.
+
+Answer: {07/16/1972}
+</div><div class='hot_answer'><strong>245/ Reformatted Question:</strong> Jane scheduled 3 apointments with 5 poeple for <fact1 style="background-color: #FF5733;">tomorrow</fact1> (<fact2 style="background-color: #33FF57;">Tue, 7/9/1972</fact2>). What is the date <fact3 style="background-color: #3357FF;">one week from today</fact3> in MM/DD/YYYY?<br><br><strong>Answer:</strong>                    Reformatted Question:                          Answer:
+
+
+ <br><br><fact2 style="background-color: #33FF57;">Tomorrow is Tue, 7/9/1972</fact2>, so today is <fact2 style="background-color: #33FF57;">Monday, 7/8/1972</fact2>. <fact3 style="background-color: #3357FF;">One week from today</fact3> means 7 days after today. Therefore, <fact3 style="background-color: #3357FF;">one week from today</fact3> is 7/15/1972.  The answer is {07/15/1972}.<br><br><strong>GT:</strong>07/15/1972</div></div>
+<div class='container'><div class='cot_answer'><strong>265/ Question:</strong> Today is 9/7. Jane is watching NFL 2003. What is the date today in MM/DD/YYYY?<br><br><strong>Answer:</strong>Today is September 7th, and Jane is watching the 2003 NFL season.  The question is asking for today's date. The information about the NFL season is irrelevant. Today's date is September 7th.  Since the year is not explicitly stated, we can assume it's the current year unless stated otherwise.  However, since the question states today is 9/7 and Jane is watching NFL 2003. It does not necessarily mean today is in 2003. So based on that today is 9/7. The problem doesn't give us the year so we cannot generate the full date.
+
+Answer: {09/07}
+</div><div class='hot_answer'><strong>265/ Reformatted Question:</strong> Today is <fact1 style="background-color: #FF5733;">9/7</fact1>. Jane is watching <fact2 style="background-color: #33FF57;">NFL 2003</fact2>. What is the date today in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>The question states that today is <fact1 style="background-color: #FF5733;">9/7</fact1>, presumably referring to September 7th. The fact that Jane is watching <fact2 style="background-color: #33FF57;">NFL 2003</fact2> implies the year is 2003.  Therefore, today's date is 09/07/2003. The answer is {09/07/2003}.<br><br><strong>GT:</strong>09/07/2003</div></div>
+<div class='container'><div class='cot_answer'><strong>267/ Question:</strong> Today is 9/7. Jane is watching NFL 2003. What is the date yesterday in MM/DD/YYYY?<br><br><strong>Answer:</strong>Today is 9/7, presumably of an unspecified year.  Jane is watching NFL 2003, but that doesn't tell us what specific date in 2003 she's watching.  The NFL season typically runs from late summer/early fall to winter, so her watching a game from 2003 doesn't pinpoint the current date. Therefore, if today is 9/7 and we're asked about yesterday, the date is 9/6. Since the year is unspecified in relation to "today", we can't determine the year for "yesterday" either.  We're told the current date is September 7th, so yesterday was September 6th.
+
+Answer: {09/06}
+</div><div class='hot_answer'><strong>267/ Reformatted Question:</strong> Today is <fact1 style="background-color: #FF5733;">9/7</fact1>. Jane is watching <fact2 style="background-color: #33FF57;">NFL 2003</fact2>. What is the date <fact3 style="background-color: #3357FF;">yesterday</fact3> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question:                          Answer:
+
+
+ <br><br>Today is <fact1 style="background-color: #FF5733;">9/7</fact1>. We can assume the current year is 2003 since Jane is watching <fact2 style="background-color: #33FF57;">NFL 2003</fact2>, so today is 09/07/2003.  <fact3 style="background-color: #3357FF;">Yesterday</fact3> would be 09/06/2003. The answer is {09/06/2003}.<br><br><strong>GT:</strong>09/06/2003</div></div>
+<div class='container'><div class='cot_answer'><strong>268/ Question:</strong> Today is 9/7. Jane is watching NFL 2003. What is the date 10 days ago in MM/DD/YYYY?<br><br><strong>Answer:</strong>Answer: Today is 09/07/2023. Jane is watching NFL 2003, but the current date is irrelevant.
+10 days ago is 08/28/2023.
+The answer is {08/28/2023}.
+</div><div class='hot_answer'><strong>268/ Reformatted Question:</strong> Today is <fact1 style="background-color: #FF5733;">9/7</fact1>. Jane is watching NFL <fact2 style="background-color: #33FF57;">2003</fact2>. What is the date <fact3 style="background-color: #3357FF;">10 days ago</fact3> in MM/DD/YYYY?<br><br><strong>Answer:</strong>Reformatted Question:                  Answer:
+
+
+ <br><br>Today is <fact1 style="background-color: #FF5733;">September 7th</fact1> of <fact2 style="background-color: #33FF57;">2003</fact2>.  <fact3 style="background-color: #3357FF;">Ten days ago</fact3> would be August 28th, 2003. The answer is {08/28/2003}.<br><br><strong>GT:</strong>08/28/2003</div></div>
+
+    </body>
+    </html>
+    
