@@ -86,10 +86,19 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             border-radius: 8px;
             z-index: 1000;
-            padding: 8px 0;
-            margin-top: 8px;
+            padding-top: 16px;
             max-height: 400px;
             overflow-y: auto;
+        }
+        
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 16px;
+            background: transparent;
         }
         
         .dropdown-menu a {
@@ -99,6 +108,15 @@
             display: block;
             font-size: 14px;
             transition: background-color 0.2s;
+            background-color: #fff;
+        }
+        
+        .dropdown-menu a:first-of-type {
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .dropdown-menu a:last-child {
+            border-radius: 0 0 8px 8px;
         }
         
         .dropdown-menu a:hover {
@@ -155,9 +173,9 @@
                     Qualitative Results <i class="fa-solid fa-images"></i>
                 </button>
                 <div class="dropdown-menu">
-                    <a href="hot_correct_cot_incorrect/AQUA_hot_correct_cot_incorrect.html">AQUA</a>
-                    <a href="hot_correct_cot_incorrect/ASDiv_hot_correct_cot_incorrect.html">ASDiv</a>
-                    <a href="hot_correct_cot_incorrect/causal_judgement_hot_correct_cot_incorrect.html">Causal Judgement</a>
+                    <!-- <a href="hot_correct_cot_incorrect/AQUA_hot_correct_cot_incorrect.html">AQUA</a>
+                    <a href="hot_correct_cot_incorrect/ASDiv_hot_correct_cot_incorrect.html">ASDiv</a> -->
+                    <!-- <a href="hot_correct_cot_incorrect/causal_judgement_hot_correct_cot_incorrect.html">Causal Judgement</a> -->
                     <a href="hot_correct_cot_incorrect/date_hot_correct_cot_incorrect.html">Date</a>
                     <a href="hot_correct_cot_incorrect/drop_break_hot_correct_cot_incorrect.html">DROP Break</a>
                     <a href="hot_correct_cot_incorrect/GSM8K_hot_correct_cot_incorrect.html">GSM8K</a>
@@ -165,10 +183,10 @@
                     <a href="hot_correct_cot_incorrect/logical_deduction_seven_objects_hot_correct_cot_incorrect.html">Logical Deduction (7 Objects)</a>
                     <a href="hot_correct_cot_incorrect/MultiArith_hot_correct_cot_incorrect.html">MultiArith</a>
                     <a href="hot_correct_cot_incorrect/navigate_hot_correct_cot_incorrect.html">Navigate</a>
-                    <a href="hot_correct_cot_incorrect/p_GSM8K_hot_correct_cot_incorrect.html">p-GSM8K</a>
+                    <a href="hot_correct_cot_incorrect/p_GSM8K_hot_correct_cot_incorrect.html">r-GSM</a>
                     <a href="hot_correct_cot_incorrect/reasoning_about_colored_objects_hot_correct_cot_incorrect.html">Reasoning About Colored Objects</a>
                     <a href="hot_correct_cot_incorrect/spartQA_hot_correct_cot_incorrect.html">SpartQA</a>
-                    <a href="hot_correct_cot_incorrect/StrategyQA_hot_correct_cot_incorrect.html">StrategyQA</a>
+                    <!-- <a href="hot_correct_cot_incorrect/StrategyQA_hot_correct_cot_incorrect.html">StrategyQA</a> -->
                     <a href="hot_correct_cot_incorrect/SVAMP_hot_correct_cot_incorrect.html">SVAMP</a>
                 </div>
             </div>
