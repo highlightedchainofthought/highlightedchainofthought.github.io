@@ -64,6 +64,55 @@
             margin: 0 auto;
             object-fit: contain;
         }
+        
+        /* Dropdown styles for Qualitative Results */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            min-width: 280px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            z-index: 1000;
+            padding: 8px 0;
+            margin-top: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .dropdown-menu a {
+            color: #333;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+            color: #0066cc;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-toggle i {
+            margin-left: 5px;
+        }
     </style>
 </head>
 
@@ -101,6 +150,28 @@
             <a href="https://github.com/anguyen8/hot" class="button">
                 Source Code <i class="fa-solid fa-code"></i>
             </a>
+            <div class="dropdown">
+                <button class="button dropdown-toggle">
+                    Qualitative Results <i class="fa-solid fa-images"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="hot_correct_cot_incorrect/AQUA_hot_correct_cot_incorrect.html">AQUA</a>
+                    <a href="hot_correct_cot_incorrect/ASDiv_hot_correct_cot_incorrect.html">ASDiv</a>
+                    <a href="hot_correct_cot_incorrect/causal_judgement_hot_correct_cot_incorrect.html">Causal Judgement</a>
+                    <a href="hot_correct_cot_incorrect/date_hot_correct_cot_incorrect.html">Date</a>
+                    <a href="hot_correct_cot_incorrect/drop_break_hot_correct_cot_incorrect.html">DROP Break</a>
+                    <a href="hot_correct_cot_incorrect/GSM8K_hot_correct_cot_incorrect.html">GSM8K</a>
+                    <a href="hot_correct_cot_incorrect/logical_deduction_five_objects_hot_correct_cot_incorrect.html">Logical Deduction (5 Objects)</a>
+                    <a href="hot_correct_cot_incorrect/logical_deduction_seven_objects_hot_correct_cot_incorrect.html">Logical Deduction (7 Objects)</a>
+                    <a href="hot_correct_cot_incorrect/MultiArith_hot_correct_cot_incorrect.html">MultiArith</a>
+                    <a href="hot_correct_cot_incorrect/navigate_hot_correct_cot_incorrect.html">Navigate</a>
+                    <a href="hot_correct_cot_incorrect/p_GSM8K_hot_correct_cot_incorrect.html">p-GSM8K</a>
+                    <a href="hot_correct_cot_incorrect/reasoning_about_colored_objects_hot_correct_cot_incorrect.html">Reasoning About Colored Objects</a>
+                    <a href="hot_correct_cot_incorrect/spartQA_hot_correct_cot_incorrect.html">SpartQA</a>
+                    <a href="hot_correct_cot_incorrect/StrategyQA_hot_correct_cot_incorrect.html">StrategyQA</a>
+                    <a href="hot_correct_cot_incorrect/SVAMP_hot_correct_cot_incorrect.html">SVAMP</a>
+                </div>
+            </div>
         </div>
 
         <div class="blog-cover">
