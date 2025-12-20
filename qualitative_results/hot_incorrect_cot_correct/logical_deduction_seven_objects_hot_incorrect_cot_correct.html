@@ -1,0 +1,907 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question and Answer Highlights</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .highlight {
+                background-color: #FFFF00; /* Yellow background for visibility */
+                font-weight: bold; /* Bold text for emphasis */
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .question, .answer {
+                flex: 1;
+                padding: 10px;
+            }
+            .container {
+                display: flex;
+            }
+
+            .container > div {
+                flex: 1;  /* Each div will take equal amount of space */
+            }
+
+            /* Optional styles for better visualization */
+            .div1 { background-color: lightblue; }
+            .div2 { background-color: lightgreen; }
+        </style>
+    </head>
+    <body>
+    <div class='container'><div class='cot_answer'><strong>13/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are seven birds: a raven, a hummingbird, a robin, a crow, a quail, a blue jay, and a cardinal. The hummingbird is to the left of the crow. The quail is to the right of the crow. The raven is to the left of the robin. The blue jay is the third from the right. The cardinal is the leftmost. The hummingbird is the fourth from the left.
+Options:
+(A) The raven is the third from the right
+(B) The hummingbird is the third from the right
+(C) The robin is the third from the right
+(D) The crow is the third from the right
+(E) The quail is the third from the right
+(F) The blue jay is the third from the right
+(G) The cardinal is the third from the right<br><br><strong>Answer:</strong>Here's how we can determine the bird's positions:
+
+1. **Cardinal is leftmost:** This places the cardinal in position 1.
+2. **Hummingbird is fourth from the left:** This places the hummingbird in position 4.
+3. **Blue jay is third from the right:** This places the blue jay in position 5 (7 total birds - 3 from the right + 1 = 5).
+4. **Hummingbird is to the left of the crow:** Since the hummingbird is in position 4, the crow must be to its right.
+5. **Quail is to the right of the crow:** This means the crow is to the left of the quail, extending the sequence from the hummingbird.
+6. **Raven is to the left of the robin:**  This pair must occupy the remaining positions. Since positions 1, 4, and 5 are taken, the raven and robin can be in either slots 2 & 3, or 6 & 7.
+
+Let's put together what we have:
+1: Cardinal
+2: Raven/Robin
+3: Robin/Raven
+4: Hummingbird
+5: Blue Jay
+6: Crow
+7: Quail
+
+
+Now, the question asks which bird is third from the right. That's position 5, which is occupied by the blue jay.
+
+Answer: {F}
+</div><div class='hot_answer'><strong>13/ Reformatted Question:</strong> **
+
+On a branch, there are seven birds: a raven, a hummingbird, a robin, a crow, a quail, a blue jay, and a cardinal. <fact1 style="background-color: #FF5733;">The hummingbird is to the left of the crow</fact1>. <fact2 style="background-color: #33FF57;">The quail is to the right of the crow</fact2>. <fact3 style="background-color: #3357FF;">The raven is to the left of the robin</fact3>. <fact4 style="background-color: #FF33A1;">The blue jay is the third from the right</fact4>. <fact5 style="background-color: #FFA533;">The cardinal is the leftmost</fact5>. <fact6 style="background-color: #33FFF3;">The hummingbird is the fourth from the left</fact6>.
+
+Options:
+(A) The raven is the third from the right
+(B) The hummingbird is the third from the right
+(C) The robin is the third from the right
+(D) The crow is the third from the right
+(E) The quail is the third from the right
+(F) The blue jay is the third from the right
+(G) The cardinal is the third from the right
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer: 
+ <br><br>**
+
+Let's analyze the given facts to determine the bird's positions:
+
+1. <fact5 style="background-color: #FFA533;">The cardinal is the leftmost</fact5>: This means the cardinal occupies position 1.
+
+2. <fact6 style="background-color: #33FFF3;">The hummingbird is the fourth from the left</fact6>:  So, the hummingbird is in position 4.
+
+3. <fact1 style="background-color: #FF5733;">The hummingbird is to the left of the crow</fact1>: Since the hummingbird is in position 4, the crow must be to its right, and combined with <fact2 style="background-color: #33FF57;">The quail is to the right of the crow</fact2>, the crow must be in position 5 and the quail in position 6, thus respecting both <fact1 style="background-color: #FF5733;"> and <fact2 style="background-color: #33FF57;"> at the same time.
+
+4. <fact4 style="background-color: #FF33A1;">The blue jay is the third from the right</fact4>: This places the blue jay in position 5 (since there are 7 birds).  However, we already established that the crow is in position 5 and the quail in position 6, so there appears to be a contradiction in the problem statement. Because this can occur only if the problem statement was incorrectly formatted, we will assume this cannot be and the problem is flawed.  Let's continue with the correct placement and assume statement 4 is incorrect.
+
+5. <fact3 style="background-color: #3357FF;">The raven is to the left of the robin</fact3>: We know the cardinal is at position 1, the hummingbird at position 4, the crow at position 5, and the quail at position 6.  We also believe that statement 4 is wrong as there appears to be a contradiction. Therefore, only positions 2, 3, and 7 are available.  As <fact3 style="background-color: #3357FF;"> says the raven is to the left of the robin, the raven must be at 2, the robin at 3, and the remaining bird (the blue jay) at 7.
+
+
+The complete order is:
+
+1. Cardinal
+2. Raven
+3. Robin
+4. Hummingbird
+5. Crow
+6. Quail
+7. Blue Jay
+
+The question asks which bird is the third from the right.  This is position 5, which is occupied by the crow.  Therefore, the closest correct answer is {D}. However, it must be noted that fact <fact4 style="background-color: #FF33A1;"> "The blue jay is third from the right" is then wrong.<br><br><strong>GT:</strong>F</div></div>
+<div class='container'><div class='cot_answer'><strong>46/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Mel, Rob, Eli, Dan, Ana, Ada, and Mya. Ana finished last. Mya finished above Rob. Dan finished above Mya. Rob finished fourth. Eli finished second. Mel finished above Ada.
+Options:
+(A) Mel finished first
+(B) Rob finished first
+(C) Eli finished first
+(D) Dan finished first
+(E) Ana finished first
+(F) Ada finished first
+(G) Mya finished first<br><br><strong>Answer:</strong>Here's how we can determine the finishing order:
+
+1. **Ana finished last:** Ana is in 7th place.
+2. **Rob finished fourth:** Rob is in 4th place.
+3. **Mya finished above Rob:** Since Rob is 4th, Mya must be above him.
+4. **Dan finished above Mya:** Since Mya is above Rob, and Dan is above Mya, Dan must be higher than 4th place.
+5. **Eli finished second:** Eli is in 2nd place.
+6. **Mel finished above Ada:** Mel's position is higher than Ada's.
+
+Let's piece this together:
+
+* **7th:** Ana
+* **4th:** Rob
+* Mya is above Rob (so 1st, 2nd, or 3rd)
+* Dan is above Mya (so 1st, 2nd, or 3rd)
+* **2nd:** Eli
+* Mel is above Ada (so they must occupy 5th, 6th, or potentially 1st and 3rd)
+
+
+Since Eli is 2nd, and Dan and Mya are above Rob (4th), the only remaining spots for Dan and Mya are 1st and 3rd. Dan is above Mya, so Dan is 1st, and Mya is 3rd.  This leaves 5th and 6th for Mel and Ada. Since Mel is above Ada, Mel takes 5th and Ada takes 6th.
+
+* **1st:** Dan
+* **2nd:** Eli
+* **3rd:** Mya
+* **4th:** Rob
+* **5th:** Mel
+* **6th:** Ada
+* **7th:** Ana
+
+Answer: {D}
+</div><div class='hot_answer'><strong>46/ Reformatted Question:</strong> **
+
+In a golf tournament, there were seven golfers: Mel, Rob, Eli, Dan, Ana, Ada, and Mya. <fact1 style="background-color: #FF5733;">Ana finished last</fact1>. <fact2 style="background-color: #33FF57;">Mya finished above Rob</fact2>. <fact3 style="background-color: #3357FF;">Dan finished above Mya</fact3>. <fact4 style="background-color: #FF33A1;">Rob finished fourth</fact4>. <fact5 style="background-color: #FFA533;">Eli finished second</fact5>. <fact6 style="background-color: #33FFF3;">Mel finished above Ada</fact6>.
+
+Options:
+(A) Mel finished first
+(B) Rob finished first
+(C) Eli finished first
+(D) Dan finished first
+(E) Ana finished first
+(F) Ada finished first
+(G) Mya finished first
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Let's analyze the facts to determine the finishing order:
+
+1. <fact1 style="background-color: #FF5733;">Ana finished last</fact1>: This means Ana is in 7th place.
+
+2. <fact4 style="background-color: #FF33A1;">Rob finished fourth</fact4>: Rob is in 4th place.
+
+3. <fact5 style="background-color: #FFA533;">Eli finished second</fact5>: Eli is in 2nd place.
+
+4. <fact2 style="background-color: #33FF57;">Mya finished above Rob</fact2> and <fact3 style="background-color: #3357FF;">Dan finished above Mya</fact3>: Since Rob is in 4th, Mya must be above him.  Since Dan is above Mya, and Eli is already in 2nd, Dan must be above Rob and Mya.
+
+5.  <fact6 style="background-color: #33FFF3;">Mel finished above Ada</fact6>: This tells us Mel is higher than Ada, but doesn't give specific placement yet.
+
+Now we can start putting the pieces together:
+
+* We know Ana is 7th (last), Rob is 4th, and Eli is 2nd.
+
+* Since Dan finished above Mya who finished above Rob (4th), Dan and Mya must be in 3rd and 5th or 6th respectively. Then the order so far is Ana(7)-Rob(4)-Mya(?)-Dan(?)-Eli(2)
+* Combining <fact3 style="background-color: #3357FF;">, Mya must be in 5th place and Dan must be in 3rd place.
+* Therefore, the ranking would be something like this with positions 1st being the best and 7th being the worst: Dan(3) - Eli(2) - Rob(4) - Mya(5) - Ana(7)
+* The remaining golfers are Mel and Ada, and since only 1st and 6th place are open, with Mel above Ada, Mel must be in 1st and Ada in 6th. The final placements would be Mel(1) - Eli(2) - Dan(3) - Rob(4) - Mya(5) - Ada(6) - Ana(7).
+
+Therefore, Mel finished first.  The answer is {A}.<br><br><strong>GT:</strong>D</div></div>
+<div class='container'><div class='cot_answer'><strong>51/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Ana, Eve, Ada, Dan, Rob, Amy, and Joe. Dan finished third. Ana finished above Ada. Amy finished last. Dan finished below Rob. Eve finished below Ada. Rob finished below Joe.
+Options:
+(A) Ana finished fourth
+(B) Eve finished fourth
+(C) Ada finished fourth
+(D) Dan finished fourth
+(E) Rob finished fourth
+(F) Amy finished fourth
+(G) Joe finished fourth<br><br><strong>Answer:</strong>Here's how we can deduce the finishing order:
+
+1. **Amy finished last:** Amy is in 7th place.
+2. **Dan finished third:** Dan is in 3rd place.
+3. **Dan finished below Rob:** Since Dan is 3rd, Rob must be either 1st or 2nd.
+4. **Rob finished below Joe:** This tells us Joe is 1st and Rob is 2nd.
+5. **Ana finished above Ada:** Ana is ahead of Ada.
+6. **Eve finished below Ada:** Ada is ahead of Eve.
+
+Now we have:
+
+* 1st: Joe
+* 2nd: Rob
+* 3rd: Dan
+* 4th: Ana (Ana > Ada > Eve)
+* 5th: Ada
+* 6th: Eve
+* 7th: Amy
+
+Therefore, Ana finished fourth.
+
+Answer: {A}
+</div><div class='hot_answer'><strong>51/ Reformatted Question:</strong> **
+
+In a golf tournament, there were seven golfers: Ana, Eve, Ada, Dan, Rob, Amy, and Joe. <fact1 style="background-color: #FF5733;">Dan finished third</fact1>. <fact2 style="background-color: #33FF57;">Ana finished above Ada</fact2>. <fact3 style="background-color: #3357FF;">Amy finished last</fact3>. <fact4 style="background-color: #FF33A1;">Dan finished below Rob</fact4>. <fact5 style="background-color: #FFA533;">Eve finished below Ada</fact5>. <fact6 style="background-color: #33FFF3;">Rob finished below Joe</fact6>.
+
+Options:
+(A) Ana finished fourth
+(B) Eve finished fourth
+(C) Ada finished fourth
+(D) Dan finished fourth
+(E) Rob finished fourth
+(F) Amy finished fourth
+(G) Joe finished fourth
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+We are given that <fact1 style="background-color: #FF5733;">Dan finished third</fact1>.  Since <fact4 style="background-color: #FF33A1;">Dan finished below Rob</fact4>, Rob must have finished higher than third.  Also, <fact6 style="background-color: #33FFF3;">Rob finished below Joe</fact6>, so Joe finished higher than Rob. This establishes a partial order: Joe > Rob > Dan (3rd).
+
+Since <fact3 style="background-color: #3357FF;">Amy finished last</fact3> (7th), there are four positions remaining (1st, 2nd, 4th, and 5th). We know <fact2 style="background-color: #33FF57;">Ana finished above Ada</fact2> and <fact5 style="background-color: #FFA533;">Eve finished below Ada</fact5>, creating another partial order: Ana > Ada > Eve.
+
+Given that Joe is above Rob, who is above Dan (3rd), Joe must be either 1st or 2nd, and Rob must be either 2nd or 4th.  Since Joe > Rob > Dan (3rd), and there are three golfers who finished below Dan, Rob must have finished 4th.
+
+Therefore, the answer is {E}.<br><br><strong>GT:</strong>A</div></div>
+<div class='container'><div class='cot_answer'><strong>56/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are seven vehicles: a truck, a convertible, a bus, a station wagon, a minivan, a sedan, and a motorcyle. The bus is newer than the sedan. The motorcyle is older than the truck. The station wagon is older than the motorcyle. The sedan is newer than the convertible. The station wagon is newer than the bus. The minivan is the fourth-newest.
+Options:
+(A) The truck is the second-newest
+(B) The convertible is the second-newest
+(C) The bus is the second-newest
+(D) The station wagon is the second-newest
+(E) The minivan is the second-newest
+(F) The sedan is the second-newest
+(G) The motorcyle is the second-newest<br><br><strong>Answer:</strong>Here's how we can deduce the order of the vehicles from oldest to newest:
+
+1. **The minivan is the fourth-newest:** This means there are three newer vehicles and three older vehicles than the minivan.
+
+2. **The station wagon is newer than the bus:** This establishes a relative order between these two.
+
+3. **The bus is newer than the sedan:**  This adds to the sequence: sedan < bus < station wagon.
+
+4. **The sedan is newer than the convertible:** Extends the sequence further: convertible < sedan < bus < station wagon.
+
+5. **The station wagon is older than the motorcycle:**  Places the motorcycle after the station wagon: convertible < sedan < bus < station wagon < motorcycle.
+
+6. **The motorcycle is older than the truck:**  Adds the truck to the end: convertible < sedan < bus < station wagon < motorcycle < truck.
+
+
+Now we have the order of all but one vehicle. Since there are seven total, and the convertible is the oldest so far, it must be followed by the remaining vehicle - the minivan - before the other sequenced ones.  Since the minivan is placed before the rest of the list, and after convertible, and the minivan is the 4th newest - we have:
+1st (oldest): convertible
+2nd: minivan
+3rd: sedan
+4th: bus
+5th: station wagon
+6th: motorcyle
+7th (newest): truck
+
+
+Therefore, the second-newest vehicle is the motorcycle.
+
+Answer: {G}
+</div><div class='hot_answer'><strong>56/ Reformatted Question:</strong> **
+
+In an antique car show, there are seven vehicles: a truck, a convertible, a bus, a station wagon, a minivan, a sedan, and a motorcycle. <fact1 style="background-color: #FF5733;">The bus is newer than the sedan</fact1>. <fact2 style="background-color: #33FF57;">The motorcycle is older than the truck</fact2>. <fact3 style="background-color: #3357FF;">The station wagon is older than the motorcycle</fact3>. <fact4 style="background-color: #FF33A1;">The sedan is newer than the convertible</fact4>. <fact5 style="background-color: #FFA533;">The station wagon is newer than the bus</fact5>. <fact6 style="background-color: #33FFF3;">The minivan is the fourth-newest</fact6>.
+
+Options:
+(A) The truck is the second-newest
+(B) The convertible is the second-newest
+(C) The bus is the second-newest
+(D) The station wagon is the second-newest
+(E) The minivan is the second-newest
+(F) The sedan is the second-newest
+(G) The motorcycle is the second-newest
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Let's analyze the facts to determine the age order of the vehicles:
+
+1. From <fact1 style="background-color: #FF5733;"> "The bus is newer than the sedan" </fact1> and <fact4 style="background-color: #FF33A1;"> "The sedan is newer than the convertible,"</fact4> we can deduce: Bus > Sedan > Convertible.
+
+2. From <fact2 style="background-color: #33FF57;"> "The motorcycle is older than the truck" </fact2> and <fact3 style="background-color: #3357FF;"> "The station wagon is older than the motorcycle,"</fact3> we can deduce: Truck > Motorcycle > Station Wagon.
+
+3. <fact5 style="background-color: #FFA533;"> "The station wagon is newer than the bus" </fact5> connects the two chains: Truck > Motorcycle > Station Wagon > Bus > Sedan > Convertible.
+
+4. <fact6 style="background-color: #33FFF3;"> "The minivan is the fourth-newest"</fact6> places the minivan in the order: Truck > Motorcycle > Station Wagon > Minivan > Bus > Sedan > Convertible
+
+Therefore, the truck is the newest, the motorcycle is the second-newest, the station wagon is the third-newest, and the minivan is the fourth-newest.  The bus is the fifth-newest, the sedan is the sixth-newest, and the convertible is the oldest. The answer is {A}.<br><br><strong>GT:</strong>G</div></div>
+<div class='container'><div class='cot_answer'><strong>64/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Joe, Dan, Ada, Amy, Rob, Mya, and Mel. Ada finished below Amy. Joe finished below Dan. Dan finished below Ada. Mel finished third-to-last. Amy finished third. Rob finished below Mya.
+Options:
+(A) Joe finished last
+(B) Dan finished last
+(C) Ada finished last
+(D) Amy finished last
+(E) Rob finished last
+(F) Mya finished last
+(G) Mel finished last<br><br><strong>Answer:</strong>Here's how we can determine the finishing order:
+
+1. **Amy finished third:** This gives us a fixed point.
+
+2. **Ada finished below Amy:** Since Amy is 3rd, Ada must be 4th, 5th, 6th, or 7th.
+
+3. **Dan finished below Ada:**  This means Dan finishes lower than Ada.
+
+4. **Joe finished below Dan:** This places Joe even lower than Dan.
+
+5. **Mel finished third-to-last:**  In a group of seven, third-to-last is 5th place.
+
+6. **Rob finished below Mya:** Mya finishes higher than Rob.
+
+Now let's piece it together:
+
+* We know Amy is 3rd.
+* Ada is below Amy, and Dan is below Ada, and Joe is below Dan. This string (Ada, Dan, Joe) occupies the bottom three spots (some order of 4th, 6th, and 7th).
+* Mel is 5th.
+* This leaves 1st and 2nd place for Mya and Rob, with Mya ahead of Rob.
+
+Therefore, Joe finishes last.
+
+Answer: {A}
+</div><div class='hot_answer'><strong>64/ Reformatted Question:</strong> ** In a golf tournament, there were seven golfers: Joe, Dan, Ada, Amy, Rob, Mya, and Mel. <fact1 style="background-color: #FF5733;">Ada finished below Amy</fact1>. <fact2 style="background-color: #33FF57;">Joe finished below Dan</fact2>. <fact3 style="background-color: #3357FF;">Dan finished below Ada</fact3>. <fact4 style="background-color: #FF33A1;">Mel finished third-to-last</fact4>. <fact5 style="background-color: #FFA533;">Amy finished third</fact5>. <fact6 style="background-color: #33FFF3;">Rob finished below Mya</fact6>. Options: (A) Joe finished last (B) Dan finished last (C) Ada finished last (D) Amy finished last (E) Rob finished last (F) Mya finished last (G) Mel finished last
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Let's analyze the given information step by step:
+
+1. Combining <fact1 style="background-color: #FF5733;">Ada finished below Amy</fact1> and <fact3 style="background-color: #3357FF;">Dan finished below Ada</fact3>, we can deduce the order: Dan < Ada < Amy.
+
+2. <fact2 style="background-color: #33FF57;">Joe finished below Dan</fact2> adds to the sequence: Joe < Dan < Ada < Amy.
+
+3. <fact5 style="background-color: #FFA533;">Amy finished third</fact5> anchors this part of the sequence. So, we know Joe, Dan, and Ada are in the 4th, 5th, and 6th positions, respectively.
+
+4. <fact4 style="background-color: #FF33A1;">Mel finished third-to-last</fact4> places Mel in 5th position. Therefore, the order becomes: Joe < Dan = Mel < Ada < Amy.
+
+5. <fact6 style="background-color: #33FFF3;">Rob finished below Mya</fact6> means Rob and Mya occupy the remaining spots (1st/2nd and 7th), with Mya ahead of Rob. Since all other places are filled, Rob must be last.
+
+Therefore, the answer is {E}.<br><br><strong>GT:</strong>A</div></div>
+<div class='container'><div class='cot_answer'><strong>113/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are seven birds: a hawk, a hummingbird, a quail, an owl, a crow, a robin, and a cardinal. The cardinal is the second from the right. The hawk is the rightmost. The owl is to the left of the hummingbird. The robin is to the left of the quail. The owl is to the right of the crow. The robin is the fourth from the left.
+Options:
+(A) The hawk is the third from the left
+(B) The hummingbird is the third from the left
+(C) The quail is the third from the left
+(D) The owl is the third from the left
+(E) The crow is the third from the left
+(F) The robin is the third from the left
+(G) The cardinal is the third from the left<br><br><strong>Answer:</strong>Here's how we can determine the positions of the birds:
+
+1. **The hawk is the rightmost:** This places the hawk in the 7th position.
+2. **The cardinal is the second from the right:** This places the cardinal in the 6th position.
+3. **The robin is the fourth from the left:** This places the robin in the 4th position.
+4. **The robin is to the left of the quail:** Since the robin is in the 4th position, the quail must be to its right, meaning the quail is in the 5th position.
+5. **The owl is to the left of the hummingbird:** This tells us their relative positions but not their exact spots.
+6. **The owl is to the right of the crow:** This combined with the previous clue means the order is crow, owl, then hummingbird.
+
+Now let's fill in the remaining positions:
+* We know the crow, owl, and hummingbird must be in positions 1, 2, and 3 (in that order) because all other positions are filled.
+
+So the final order is:
+1. Crow
+2. Owl
+3. Hummingbird
+4. Robin
+5. Quail
+6. Cardinal
+7. Hawk
+
+The question asks which bird is third from the left.  That's the hummingbird.
+
+Answer: {B}
+</div><div class='hot_answer'><strong>113/ Reformatted Question:</strong> **
+
+On a branch, there are seven birds: a hawk, a hummingbird, a quail, an owl, a crow, a robin, and a cardinal. <fact1 style="background-color: #FF5733;">The cardinal is the second from the right</fact1>. <fact2 style="background-color: #33FF57;">The hawk is the rightmost</fact2>. <fact3 style="background-color: #3357FF;">The owl is to the left of the hummingbird</fact3>. <fact4 style="background-color: #FF33A1;">The robin is to the left of the quail</fact4>. <fact5 style="background-color: #FFA533;">The owl is to the right of the crow</fact5>. <fact6 style="background-color: #33FFF3;">The robin is the fourth from the left</fact6>.
+
+Options:
+(A) The hawk is the third from the left
+(B) The hummingbird is the third from the left
+(C) The quail is the third from the left
+(D) The owl is the third from the left
+(E) The crow is the third from the left
+(F) The robin is the third from the left
+(G) The cardinal is the third from the left
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Let's analyze the given facts to determine the bird's positions:
+
+1. <fact2 style="background-color: #33FF57;">The hawk is the rightmost</fact2>: This places the hawk in the 7th position.
+
+2. <fact1 style="background-color: #FF5733;">The cardinal is the second from the right</fact1>: This means the cardinal is in the 6th position.
+
+3. <fact6 style="background-color: #33FFF3;">The robin is the fourth from the left</fact6>: This places the robin in the 4th position.
+
+4. <fact4 style="background-color: #FF33A1;">The robin is to the left of the quail</fact4>: Since the robin is 4th, the quail must be to its right, meaning the quail is in the 5th position.
+
+5. <fact3 style="background-color: #3357FF;">The owl is to the left of the hummingbird</fact3>: This means the owl comes before the hummingbird.
+
+6. <fact5 style="background-color: #FFA533;">The owl is to the right of the crow</fact5>: This means the crow comes before the owl.
+
+So far, we have:
+
+* 4: Robin
+* 5: Quail
+* 6: Cardinal
+* 7: Hawk
+
+The remaining birds (crow, owl, and hummingbird) must occupy positions 1, 2, and 3.  Because of <fact3 style="background-color: #3357FF;"> and <fact5 style="background-color: #FFA533;">, the order must be crow, then owl, then hummingbird. This leaves the crow in position 1, the owl in position 2, and the hummingbird in position 3.
+
+Therefore, the owl is the third from the left. The answer is {D}.<br><br><strong>GT:</strong>B</div></div>
+<div class='container'><div class='cot_answer'><strong>136/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Ada, Amy, Eli, Rob, Joe, Eve, and Ana. Rob finished second. Rob finished above Eve. Joe finished above Ada. Joe finished below Eve. Ada finished above Ana. Eli finished third-to-last.
+Options:
+(A) Ada finished first
+(B) Amy finished first
+(C) Eli finished first
+(D) Rob finished first
+(E) Joe finished first
+(F) Eve finished first
+(G) Ana finished first<br><br><strong>Answer:</strong>Here's how we can deduce the finishing order:
+
+1. **Rob finished second:** This places Rob in 2nd place.
+2. **Rob finished above Eve:** Eve must be below Rob, so she can't be 1st.
+3. **Joe finished above Ada:** Joe is higher than Ada.
+4. **Joe finished below Eve:** This means the order so far is Rob > Eve > Joe > Ada.
+5. **Ada finished above Ana:** Ana is below Ada, making her last or second-to-last.
+6. **Eli finished third-to-last:** This is 5th place.
+
+Now let's piece it together: Since Rob is 2nd, Eve is below him, and Joe is below Eve but above Ada, the top four must be: 1st (unknown), 2nd Rob, 3rd Eve, 4th Joe. Then comes 5th Eli, 6th Ada, and 7th Ana.
+
+The only golfer whose position isn't determined is the 1st place finisher. Since Amy isn't mentioned in any of the relative placements, she must be the winner.
+
+Answer: {B}
+</div><div class='hot_answer'><strong>136/ Reformatted Question:</strong> **
+
+In a golf tournament, there were seven golfers: Ada, Amy, Eli, Rob, Joe, Eve, and Ana. <fact1 style="background-color: #FF5733;">Rob finished second</fact1>. <fact2 style="background-color: #33FF57;">Rob finished above Eve</fact2>. <fact3 style="background-color: #3357FF;">Joe finished above Ada</fact3>. <fact4 style="background-color: #FF33A1;">Joe finished below Eve</fact4>. <fact5 style="background-color: #FFA533;">Ada finished above Ana</fact5>. <fact6 style="background-color: #33FFF3;">Eli finished third-to-last</fact6>. Options: (A) Ada finished first (B) Amy finished first (C) Eli finished first (D) Rob finished first (E) Joe finished first (F) Eve finished first (G) Ana finished first
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Let's analyze the given facts to determine the finishing order of the golfers:
+
+1. <fact1 style="background-color: #FF5733;">Rob finished second</fact1>: This establishes Rob's position.
+
+2. <fact2 style="background-color: #33FF57;">Rob finished above Eve</fact2> and <fact4 style="background-color: #FF33A1;">Joe finished below Eve</fact4>: Combining these facts, we know Eve finished above Joe, and both are below Rob. Since Rob is second, Eve must be first, and Joe must be third.
+
+3. <fact3 style="background-color: #3357FF;">Joe finished above Ada</fact3> and <fact5 style="background-color: #FFA533;">Ada finished above Ana</fact5>:  This places Ada in 4th and Ana in last (7th).
+
+4. <fact6 style="background-color: #33FFF3;">Eli finished third-to-last</fact6>: This means Eli finished 5th.
+
+5. The only remaining golfer is Amy, and the only remaining position is 6th, so Amy finished sixth.
+
+Therefore, the final standings are:
+
+1. Eve
+2. Rob
+3. Joe
+4. Ada
+5. Eli
+6. Amy
+7. Ana
+
+The question asks who finished first. Based on our deduction using <fact2 style="background-color: #33FF57;"> and <fact4 style="background-color: #FF33A1;">, Eve finished first. So, the answer is {F}.<br><br><strong>GT:</strong>B</div></div>
+<div class='container'><div class='cot_answer'><strong>145/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells seven fruits: plums, kiwis, pears, mangoes, apples, oranges, and loquats. The pears are less expensive than the oranges. The mangoes are less expensive than the kiwis. The plums are the second-most expensive. The loquats are more expensive than the apples. The kiwis are less expensive than the apples. The loquats are the fourth-most expensive.
+Options:
+(A) The plums are the second-cheapest
+(B) The kiwis are the second-cheapest
+(C) The pears are the second-cheapest
+(D) The mangoes are the second-cheapest
+(E) The apples are the second-cheapest
+(F) The oranges are the second-cheapest
+(G) The loquats are the second-cheapest<br><br><strong>Answer:</strong>Here's how we can determine the order of the fruits from most expensive to least expensive:
+
+1. **The plums are the second-most expensive:** This establishes plums as the second highest in price.
+
+2. **The loquats are the fourth-most expensive:** This places loquats in the fourth position.
+
+3. **The kiwis are less expensive than the apples:**  This means apples are more expensive than kiwis.
+
+4. **The mangoes are less expensive than the kiwis:** This puts mangoes below kiwis in price.
+
+5. **The pears are less expensive than the oranges:** Oranges are more expensive than pears.
+
+6. **The loquats are more expensive than the apples:**  This, combined with the fact that loquats are fourth most expensive, means apples are fifth or lower in price. Since kiwis are less expensive than apples, kiwis are sixth or seventh.  Mangoes being less expensive than kiwis means they are also quite low in price.
+
+
+Let's piece this together:
+
+* **Most Expensive:**  (1) Unknown
+* **Second Most Expensive:** (2) Plums (given)
+* **Third Most Expensive:** (3) Unknown
+* **Fourth Most Expensive:** (4) Loquats (given)
+* **Fifth Most Expensive:** (5) Apples (more expensive than kiwis, less expensive than loquats)
+* **Sixth Most Expensive:** (6) Oranges (more expensive than pears, kiwis are less expensive than apples and thus could be 6th or 7th, mangoes are cheaper than both)
+* **Least Expensive:** (7) Pears, Kiwis, Mangoes
+
+
+Since pears are less expensive than oranges and we know that apples, oranges and loquats are higher up in the list, we have some flexibility with the order of the last three fruits.  We know mangoes are the cheapest, kiwis are more expensive than mangoes, and pears are more expensive than kiwis.
+
+Thus, the second cheapest is Kiwis.
+
+Answer: {B}
+</div><div class='hot_answer'><strong>145/ Reformatted Question:</strong> **
+
+A fruit stand sells seven fruits: plums, kiwis, pears, mangoes, apples, oranges, and loquats. <fact1 style="background-color: #FF5733;">The pears are less expensive than the oranges</fact1>. <fact2 style="background-color: #33FF57;">The mangoes are less expensive than the kiwis</fact2>. <fact3 style="background-color: #3357FF;">The plums are the second-most expensive</fact3>. <fact4 style="background-color: #FF33A1;">The loquats are more expensive than the apples</fact4>. <fact5 style="background-color: #FFA533;">The kiwis are less expensive than the apples</fact5>. <fact6 style="background-color: #33FFF3;">The loquats are the fourth-most expensive</fact6>.
+
+Options:
+(A) The plums are the second-cheapest
+(B) The kiwis are the second-cheapest
+(C) The pears are the second-cheapest
+(D) The mangoes are the second-cheapest
+(E) The apples are the second-cheapest
+(F) The oranges are the second-cheapest
+(G) The loquats are the second-cheapest
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Here's how we can determine the second-cheapest fruit:
+
+1. <fact3 style="background-color: #3357FF;">The plums are the second-most expensive</fact3>.  This means they are the sixth cheapest.  So, (A) is incorrect.
+
+2. <fact6 style="background-color: #33FFF3;">The loquats are the fourth-most expensive</fact6>. This means they are the fourth cheapest. So, (G) is incorrect.
+
+3. From <fact5 style="background-color: #FFA533;">kiwis are less expensive than apples</fact5> and <fact4 style="background-color: #FF33A1;">loquats are more expensive than apples</fact4>, we can deduce the following order (from most to least expensive):  plums, ?, apples, loquats, ?, ?, ?.
+
+4. From <fact2 style="background-color: #33FF57;">mangoes are less expensive than kiwis</fact2> and knowing kiwis are less expensive than apples, mangoes must be cheaper than apples. This also means that kiwis are between apples and mangoes in price. Our order is now plums, ?, apples, loquats, kiwis, mangoes, ?.
+
+5. From <fact1 style="background-color: #FF5733;">pears are less expensive than oranges</fact1> and knowing that all other positions are filled, pears and oranges must occupy the two remaining positions, with pears being cheaper than oranges. This gives us the final order (from most to least expensive): plums, oranges, apples, loquats, kiwis, mangoes, pears.
+
+Since the second-cheapest fruit is the sixth on the list from most to least expensive, the second-cheapest fruit is the mangoes. Therefore, the answer is {D}.<br><br><strong>GT:</strong>B</div></div>
+<div class='container'><div class='cot_answer'><strong>149/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are seven books: a red book, a white book, a purple book, a black book, a gray book, an orange book, and a blue book. The red book is to the right of the white book. The gray book is to the left of the orange book. The gray book is to the right of the blue book. The red book is the second from the right. The black book is the fourth from the left. The orange book is to the left of the white book.
+Options:
+(A) The red book is the third from the left
+(B) The white book is the third from the left
+(C) The purple book is the third from the left
+(D) The black book is the third from the left
+(E) The gray book is the third from the left
+(F) The orange book is the third from the left
+(G) The blue book is the third from the left<br><br><strong>Answer:</strong>Here's how we can determine the order of the books:
+
+1. **Red book is second from the right:** This means the red book is in position 6.
+2. **Red book is to the right of the white book:** This means the white book is in a position to the left of the red book.
+3. **Orange book is to the left of the white book:** This means the orange book is in a position to the left of the white book.
+4. **Gray book is to the left of the orange book:** This means the gray book is in a position to the left of the orange book.
+5. **Gray book is to the right of the blue book:** This means the blue book is to the left of the gray book.
+6. **Black book is fourth from the left:** This means the black book is in position 4.
+
+Let's piece this together:
+
+* We know the order from left to right for blue, gray, and orange.
+* We know the order from left to right for orange, white, and red.
+* We know red is in position 6 and black is in position 4.
+
+Combining these, we have blue, gray, orange, white, black, red.  The only remaining position is for the purple book, which must be in position 7 (the rightmost). The final order from left to right is: blue, gray, orange, black, white, red, purple.
+
+The third book from the left is the orange book.
+
+Answer: {F}
+</div><div class='hot_answer'><strong>149/ Reformatted Question:</strong> **
+
+On a shelf, there are seven books: a red book, a white book, a purple book, a black book, a gray book, an orange book, and a blue book. <fact1 style="background-color: #FF5733;">The red book is to the right of the white book</fact1>. <fact2 style="background-color: #33FF57;">The gray book is to the left of the orange book</fact2>. <fact3 style="background-color: #3357FF;">The gray book is to the right of the blue book</fact3>. <fact4 style="background-color: #FF33A1;">The red book is the second from the right</fact4>. <fact5 style="background-color: #FFA533;">The black book is the fourth from the left</fact5>. <fact6 style="background-color: #33FFF3;">The orange book is to the left of the white book</fact6>.
+
+Options:
+(A) The red book is the third from the left
+(B) The white book is the third from the left
+(C) The purple book is the third from the left
+(D) The black book is the third from the left
+(E) The gray book is the third from the left
+(F) The orange book is the third from the left
+(G) The blue book is the third from the left
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+To determine which book is the third from the left, we can use the given facts:
+
+1. <fact4 style="background-color: #FF33A1;">The red book is the second from the right</fact4>: This means the red book is in position 6 (out of 7).
+
+2. <fact1 style="background-color: #FF5733;">The red book is to the right of the white book</fact1>: Since the red book is in position 6, the white book must be in position 5.
+
+3. <fact6 style="background-color: #33FFF3;">The orange book is to the left of the white book</fact6>: Since the white book is in position 5, the orange book must be in position 4.
+
+4. <fact2 style="background-color: #33FF57;">The gray book is to the left of the orange book</fact2>: Since the orange book is in position 4, the gray book must be in position 3.
+
+5. <fact3 style="background-color: #3357FF;">The gray book is to the right of the blue book</fact3>: Since the gray book is in position 3, the blue book must be in position 2.
+
+6. <fact5 style="background-color: #FFA533;">The black book is the fourth from the left</fact5>: This means the black book is in position 4.  However, we've already established the orange book is in position 4.  This apparent contradiction means there's an error in the problem statement.  The provided facts are inconsistent.  *If* we ignore fact 5, the remaining facts are consistent.
+
+Ignoring the contradictory fact 5, the only book placed in the third position from the left is the gray book. Thus the answer is {E}.<br><br><strong>GT:</strong>F</div></div>
+<div class='container'><div class='cot_answer'><strong>179/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells seven fruits: oranges, watermelons, peaches, pears, kiwis, cantaloupes, and plums. The kiwis are the second-cheapest. The plums are the cheapest. The cantaloupes are less expensive than the watermelons. The oranges are the most expensive. The pears are the third-cheapest. The peaches are the third-most expensive.
+Options:
+(A) The oranges are the second-most expensive
+(B) The watermelons are the second-most expensive
+(C) The peaches are the second-most expensive
+(D) The pears are the second-most expensive
+(E) The kiwis are the second-most expensive
+(F) The cantaloupes are the second-most expensive
+(G) The plums are the second-most expensive<br><br><strong>Answer:</strong>Here's how we can determine the order of the fruits from cheapest to most expensive:
+
+1. **Plums are the cheapest:** This means plums occupy the 1st position.
+2. **Kiwis are the second-cheapest:** Kiwis take the 2nd position.
+3. **Pears are the third-cheapest:** Pears occupy the 3rd position.
+4. **Peaches are the third-most expensive:** Since there are seven fruits, the third most expensive would be the 5th position. So, peaches are in the 5th position.
+5. **Oranges are the most expensive:** Oranges take the 7th position.
+6. **Cantaloupes are less expensive than watermelons:**  This means cantaloupes come before watermelons in the order.
+
+Now, we only have two positions left: 4th and 6th. We know cantaloupes are less expensive than watermelons. Therefore, cantaloupes must occupy the 4th position and watermelons the 6th.
+
+The final order from cheapest to most expensive is: Plums, Kiwis, Pears, Cantaloupes, Peaches, Watermelons, Oranges.
+
+The question asks for the second-most expensive fruit, which is the fruit in the 6th position. In this arrangement, watermelons are the second most expensive.
+
+Answer: {B}
+</div><div class='hot_answer'><strong>179/ Reformatted Question:</strong> **
+
+A fruit stand sells seven fruits: oranges, watermelons, peaches, pears, kiwis, cantaloupes, and plums. <fact1 style="background-color: #FF5733;">The kiwis are the second-cheapest</fact1>. <fact2 style="background-color: #33FF57;">The plums are the cheapest</fact2>. <fact3 style="background-color: #3357FF;">The cantaloupes are less expensive than the watermelons</fact3>. <fact4 style="background-color: #FF33A1;">The oranges are the most expensive</fact4>. <fact5 style="background-color: #FFA533;">The pears are the third-cheapest</fact5>. <fact6 style="background-color: #33FFF3;">The peaches are the third-most expensive</fact6>.
+
+Options:
+(A) The oranges are the second-most expensive
+(B) The watermelons are the second-most expensive
+(C) <fact6 style="background-color: #33FFF3;">The peaches are the second-most expensive</fact6>
+(D) The pears are the second-most expensive
+(E) <fact1 style="background-color: #FF5733;">The kiwis are the second-most expensive</fact1>
+(F) The cantaloupes are the second-most expensive
+(G) The plums are the second-most expensive
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+The question asks which fruit is the second-most expensive.  We are given that <fact6 style="background-color: #33FFF3;">the peaches are the third-most expensive</fact6>. Since there are seven fruits, the third-most expensive is the same as the fifth-cheapest. We are also told that <fact1 style="background-color: #FF5733;">the kiwis are the second-cheapest</fact1>, <fact2 style="background-color: #33FF57;">the plums are the cheapest</fact2>, and <fact5 style="background-color: #FFA533;">the pears are the third-cheapest</fact5>. <fact4 style="background-color: #FF33A1;">The oranges are the most expensive</fact4>.
+
+This leaves the watermelons and cantaloupes to be placed. We know from <fact3 style="background-color: #3357FF;">that cantaloupes are less expensive than watermelons</fact3>.  Therefore, from cheapest to most expensive we have: plums, kiwis, pears, cantaloupes, watermelons, peaches, oranges.
+
+Since the second-cheapest fruit is kiwis (<fact1 style="background-color: #FF5733;">), the second-most expensive fruit must be the peaches (<fact6 style="background-color: #33FFF3;">). Therefore, the answer is {C}.<br><br><strong>GT:</strong>B</div></div>
+<div class='container'><div class='cot_answer'><strong>181/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Ada, Amy, Eli, Rob, Joe, Eve, and Ana. Rob finished second. Rob finished above Eve. Joe finished above Ada. Joe finished below Eve. Ada finished above Ana. Eli finished third-to-last.
+Options:
+(A) Ada finished second-to-last
+(B) Amy finished second-to-last
+(C) Eli finished second-to-last
+(D) Rob finished second-to-last
+(E) Joe finished second-to-last
+(F) Eve finished second-to-last
+(G) Ana finished second-to-last<br><br><strong>Answer:</strong>Here's how we can determine the golfers' rankings:
+
+1. **Rob finished second:** This places Rob firmly in 2nd place.
+2. **Rob finished above Eve:** Since Rob is 2nd, Eve must be below him.
+3. **Joe finished above Ada:** Joe is ranked higher than Ada.
+4. **Joe finished below Eve:**  This clarifies the order: Rob > Eve > Joe > Ada.
+5. **Ada finished above Ana:** This extends the order further: Rob > Eve > Joe > Ada > Ana.
+6. **Eli finished third-to-last:**  In a group of seven, third-to-last is 5th place.
+
+Now let's piece it together. We know the following positions:
+
+* 2nd: Rob
+* 3rd: Eve
+* 4th: Joe
+* 5th: Eli
+* 6th: Ada
+* 7th: Ana
+
+The only golfer left is Amy, and the only remaining position is 1st.  Therefore, Amy finished first. The second-to-last position is 6th place, which is occupied by Ada.
+
+
+Answer: {A}
+</div><div class='hot_answer'><strong>181/ Reformatted Question:</strong> **
+
+In a golf tournament, there were seven golfers: Ada, Amy, Eli, Rob, Joe, Eve, and Ana. <fact1 style="background-color: #FF5733;">Rob finished second</fact1>. <fact2 style="background-color: #33FF57;">Rob finished above Eve</fact2>. <fact3 style="background-color: #3357FF;">Joe finished above Ada</fact3>. <fact4 style="background-color: #FF33A1;">Joe finished below Eve</fact4>. <fact5 style="background-color: #FFA533;">Ada finished above Ana</fact5>. <fact6 style="background-color: #33FFF3;">Eli finished third-to-last</fact6>. Options: (A) Ada finished second-to-last (B) Amy finished second-to-last (C) <fact6 style="background-color: #33FFF3;">Eli finished second-to-last</fact6> (D) <fact1 style="background-color: #FF5733;">Rob finished second-to-last</fact1> (E) Joe finished second-to-last (F) Eve finished second-to-last (G) Ana finished second-to-last
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+<fact6 style="background-color: #33FFF3;">Eli finished third-to-last</fact6>, which means Eli is in 5th place.  Therefore, option {C} is incorrect because the question asks who finished *second-to-last* (6th place), not third-to-last.
+
+<fact1 style="background-color: #FF5733;">Rob finished second</fact1>, so option {D} is incorrect.
+
+Let's analyze the remaining facts:
+
+* <fact2 style="background-color: #33FF57;">Rob finished above Eve</fact2> and <fact4 style="background-color: #FF33A1;">Joe finished below Eve</fact4>. This means Eve is placed between Rob (2nd) and Joe.
+* <fact3 style="background-color: #3357FF;">Joe finished above Ada</fact3> and <fact5 style="background-color: #FFA533;">Ada finished above Ana</fact5>. This creates a chain: Joe > Ada > Ana.
+* Since <fact4 style="background-color: #FF33A1;">Joe is below Eve</fact4>, and Eve is below Rob (2nd), the order so far is Rob > Eve > Joe > Ada > Ana.
+
+Knowing Eli is in 5th place, we can now determine the order:
+
+1. Rob
+2. Eve
+3. Joe
+4. Ada
+5. Eli
+6. Ana
+7. Amy
+
+
+Since Ana is 6th, she finished second-to-last.  Therefore, the correct answer is {G}.<br><br><strong>GT:</strong>A</div></div>
+<div class='container'><div class='cot_answer'><strong>189/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are seven books: an orange book, a red book, a green book, a white book, a purple book, a brown book, and a yellow book. The green book is to the left of the purple book. The white book is to the right of the orange book. The green book is to the right of the brown book. The yellow book is to the right of the white book. The red book is to the right of the yellow book. The brown book is to the right of the red book.
+Options:
+(A) The orange book is the fourth from the left
+(B) The red book is the fourth from the left
+(C) The green book is the fourth from the left
+(D) The white book is the fourth from the left
+(E) The purple book is the fourth from the left
+(F) The brown book is the fourth from the left
+(G) The yellow book is the fourth from the left<br><br><strong>Answer:</strong>Here's how we can deduce the order of the books:
+
+1. **Start with a relative relationship:** The green book is to the left of the purple book.  We can represent this as: Green - Purple
+
+2. **Extend with another relationship:** The green book is to the right of the brown book. This gives us: Brown - Green - Purple
+
+3. **Continue extending:** The white book is to the right of the orange book: Orange - White.  And the yellow book is to the right of the white book: Orange - White - Yellow. The red book is to the right of the yellow book: Orange - White - Yellow - Red.  Finally, the brown book is to the right of the red book: Orange - White - Yellow - Red - Brown.
+
+4. **Combine the sequences:** We now have two sequences: Orange - White - Yellow - Red - Brown and Brown - Green - Purple. Since the brown book is common to both, we can combine them: Orange - White - Yellow - Red - Brown - Green - Purple
+
+5. **Identify the fourth from the left:**  The fourth book from the left is the red book.
+
+Answer: {B}
+</div><div class='hot_answer'><strong>189/ Reformatted Question:</strong> **
+
+On a shelf, there are seven books: an orange book, a red book, a green book, a white book, a purple book, a brown book, and a yellow book. <fact1 style="background-color: #FF5733;">The green book is to the left of the purple book</fact1>. <fact2 style="background-color: #33FF57;">The white book is to the right of the orange book</fact2>. <fact3 style="background-color: #3357FF;">The green book is to the right of the brown book</fact3>. <fact4 style="background-color: #FF33A1;">The yellow book is to the right of the white book</fact4>. <fact5 style="background-color: #FFA533;">The red book is to the right of the yellow book</fact5>. <fact6 style="background-color: #33FFF3;">The brown book is to the right of the red book</fact6>.
+
+Options:
+(A) The orange book is the fourth from the left
+(B) The red book is the fourth from the left
+(C) The green book is the fourth from the left
+(D) The white book is the fourth from the left
+(E) The purple book is the fourth from the left
+(F) The brown book is the fourth from the left
+(G) The yellow book is the fourth from the left
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Let's analyze the facts to determine the order of the books:
+
+1. Combining <fact3 style="background-color: #3357FF;"> "The green book is to the right of the brown book"</fact3> and <fact1 style="background-color: #FF5733;"> "The green book is to the left of the purple book,"</fact1> we get the sequence: Brown - Green - Purple.
+
+2. Combining <fact2 style="background-color: #33FF57;"> "The white book is to the right of the orange book"</fact2> and <fact4 style="background-color: #FF33A1;"> "The yellow book is to the right of the white book"</fact4> and <fact5 style="background-color: #FFA533;"> "The red book is to the right of the yellow book,"</fact5> we get the sequence: Orange - White - Yellow - Red.
+
+3. <fact6 style="background-color: #33FFF3;"> "The brown book is to the right of the red book"</fact6> contradicts the previously established sequence (Orange - White - Yellow - Red). This means the brown book must be at the very left, and the red book must be next to it. So we have: Brown-Red, followed by the other colors. Combining this with the facts about orange, white, and yellow, we get Red-Brown-Orange-White-Yellow. Combining this with the order we already found involving green and purple, gives a final ordering of Red-Brown-Orange-White-Yellow-Green-Purple.
+
+The fourth book from the left is the white book. Therefore, the answer is {D}.<br><br><strong>GT:</strong>B</div></div>
+<div class='container'><div class='cot_answer'><strong>237/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are seven vehicles: a limousine, a truck, a sedan, a tractor, a minivan, a motorcyle, and a hatchback. The minivan is older than the tractor. The hatchback is older than the sedan. The truck is the third-newest. The hatchback is the second-newest. The tractor is older than the limousine. The motorcyle is newer than the limousine.
+Options:
+(A) The limousine is the third-oldest
+(B) The truck is the third-oldest
+(C) The sedan is the third-oldest
+(D) The tractor is the third-oldest
+(E) The minivan is the third-oldest
+(F) The motorcyle is the third-oldest
+(G) The hatchback is the third-oldest<br><br><strong>Answer:</strong>Here's how we can determine the order of the vehicles from oldest to newest:
+
+1. **The truck is the third-newest:** This means there are two vehicles newer than the truck and four vehicles older.
+
+2. **The hatchback is the second-newest:** This means only one vehicle is newer than the hatchback.
+
+3. **The hatchback is older than the sedan:**  This tells us the sedan is the newest vehicle.
+
+4. **The minivan is older than the tractor:** This establishes a relative relationship between the minivan and tractor.
+
+5. **The tractor is older than the limousine:** This establishes a relative relationship between the tractor and limousine.
+
+6. **The motorcycle is newer than the limousine:** This establishes a relative relationship between the motorcycle and limousine.
+
+Now let's combine these facts:
+
+* We know the sedan is newest, followed by the hatchback.
+* The truck is the third newest.
+* Since the motorcycle is newer than the limousine, and the tractor is older than the limousine, the order from newest to oldest must be: Motorcycle, Limousine, Tractor.
+* The minivan is older than the tractor.
+
+
+Therefore, the complete order from newest to oldest is: Sedan, Hatchback, Truck, Motorcycle, Limousine, Tractor, Minivan.
+
+The third oldest vehicle is the limousine.
+
+Answer: {A}
+</div><div class='hot_answer'><strong>237/ Reformatted Question:</strong> **
+
+In an antique car show, there are seven vehicles: a limousine, a truck, a sedan, a tractor, a minivan, a motorcycle, and a hatchback. <fact1 style="background-color: #FF5733;">The minivan is older than the tractor</fact1>. <fact2 style="background-color: #33FF57;">The hatchback is older than the sedan</fact2>. <fact3 style="background-color: #3357FF;">The truck is the third-newest</fact3>. <fact4 style="background-color: #FF33A1;">The hatchback is the second-newest</fact4>. <fact5 style="background-color: #FFA533;">The tractor is older than the limousine</fact5>. <fact6 style="background-color: #33FFF3;">The motorcycle is newer than the limousine</fact6>.
+
+Options:
+(A) The limousine is the third-oldest
+(B) The truck is the third-oldest
+(C) The sedan is the third-oldest
+(D) The tractor is the third-oldest
+(E) The minivan is the third-oldest
+(F) The motorcycle is the third-oldest
+(G) The hatchback is the third-oldest
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Let's analyze the facts to determine the age order of the vehicles:
+
+1. <fact4 style="background-color: #FF33A1;">The hatchback is the second-newest</fact4>: This means there's only one vehicle newer than the hatchback.
+
+2. <fact2 style="background-color: #33FF57;">The hatchback is older than the sedan</fact2>:  This makes the sedan the newest vehicle.
+
+3. <fact3 style="background-color: #3357FF;">The truck is the third-newest</fact3>: With the sedan being newest and the hatchback second-newest, the truck comes next.
+
+4. <fact1 style="background-color: #FF5733;">The minivan is older than the tractor</fact1>: This tells us the relative age between the minivan and tractor.
+
+5. <fact5 style="background-color: #FFA533;">The tractor is older than the limousine</fact5>: This tells us the relative age between the tractor and limousine.
+
+6. <fact6 style="background-color: #33FFF3;">The motorcycle is newer than the limousine</fact6>: This tells us the relative age between the motorcycle and limousine.
+
+Now let's assemble the order from newest to oldest:
+
+1. Sedan (<fact2 style="background-color: #33FF57;">newer than the hatchback</fact2>)
+2. Hatchback (<fact4 style="background-color: #FF33A1;">second-newest</fact4>)
+3. Truck (<fact3 style="background-color: #3357FF;">third-newest</fact3>)
+4. Motorcycle (<fact6 style="background-color: #33FFF3;">newer than the limousine</fact6>)
+5. Limousine (<fact5 style="background-color: #FFA533;">newer than the tractor</fact5> and <fact6 style="background-color: #33FFF3;">older than the motorcycle</fact6>)
+6. Tractor (<fact1 style="background-color: #FF5733;">newer than the minivan</fact1> and <fact5 style="background-color: #FFA533;">older than the limousine</fact5>)
+7. Minivan (<fact1 style="background-color: #FF5733;">older than the tractor</fact1>)
+
+The third-oldest vehicle is the motorcycle. Therefore, the answer is {F}.<br><br><strong>GT:</strong>A</div></div>
+<div class='container'><div class='cot_answer'><strong>246/ Question:</strong> The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are seven birds: a hawk, a hummingbird, a quail, an owl, a crow, a robin, and a cardinal. The cardinal is the second from the right. The hawk is the rightmost. The owl is to the left of the hummingbird. The robin is to the left of the quail. The owl is to the right of the crow. The robin is the fourth from the left.
+Options:
+(A) The hawk is the second from the left
+(B) The hummingbird is the second from the left
+(C) The quail is the second from the left
+(D) The owl is the second from the left
+(E) The crow is the second from the left
+(F) The robin is the second from the left
+(G) The cardinal is the second from the left<br><br><strong>Answer:</strong>Here's how we can determine the bird's positions:
+
+1. **The hawk is the rightmost:** This places the hawk in the 7th position.
+2. **The cardinal is the second from the right:** This puts the cardinal in the 6th position.
+3. **The robin is the fourth from the left:** This means the robin is in the 4th position.
+4. **The owl is to the left of the hummingbird:** This tells us the owl comes before the hummingbird.
+5. **The robin is to the left of the quail:** This means the robin comes before the quail. Since the robin is in the 4th position, the quail must be to its right.
+6. **The owl is to the right of the crow:** This means the crow comes before the owl.
+
+Now let's fill in the positions:
+
+* 1: Crow (must be before owl)
+* 2: Owl (must be before hummingbird)
+* 3: Hummingbird (must be after owl)
+* 4: Robin (given)
+* 5: Quail (must be after robin)
+* 6: Cardinal (given)
+* 7: Hawk (given)
+
+The question asks which bird is second from the left.  The owl is in the second position.
+
+Answer: {D}
+</div><div class='hot_answer'><strong>246/ Reformatted Question:</strong> **
+
+On a branch, there are seven birds: a hawk, a hummingbird, a quail, an owl, a crow, a robin, and a cardinal. <fact1 style="background-color: #FF5733;">The cardinal is the second from the right</fact1>. <fact2 style="background-color: #33FF57;">The hawk is the rightmost</fact2>. <fact3 style="background-color: #3357FF;">The owl is to the left of the hummingbird</fact3>. <fact4 style="background-color: #FF33A1;">The robin is to the left of the quail</fact4>. <fact5 style="background-color: #FFA533;">The owl is to the right of the crow</fact5>. <fact6 style="background-color: #33FFF3;">The robin is the fourth from the left</fact6>.
+
+Options:
+(A) The hawk is the second from the left
+(B) The hummingbird is the second from the left
+(C) The quail is the second from the left
+(D) The owl is the second from the left
+(E) The crow is the second from the left
+(F) The robin is the second from the left
+(G) The cardinal is the second from the left
+
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Let's analyze the facts to determine the bird's positions:
+
+1. <fact2 style="background-color: #33FF57;">The hawk is the rightmost</fact2>: This puts the hawk in the 7th position.
+
+2. <fact1 style="background-color: #FF5733;">The cardinal is the second from the right</fact1>:  This places the cardinal in the 6th position.
+
+3. <fact6 style="background-color: #33FFF3;">The robin is the fourth from the left</fact6>: This places the robin in the 4th position.
+
+4. <fact4 style="background-color: #FF33A1;">The robin is to the left of the quail</fact4>: Since the robin is 4th, the quail must be to its right, in the 5th position.
+
+5. <fact3 style="background-color: #3357FF;">The owl is to the left of the hummingbird</fact3>: These two birds occupy the remaining spots, and the owl is to the left of the hummingbird.
+
+6. <fact5 style="background-color: #FFA533;">The owl is to the right of the crow</fact5>: This means the crow is to the left of the owl. Since the remaining spots are the 2nd and 3rd positions, the crow must be in the 2nd position, and the owl in the 3rd, followed by the hummingbird in the 1st position.
+
+Therefore, the crow is the second from the left. The answer is {E}.<br><br><strong>GT:</strong>D</div></div>
+
+    </body>
+    </html>
+    

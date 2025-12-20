@@ -1,0 +1,701 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question and Answer Highlights</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .highlight {
+                background-color: #FFFF00; /* Yellow background for visibility */
+                font-weight: bold; /* Bold text for emphasis */
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .question, .answer {
+                flex: 1;
+                padding: 10px;
+            }
+            .container {
+                display: flex;
+            }
+
+            .container > div {
+                flex: 1;  /* Each div will take equal amount of space */
+            }
+
+            /* Optional styles for better visualization */
+            .div1 { background-color: lightblue; }
+            .div2 { background-color: lightgreen; }
+        </style>
+    </head>
+    <body>
+    <div class='container'><div class='cot_answer'><strong>10/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: kiwis, pears, peaches, loquats, and apples. The loquats are more expensive than the kiwis. The pears are more expensive than the peaches. The apples are more expensive than the loquats. The apples are less expensive than the peaches.
+Options:
+(A) The kiwis are the second-cheapest
+(B) The pears are the second-cheapest
+(C) The peaches are the second-cheapest
+(D) The loquats are the second-cheapest
+(E) The apples are the second-cheapest<br><br><strong>Answer:</strong>Here's how we can determine the order of the fruits from least to most expensive:
+
+1. **Apples are more expensive than loquats:** Apples > Loquats
+2. **Apples are less expensive than peaches:** Peaches > Apples
+3. **Loquats are more expensive than kiwis:** Loquats > Kiwis
+4. **Pears are more expensive than peaches:** Pears > Peaches
+
+Combining these facts, we get the complete order:
+
+Kiwis < Loquats < Apples < Peaches < Pears
+
+Therefore, the apples are the second-cheapest.
+
+Answer: {E}
+</div><div class='hot_answer'><strong>10/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: kiwis, pears, peaches, loquats, and apples. <fact1 style="background-color: #FF5733;">The loquats are more expensive than the kiwis</fact1>. <fact2 style="background-color: #33FF57;">The pears are more expensive than the peaches</fact2>. <fact3 style="background-color: #3357FF;">The apples are more expensive than the loquats</fact3>. <fact4 style="background-color: #FF33A1;">The apples are less expensive than the peaches</fact4>. Options: (A) The kiwis are the second-cheapest (B) The pears are the second-cheapest (C) The peaches are the second-cheapest (D) The loquats are the second-cheapest (E) The apples are the second-cheapest<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>Let's analyze the given facts to determine the price order of the fruits:
+
+1. <fact1 style="background-color: #FF5733;">Loquats are more expensive than kiwis</fact1>: This implies Kiwis < Loquats.
+
+2. <fact2 style="background-color: #33FF57;">Pears are more expensive than peaches</fact2>: This implies Peaches < Pears.
+
+3. <fact3 style="background-color: #3357FF;">Apples are more expensive than loquats</fact3>: This implies Loquats < Apples.
+
+4. <fact4 style="background-color: #FF33A1;">Apples are less expensive than peaches</fact4>: This implies Apples < Peaches.
+
+Combining these facts, we get the following order from cheapest to most expensive:
+
+Kiwis < Loquats < Apples < Peaches < Pears
+
+Therefore, the loquats are the second cheapest.  The answer is {D}.<br><br><strong>GT:</strong>D</div></div>
+<div class='container'><div class='cot_answer'><strong>34/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were five golfers: Eve, Eli, Joe, Rob, and Mya. Rob finished above Mya. Eve finished first. Joe finished above Eli. Joe finished below Mya.
+Options:
+(A) Eve finished second-to-last
+(B) Eli finished second-to-last
+(C) Joe finished second-to-last
+(D) Rob finished second-to-last
+(E) Mya finished second-to-last<br><br><strong>Answer:</strong>Here's how we can determine the finishing order:
+
+1. **Eve finished first:** This places Eve at the top of the ranking.
+2. **Rob finished above Mya:** This tells us Rob finished higher than Mya.
+3. **Joe finished above Eli:** Joe's ranking is higher than Eli's.
+4. **Joe finished below Mya:** Mya finished higher than Joe.
+
+Putting it all together:
+
+* **Eve** is 1st.
+* Since Rob is above Mya and Mya is above Joe, **Rob** must be above both of them.
+* Since Joe is above Eli, the order so far is Eve, Rob, Mya, Joe.
+* The only remaining golfer is Eli, who must be last.
+
+Therefore, the final order is Eve, Rob, Mya, Joe, Eli.  Mya finished second-to-last.
+
+Answer: {E}
+</div><div class='hot_answer'><strong>34/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were five golfers: Eve, Eli, Joe, Rob, and Mya. <fact1 style="background-color: #FF5733;">Rob finished above Mya</fact1>. <fact2 style="background-color: #33FF57;">Eve finished first</fact2>. <fact3 style="background-color: #3357FF;">Joe finished above Eli</fact3>. <fact4 style="background-color: #FF33A1;">Joe finished below Mya</fact4>. Options: (A) Eve finished second-to-last (B) Eli finished second-to-last (C) Joe finished second-to-last (D) Rob finished second-to-last (E) Mya finished second-to-last<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Let's analyze the given information to determine the finishing order of the golfers:
+
+1. <fact2 style="background-color: #33FF57;">Eve finished first</fact2>: This establishes Eve's position.
+
+2. <fact1 style="background-color: #FF5733;">Rob finished above Mya</fact1> and <fact4 style="background-color: #FF33A1;">Joe finished below Mya</fact4>: Combining these facts, we know Rob > Mya > Joe.
+
+3. <fact3 style="background-color: #3357FF;">Joe finished above Eli</fact3>: This places Eli last in the sequence we've built so far.
+
+Putting it all together, the order is: Eve > Rob > Mya > Joe > Eli.
+
+Since second-to-last is the 4th position in a group of 5, Joe finished second-to-last. The answer is {C}.<br><br><strong>GT:</strong>C</div></div>
+<div class='container'><div class='cot_answer'><strong>71/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: oranges, apples, peaches, cantaloupes, and loquats. The loquats are less expensive than the cantaloupes. The cantaloupes are less expensive than the apples. The oranges are the most expensive. The apples are the third-most expensive.
+Options:
+(A) The oranges are the second-cheapest
+(B) The apples are the second-cheapest
+(C) The peaches are the second-cheapest
+(D) The cantaloupes are the second-cheapest
+(E) The loquats are the second-cheapest<br><br><strong>Answer:</strong>Here's how we can determine the order of fruit prices:
+
+1. **Oranges are the most expensive:** This puts oranges at the top of the price list.
+2. **Apples are the third-most expensive:**  This means two fruits are more expensive than apples.
+3. **Cantaloupes are less expensive than apples:** Since apples are third most expensive, and oranges are the most expensive, cantaloupes must be the second most expensive.
+4. **Loquats are less expensive than cantaloupes:** This places loquats below cantaloupes in price.
+5. **Peaches:** Since we know the placement of oranges, apples, cantaloupes, and loquats, peaches must be the cheapest.
+
+So, the price order from most to least expensive is: Oranges > Cantaloupes > Apples > Loquats > Peaches. The second cheapest fruit is the loquats.
+
+Answer: {E}
+</div><div class='hot_answer'><strong>71/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: oranges, apples, peaches, cantaloupes, and loquats. <fact1 style="background-color: #FF5733;">The loquats are less expensive than the cantaloupes</fact1>. <fact2 style="background-color: #33FF57;">The cantaloupes are less expensive than the apples</fact2>. <fact3 style="background-color: #3357FF;">The oranges are the most expensive</fact3>. <fact4 style="background-color: #FF33A1;">The apples are the third-most expensive</fact4>. Options: (A) The oranges are the second-cheapest (B) The apples are the second-cheapest (C) The peaches are the second-cheapest (D) The cantaloupes are the second-cheapest (E) The loquats are the second-cheapest<br><br><strong>Answer:</strong>Reformatted Question: 
+
+
+Answer: 
+ <br><br>Here's how we can determine the second-cheapest fruit:
+
+1. **Oranges:** <fact3 style="background-color: #3357FF;">The oranges are the most expensive</fact3>, so they cannot be the second-cheapest.
+
+2. **Apples:** <fact4 style="background-color: #FF33A1;">The apples are the third-most expensive</fact4>.  This means there are two fruits cheaper than apples. Therefore, apples are not the second-cheapest.
+
+3. **Cantaloupes and Loquats:** <fact1 style="background-color: #FF5733;">Loquats are less expensive than cantaloupes</fact1>, and <fact2 style="background-color: #33FF57;">cantaloupes are less expensive than apples</fact2>. Since apples are the third most expensive, cantaloupes must be the second-cheapest.
+
+4. **Peaches:** We know oranges are the most expensive, apples are the third most expensive, and cantaloupes are the second cheapest. Loquats are cheaper than cantaloupes. This leaves peaches as the only option for the second most expensive fruit. Since there are only five fruits, the second most expensive fruit is also the third cheapest.
+
+Therefore, the second-cheapest fruit is the cantaloupe. The answer is {D}.<br><br><strong>GT:</strong>D</div></div>
+<div class='container'><div class='cot_answer'><strong>105/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are five vehicles: a truck, a station wagon, a motorcyle, a convertible, and a hatchback. The convertible is newer than the truck. The station wagon is newer than the hatchback. The convertible is older than the hatchback. The station wagon is the second-newest.
+Options:
+(A) The truck is the second-oldest
+(B) The station wagon is the second-oldest
+(C) The motorcyle is the second-oldest
+(D) The convertible is the second-oldest
+(E) The hatchback is the second-oldest<br><br><strong>Answer:</strong>Here's how we can deduce the age order of the vehicles:
+
+1. **The station wagon is the second-newest:** This means there's only one vehicle newer than it.
+
+2. **The convertible is older than the hatchback:**  This tells us the hatchback is newer than the convertible.
+
+3. **The station wagon is newer than the hatchback:** Combining this with point 2, we know the order from newest to oldest so far is: Station Wagon > Hatchback > Convertible.
+
+4. **The convertible is newer than the truck:** This extends the order to: Station Wagon > Hatchback > Convertible > Truck.
+
+5. **The motorcycle's position is not specified relative to any other vehicle.**  Since the station wagon is second-newest, the motorcycle must be the newest.  This completes the order: Motorcycle > Station Wagon > Hatchback > Convertible > Truck.
+
+The second-oldest vehicle is the station wagon.
+
+Answer: {B}
+</div><div class='hot_answer'><strong>105/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are five vehicles: a truck, a station wagon, a motorcycle, a convertible, and a hatchback. <fact1 style="background-color: #FF5733;">The convertible is newer than the truck</fact1>. <fact2 style="background-color: #33FF57;">The station wagon is newer than the hatchback</fact2>. <fact3 style="background-color: #3357FF;">The convertible is older than the hatchback</fact3>. <fact4 style="background-color: #FF33A1;">The station wagon is the second-newest</fact4>. Options: (A) The truck is the second-oldest (B) The station wagon is the second-oldest (C) The motorcycle is the second-oldest (D) The convertible is the second-oldest (E) The hatchback is the second-oldest<br><br><strong>Answer:</strong>Reformatted Question: 
+
+
+Answer: 
+ <br><br>Let's analyze the facts to determine the age order of the vehicles:
+
+1. <fact4 style="background-color: #FF33A1;">The station wagon is the second-newest</fact4>: This means the station wagon is fourth from the oldest.
+
+2. <fact2 style="background-color: #33FF57;">The station wagon is newer than the hatchback</fact2>:  Since the station wagon is fourth oldest, the hatchback must be older than the station wagon, making it either third or fourth oldest (fourth is already taken). Therefore the hatchback is the third oldest.
+
+3. <fact3 style="background-color: #3357FF;">The convertible is older than the hatchback</fact3>: Since the hatchback is third oldest, the convertible must be older, making it either first or second oldest.
+
+4. <fact1 style="background-color: #FF5733;">The convertible is newer than the truck</fact1>:  Since the convertible is older than the hatchback, and newer than the truck, the truck must be the oldest. This means the convertible is the second oldest.  The motorcycle's position is not specified, but that doesn't affect the answer.
+
+The question asks which vehicle is the second-oldest. Based on our analysis, the convertible is the second-oldest. Therefore, the answer is {D}.<br><br><strong>GT:</strong>D</div></div>
+<div class='container'><div class='cot_answer'><strong>107/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are five vehicles: a minivan, a hatchback, a bus, a convertible, and a motorcyle. The hatchback is newer than the convertible. The bus is newer than the hatchback. The bus is older than the motorcyle. The minivan is the newest.
+Options:
+(A) The minivan is the second-oldest
+(B) The hatchback is the second-oldest
+(C) The bus is the second-oldest
+(D) The convertible is the second-oldest
+(E) The motorcyle is the second-oldest<br><br><strong>Answer:</strong>Here's how we can determine the age order of the vehicles:
+
+1. **The minivan is the newest:** This places the minivan at the top of our list.
+
+2. **The bus is newer than the hatchback:** This tells us the bus comes before the hatchback.
+
+3. **The hatchback is newer than the convertible:** This places the convertible below the hatchback.
+
+4. **The bus is older than the motorcycle:** This means the motorcycle is newer than the bus, placing it right below the minivan.
+
+Combining these facts, we get the following order from newest to oldest:
+
+1. Minivan
+2. Motorcycle
+3. Bus
+4. Hatchback
+5. Convertible
+
+The second-oldest vehicle is the motorcycle.
+
+Answer: {E}
+</div><div class='hot_answer'><strong>107/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are five vehicles: a minivan, a hatchback, a bus, a convertible, and a motorcycle. <fact1 style="background-color: #FF5733;">The hatchback is newer than the convertible</fact1>. <fact2 style="background-color: #33FF57;">The bus is newer than the hatchback</fact2>. <fact3 style="background-color: #3357FF;">The bus is older than the motorcycle</fact3>. <fact4 style="background-color: #FF33A1;">The minivan is the newest</fact4>. Options: (A) The minivan is the second-oldest (B) The hatchback is the second-oldest (C) The bus is the second-oldest (D) The convertible is the second-oldest (E) The motorcycle is the second-oldest<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>Let's analyze the facts to determine the age order of the vehicles:
+
+1. <fact4 style="background-color: #FF33A1;">The minivan is the newest</fact4>: This means the minivan is the youngest.
+
+2. <fact3 style="background-color: #3357FF;">The bus is older than the motorcycle</fact3>: This tells us the motorcycle is newer than the bus.
+
+3. <fact2 style="background-color: #33FF57;">The bus is newer than the hatchback</fact2>:  This means the hatchback is older than the bus.
+
+4. <fact1 style="background-color: #FF5733;">The hatchback is newer than the convertible</fact1>: This tells us the convertible is older than the hatchback.
+
+Combining these facts, we can create an ordered list from newest to oldest:
+
+1. Minivan (<fact4 style="background-color: #FF33A1;">)
+2. Motorcycle (<fact3 style="background-color: #3357FF;">)
+3. Bus (<fact2 style="background-color: #33FF57;">, <fact3 style="background-color: #3357FF;">)
+4. Hatchback (<fact1 style="background-color: #FF5733;">, <fact2 style="background-color: #33FF57;">)
+5. Convertible (<fact1 style="background-color: #FF5733;">)
+
+The question asks for the second-oldest vehicle. From our ordered list, the second-oldest vehicle is the hatchback. Therefore, the answer is {B}.<br><br><strong>GT:</strong>B</div></div>
+<div class='container'><div class='cot_answer'><strong>108/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: an owl, a cardinal, a robin, a hummingbird, and a crow. The hummingbird is to the left of the owl. The hummingbird is to the right of the cardinal. The crow is to the left of the robin. The owl is to the left of the crow.
+Options:
+(A) The owl is the second from the right
+(B) The cardinal is the second from the right
+(C) The robin is the second from the right
+(D) The hummingbird is the second from the right
+(E) The crow is the second from the right<br><br><strong>Answer:</strong>Here's how we can determine the order of the birds:
+
+1. **The hummingbird is to the left of the owl:**  This gives us the sequence Cardinal - Hummingbird - Owl.
+
+2. **The hummingbird is to the right of the cardinal:** This confirms the sequence above.
+
+3. **The crow is to the left of the robin:** This gives us the sequence Crow - Robin.
+
+4. **The owl is to the left of the crow:** This connects our two sequences: Cardinal - Hummingbird - Owl - Crow - Robin.
+
+Therefore, the owl is the second from the right.
+
+Answer: {A}
+</div><div class='hot_answer'><strong>108/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: an owl, a cardinal, a robin, a hummingbird, and a crow. The <fact1 style="background-color: #FF5733;">hummingbird is to the left of the owl</fact1>. The <fact2 style="background-color: #33FF57;">hummingbird is to the right of the cardinal</fact2>. The <fact3 style="background-color: #3357FF;">crow is to the left of the robin</fact3>. The <fact4 style="background-color: #FF33A1;">owl is to the left of the crow</fact4>. Options: (A) The owl is the second from the right (B) The cardinal is the second from the right (C) The robin is the second from the right (D) The hummingbird is the second from the right (E) The crow is the second from the right<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Let's analyze the positions of the birds based on the given facts:
+1. Combining <fact1 style="background-color: #FF5733;">hummingbird is to the left of the owl</fact1> and <fact4 style="background-color: #FF33A1;">owl is to the left of the crow</fact4>, we get the sequence: hummingbird - owl - crow.
+2. <fact3 style="background-color: #3357FF;">The crow is to the left of the robin</fact3> adds to the sequence: hummingbird - owl - crow - robin.
+3. <fact2 style="background-color: #33FF57;">The hummingbird is to the right of the cardinal</fact2> completes the sequence: cardinal - hummingbird - owl - crow - robin.
+
+The question asks which bird is second from the right.  In our deduced sequence, the crow is second from the right. Thus, the answer is {E}.<br><br><strong>GT:</strong>E</div></div>
+<div class='container'><div class='cot_answer'><strong>125/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: kiwis, pears, peaches, loquats, and apples. The loquats are more expensive than the kiwis. The pears are more expensive than the peaches. The apples are more expensive than the loquats. The apples are less expensive than the peaches.
+Options:
+(A) The kiwis are the second-most expensive
+(B) The pears are the second-most expensive
+(C) The peaches are the second-most expensive
+(D) The loquats are the second-most expensive
+(E) The apples are the second-most expensive<br><br><strong>Answer:</strong>Here's how we can deduce the order of fruit prices:
+
+1. **Apples are more expensive than loquats:** Apples > Loquats
+2. **Apples are less expensive than peaches:** Peaches > Apples
+3. **Loquats are more expensive than kiwis:** Loquats > Kiwis
+4. **Pears are more expensive than peaches:** Pears > Peaches
+
+Combining these, we get: Pears > Peaches > Apples > Loquats > Kiwis.
+
+Therefore, the apples are the second-most expensive.
+
+Answer: {E}
+</div><div class='hot_answer'><strong>125/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: kiwis, pears, peaches, loquats, and apples. <fact1 style="background-color: #FF5733;">The loquats are more expensive than the kiwis</fact1>. <fact2 style="background-color: #33FF57;">The pears are more expensive than the peaches</fact2>. <fact3 style="background-color: #3357FF;">The apples are more expensive than the loquats</fact3>. <fact4 style="background-color: #FF33A1;">The apples are less expensive than the peaches</fact4>. Options: (A) The kiwis are the second-most expensive (B) The pears are the second-most expensive (C) The peaches are the second-most expensive (D) The loquats are the second-most expensive (E) The apples are the second-most expensive<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>Let's analyze the facts to determine the price order:
+
+1. Combining <fact3 style="background-color: #3357FF;">apples are more expensive than loquats</fact3> and <fact1 style="background-color: #FF5733;">loquats are more expensive than kiwis</fact1>, we get: apples > loquats > kiwis.
+
+2. From <fact4 style="background-color: #FF33A1;">apples are less expensive than peaches</fact4>, we know peaches > apples.
+
+3. From <fact2 style="background-color: #33FF57;">pears are more expensive than peaches</fact2>, we know pears > peaches.
+
+Putting it all together: pears > peaches > apples > loquats > kiwis.
+
+The second most expensive fruit is peaches. Therefore, the answer is {C}.<br><br><strong>GT:</strong>C</div></div>
+<div class='container'><div class='cot_answer'><strong>131/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are five books: a gray book, a red book, a purple book, a blue book, and a black book. The red book is to the right of the gray book. The black book is to the left of the blue book. The blue book is to the left of the gray book. The purple book is the second from the right.
+Options:
+(A) The gray book is the third from the left
+(B) The red book is the third from the left
+(C) The purple book is the third from the left
+(D) The blue book is the third from the left
+(E) The black book is the third from the left<br><br><strong>Answer:</strong>Here's how we can determine the order of the books:
+
+1. **The red book is to the right of the gray book:** This gives us the sequence gray - red.
+
+2. **The black book is to the left of the blue book:** This gives us the sequence black - blue.
+
+3. **The blue book is to the left of the gray book:** Combining this with the previous point, we have black - blue - gray.
+
+4. **The purple book is the second from the right:**  Since we know gray - red, and there are five books, the purple book must come before the gray book.
+
+Combining all these facts, we get the order: black - blue - purple - gray - red.
+
+The third book from the left is the purple book.
+
+Answer: {C}
+</div><div class='hot_answer'><strong>131/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are five books: a gray book, a red book, a purple book, a blue book, and a black book. The <fact1 style="background-color: #FF5733;">red book is to the right of the gray book</fact1>. The <fact2 style="background-color: #33FF57;">black book is to the left of the blue book</fact2>. The <fact3 style="background-color: #3357FF;">blue book is to the left of the gray book</fact3>. The <fact4 style="background-color: #FF33A1;">purple book is the second from the right</fact4>. Options: (A) The gray book is the third from the left (B) The red book is the third from the left (C) The purple book is the third from the left (D) The blue book is the third from the left (E) The black book is the third from the left<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Let's analyze the given facts to determine the order of the books:
+1. <fact4 style="background-color: #FF33A1;">The purple book is the second from the right</fact4>: This means the purple book is in the 4th position.
+2. <fact3 style="background-color: #3357FF;">The blue book is to the left of the gray book</fact3> and <fact1 style="background-color: #FF5733;">the red book is to the right of the gray book</fact1>: This tells us the order is blue - gray - red.
+3. <fact2 style="background-color: #33FF57;">The black book is to the left of the blue book</fact2>: This means the black book is to the left of the blue book.
+
+Combining these facts, we can deduce the complete order:
+1. Black
+2. Blue
+3. Gray
+4. Purple
+5. Red
+
+The question asks which book is third from the left. In our deduced order, the gray book occupies the 3rd position from the left. Therefore, the answer is {A}.<br><br><strong>GT:</strong>A</div></div>
+<div class='container'><div class='cot_answer'><strong>145/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: a blue jay, a cardinal, a hawk, a hummingbird, and a quail. The quail is to the left of the blue jay. The cardinal is the third from the left. The quail is the second from the left. The blue jay is to the left of the hummingbird.
+Options:
+(A) The blue jay is the rightmost
+(B) The cardinal is the rightmost
+(C) The hawk is the rightmost
+(D) The hummingbird is the rightmost
+(E) The quail is the rightmost<br><br><strong>Answer:</strong>Here's how we can determine the order of the birds:
+
+1. **The cardinal is the third from the left:** This places the cardinal in the middle position.
+
+2. **The quail is the second from the left:** This places the quail to the left of the cardinal.
+
+3. **The quail is to the left of the blue jay:** This places the blue jay to the right of the quail.
+
+4. **The blue jay is to the left of the hummingbird:** This places the hummingbird to the right of the blue jay.
+
+Since all other birds are placed relative to the left, and the hawk is not mentioned in those relative placements, the hawk must be at the rightmost position.
+
+Answer: {C}
+</div><div class='hot_answer'><strong>145/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: a blue jay, a cardinal, a hawk, a hummingbird, and a quail. The <fact1 style="background-color: #FF5733;">quail is to the left of the blue jay</fact1>. The <fact2 style="background-color: #33FF57;">cardinal is the third from the left</fact2>. The <fact3 style="background-color: #3357FF;">quail is the second from the left</fact3>. The <fact4 style="background-color: #FF33A1;">blue jay is to the left of the hummingbird</fact4>. Options: (A) The blue jay is the rightmost (B) The cardinal is the rightmost (C) The hawk is the rightmost (D) The hummingbird is the rightmost (E) The quail is the rightmost<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Let's analyze the given facts to determine the positions of the birds:
+1. <fact3 style="background-color: #3357FF;">The quail is the second from the left</fact3>: This means the quail is in position 2.
+2. <fact2 style="background-color: #33FF57;">The cardinal is the third from the left</fact2>: This puts the cardinal in position 3.
+3. <fact1 style="background-color: #FF5733;">The quail is to the left of the blue jay</fact1>: Since the quail is in position 2, the blue jay must be to its right.
+4. <fact4 style="background-color: #FF33A1;">The blue jay is to the left of the hummingbird</fact4>: Since the blue jay is to the right of the quail (position 2) and to the left of the hummingbird, and the cardinal is in position 3, the blue jay must be in position 4, and the hummingbird must be to its right.  This places the hummingbird in position 5 (rightmost).
+5.  Since the hawk hasn't been mentioned in any of the relative positioning facts, and positions 2, 3, 4 and 5 are filled, the hawk must be in position 1 (leftmost).
+
+Now we can summarize the positions of the birds from left to right:
+1. Hawk
+2. Quail
+3. Cardinal
+4. Blue Jay
+5. Hummingbird
+
+The question asks which bird is the rightmost.  Based on our analysis, the hummingbird is in the rightmost position (position 5). The answer is {D}.<br><br><strong>GT:</strong>D</div></div>
+<div class='container'><div class='cot_answer'><strong>146/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: mangoes, pears, cantaloupes, watermelons, and loquats. The mangoes are more expensive than the loquats. The cantaloupes are more expensive than the mangoes. The watermelons are more expensive than the cantaloupes. The pears are the cheapest.
+Options:
+(A) The mangoes are the second-most expensive
+(B) The pears are the second-most expensive
+(C) The cantaloupes are the second-most expensive
+(D) The watermelons are the second-most expensive
+(E) The loquats are the second-most expensive<br><br><strong>Answer:</strong>Here's the breakdown:
+
+1. **Pears are cheapest:** This establishes pears as the baseline.
+2. **Mangoes are more expensive than loquats:**  Mangoes > Loquats
+3. **Cantaloupes are more expensive than mangoes:** Cantaloupes > Mangoes
+4. **Watermelons are more expensive than cantaloupes:** Watermelons > Cantaloupes
+
+Putting it all together: Watermelons > Cantaloupes > Mangoes > Loquats > Pears
+
+Therefore, the loquats are the second cheapest, meaning they are the second-most expensive from the bottom or the least expensive side.
+
+Answer: {E}
+</div><div class='hot_answer'><strong>146/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: mangoes, pears, cantaloupes, watermelons, and loquats. <fact1 style="background-color: #FF5733;">The mangoes are more expensive than the loquats</fact1>. <fact2 style="background-color: #33FF57;">The cantaloupes are more expensive than the mangoes</fact2>. <fact3 style="background-color: #3357FF;">The watermelons are more expensive than the cantaloupes</fact3>. <fact4 style="background-color: #FF33A1;">The pears are the cheapest</fact4>. Options: (A) The mangoes are the second-most expensive (B) The pears are the second-most expensive (C) The cantaloupes are the second-most expensive (D) The watermelons are the second-most expensive (E) The loquats are the second-most expensive<br><br><strong>Answer:</strong>Reformatted Question: 
+
+
+Answer: 
+ <br><br>Here's the breakdown to determine the second-most expensive fruit:
+
+1. <fact4 style="background-color: #FF33A1;">Pears are the cheapest</fact4>: This establishes the pears as the least expensive.
+
+2. <fact1 style="background-color: #FF5733;">Mangoes are more expensive than loquats</fact1>:  This tells us mangoes > loquats in price.
+
+3. <fact2 style="background-color: #33FF57;">Cantaloupes are more expensive than mangoes</fact2>: This tells us cantaloupes > mangoes in price.
+
+4. <fact3 style="background-color: #3357FF;">Watermelons are more expensive than cantaloupes</fact3>: This tells us watermelons > cantaloupes in price.
+
+Combining these facts, we get the price order from most to least expensive: watermelons > cantaloupes > mangoes > loquats > pears. Therefore, the cantaloupes are the second-most expensive.  The answer is {C}.<br><br><strong>GT:</strong>C</div></div>
+<div class='container'><div class='cot_answer'><strong>153/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were five golfers: Eve, Eli, Joe, Rob, and Mya. Rob finished above Mya. Eve finished first. Joe finished above Eli. Joe finished below Mya.
+Options:
+(A) Eve finished third
+(B) Eli finished third
+(C) Joe finished third
+(D) Rob finished third
+(E) Mya finished third<br><br><strong>Answer:</strong>Here's how we can determine the finishing order:
+
+1. **Eve finished first:** This gives us the top position.
+2. **Rob finished above Mya:** This tells us Rob is higher than Mya, but we don't know their exact positions yet.
+3. **Joe finished above Eli:** This tells us Joe is higher than Eli.
+4. **Joe finished below Mya:** This connects the previous two statements, giving us a sequence: Rob > Mya > Joe > Eli.
+
+Since Eve is first, and Rob, Mya, Joe, and Eli follow in that order, the final order is Eve, Rob, Mya, Joe, Eli.  Therefore, Joe finished third.
+
+Answer: {C}
+</div><div class='hot_answer'><strong>153/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were five golfers: Eve, Eli, Joe, Rob, and Mya. <fact1 style="background-color: #FF5733;">Rob finished above Mya</fact1>. <fact2 style="background-color: #33FF57;">Eve finished first</fact2>. <fact3 style="background-color: #3357FF;">Joe finished above Eli</fact3>. <fact4 style="background-color: #FF33A1;">Joe finished below Mya</fact4>. Options: (A) Eve finished third (B) Eli finished third (C) Joe finished third (D) Rob finished third (E) Mya finished third<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Let's analyze the given facts to determine the finishing order:
+1. <fact2 style="background-color: #33FF57;">Eve finished first</fact2>: This means Eve is in 1st place.
+2. <fact1 style="background-color: #FF5733;">Rob finished above Mya</fact1>: This tells us Rob finished ahead of Mya.
+3. <fact4 style="background-color: #FF33A1;">Joe finished below Mya</fact4>: This means Mya finished ahead of Joe.
+4. <fact3 style="background-color: #3357FF;">Joe finished above Eli</fact3>: This tells us Joe finished ahead of Eli.
+
+Combining these facts, we can construct the order:
+1. Eve (<fact2 style="background-color: #33FF57;">Given</fact2>)
+2. Rob (<fact1 style="background-color: #FF5733;">Above Mya</fact1>)
+3. Mya (<fact1,4>Above Joe, below Rob</fact1,4>)
+4. Joe (<fact3,4>Above Eli, below Mya</fact3,4>)
+5. Eli (<fact3 style="background-color: #3357FF;">Below Joe</fact3>)
+
+The question asks who finished third. According to our deduced order, Mya finished third.  Therefore, the answer is {E}.<br><br><strong>GT:</strong>E</div></div>
+<div class='container'><div class='cot_answer'><strong>203/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: mangoes, cantaloupes, plums, oranges, and watermelons. The oranges are more expensive than the watermelons. The watermelons are the second-cheapest. The plums are less expensive than the cantaloupes. The plums are the second-most expensive.
+Options:
+(A) The mangoes are the third-most expensive
+(B) The cantaloupes are the third-most expensive
+(C) The plums are the third-most expensive
+(D) The oranges are the third-most expensive
+(E) The watermelons are the third-most expensive<br><br><strong>Answer:</strong>Here's how we can determine the order of fruit prices:
+
+1. **Watermelons are second-cheapest:** This means there's one fruit cheaper than watermelons and three fruits more expensive.
+
+2. **Oranges are more expensive than watermelons:**  This places oranges above watermelons in price.
+
+3. **Plums are the second-most expensive:** This means there's one fruit more expensive than plums and three fruits less expensive.
+
+4. **Plums are less expensive than cantaloupes:** This places cantaloupes above plums in price, making cantaloupes the most expensive.
+
+Now we can list the fruits in order of increasing price:
+1. (Cheapest) - Unknown
+2. Watermelons
+3. Oranges
+4. Plums
+5. Cantaloupes (Most expensive)
+
+
+The only fruit not placed is mangoes, and it must occupy the cheapest slot.  This also means mangoes are the third least expensive, or the third-most expensive.
+
+Answer: {A}
+</div><div class='hot_answer'><strong>203/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: mangoes, cantaloupes, plums, oranges, and watermelons. <fact1 style="background-color: #FF5733;">The oranges are more expensive than the watermelons</fact1>. <fact2 style="background-color: #33FF57;">The watermelons are the second-cheapest</fact2>. <fact3 style="background-color: #3357FF;">The plums are less expensive than the cantaloupes</fact3>. <fact4 style="background-color: #FF33A1;">The plums are the second-most expensive</fact4>. Options: (A) The mangoes are the third-most expensive (B) The cantaloupes are the third-most expensive (C) The plums are the third-most expensive (D) The oranges are the third-most expensive (E) The watermelons are the third-most expensive<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Here's how we can determine the price order of the fruits:
+
+1. <fact4 style="background-color: #FF33A1;">The plums are the second-most expensive</fact4>.
+
+2. <fact3 style="background-color: #3357FF;">The plums are less expensive than the cantaloupes</fact3>. This means cantaloupes are the most expensive.
+
+3. <fact2 style="background-color: #33FF57;">The watermelons are the second-cheapest</fact2>.
+
+4. <fact1 style="background-color: #FF5733;">The oranges are more expensive than the watermelons</fact1>. This means oranges are the third-most expensive.
+
+5.  Since mangoes haven't been mentioned in any comparison, they must be the cheapest.
+
+Therefore, the order from most to least expensive is: cantaloupes, plums, oranges, watermelons, mangoes. The question asks which fruit is the third-most expensive. Based on our deduced order, the answer is oranges. So the correct option is {D}.<br><br><strong>GT:</strong>D</div></div>
+<div class='container'><div class='cot_answer'><strong>212/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: apples, loquats, cantaloupes, watermelons, and kiwis. The watermelons are more expensive than the loquats. The watermelons are less expensive than the kiwis. The loquats are more expensive than the apples. The cantaloupes are the cheapest.
+Options:
+(A) The apples are the third-most expensive
+(B) The loquats are the third-most expensive
+(C) The cantaloupes are the third-most expensive
+(D) The watermelons are the third-most expensive
+(E) The kiwis are the third-most expensive<br><br><strong>Answer:</strong>Here's how we can determine the order of fruit prices:
+
+1. **Cantaloupes are the cheapest:** This places cantaloupes at the bottom of the price list.
+
+2. **Apples are cheaper than loquats:**  This means apples are above cantaloupes but below loquats.
+
+3. **Loquats are cheaper than watermelons:** This puts loquats below watermelons.
+
+4. **Watermelons are cheaper than kiwis:** This makes kiwis the most expensive.
+
+Putting it all together, the price order from cheapest to most expensive is: Cantaloupe, Apple, Loquat, Watermelon, Kiwi.
+
+Therefore, watermelons are the third most expensive.
+
+Answer: {D}
+</div><div class='hot_answer'><strong>212/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: apples, loquats, cantaloupes, watermelons, and kiwis. <fact1 style="background-color: #FF5733;">The watermelons are more expensive than the loquats</fact1>. <fact2 style="background-color: #33FF57;">The watermelons are less expensive than the kiwis</fact2>. <fact3 style="background-color: #3357FF;">The loquats are more expensive than the apples</fact3>. <fact4 style="background-color: #FF33A1;">The cantaloupes are the cheapest</fact4>. Options: (A) The apples are the third-most expensive (B) The loquats are the third-most expensive (C) The cantaloupes are the third-most expensive (D) The watermelons are the third-most expensive (E) The kiwis are the third-most expensive<br><br><strong>Answer:</strong>Reformatted Question: 
+
+
+Answer: 
+ <br><br>Here's how we can determine the order of the fruits from most to least expensive:
+
+1. <fact4 style="background-color: #FF33A1;">Cantaloupes are the cheapest</fact4>.  So, they are at the bottom of the list.
+
+2. <fact3 style="background-color: #3357FF;">Loquats are more expensive than apples</fact3>.
+
+3. <fact1 style="background-color: #FF5733;">Watermelons are more expensive than loquats</fact1>.
+
+4. <fact2 style="background-color: #33FF57;">Watermelons are less expensive than kiwis</fact2>.
+
+
+Putting it all together, we have the following order from cheapest to most expensive:
+
+1. Cantaloupes
+2. Apples
+3. Loquats
+4. Watermelons
+5. Kiwis
+
+The question asks which fruit is the third-most expensive. From our ordered list, we can see that loquats are the third-most expensive. Therefore, the answer is {B}.<br><br><strong>GT:</strong>B</div></div>
+<div class='container'><div class='cot_answer'><strong>215/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are five vehicles: a tractor, a truck, a bus, a minivan, and a convertible. The bus is newer than the tractor. The convertible is older than the tractor. The truck is the second-newest. The minivan is older than the convertible.
+Options:
+(A) The tractor is the second-oldest
+(B) The truck is the second-oldest
+(C) The bus is the second-oldest
+(D) The minivan is the second-oldest
+(E) The convertible is the second-oldest<br><br><strong>Answer:</strong>Here's how we can determine the age order of the vehicles:
+
+1. **The truck is the second-newest:** This means there's only one vehicle newer than the truck.
+
+2. **The bus is newer than the tractor:** This tells us the bus isn't the oldest, and the tractor isn't the newest.
+
+3. **The convertible is older than the tractor:** This means the convertible isn't the newest, and the tractor isn't the oldest.
+
+4. **The minivan is older than the convertible:** This tells us the minivan is older than both the convertible and the tractor (since the convertible is older than the tractor).
+
+Now let's put it all together. We know the truck is second newest.  The bus is newer than the tractor, and since only one vehicle can be newer than the truck, the bus must be the newest.  Therefore, the order from newest to oldest is:
+
+1. Bus
+2. Truck
+3. Tractor
+4. Convertible
+5. Minivan
+
+The second oldest vehicle is the truck.
+
+Answer: {B}
+</div><div class='hot_answer'><strong>215/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are five vehicles: a tractor, a truck, a bus, a minivan, and a convertible. <fact1 style="background-color: #FF5733;">The bus is newer than the tractor</fact1>. <fact2 style="background-color: #33FF57;">The convertible is older than the tractor</fact2>. <fact3 style="background-color: #3357FF;">The truck is the second-newest</fact3>. <fact4 style="background-color: #FF33A1;">The minivan is older than the convertible</fact4>. Options: (A) The tractor is the second-oldest (B) The truck is the second-oldest (C) The bus is the second-oldest (D) The minivan is the second-oldest (E) The convertible is the second-oldest<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Let's analyze the facts to determine the age order of the vehicles:
+
+1. <fact3 style="background-color: #3357FF;">The truck is the second-newest</fact3>: This means there is only one vehicle newer than the truck.
+
+2. <fact1 style="background-color: #FF5733;">The bus is newer than the tractor</fact1>: This tells us the bus is not the oldest vehicle and the tractor is not the newest.
+
+3. <fact2 style="background-color: #33FF57;">The convertible is older than the tractor</fact2>:  This means the convertible is not the newest, and the tractor is not the oldest.
+
+4. <fact4 style="background-color: #FF33A1;">The minivan is older than the convertible</fact4>: This tells us the minivan is not the newest and the convertible is not the oldest.
+
+Combining these facts:
+
+* Since the minivan is older than the convertible, and the convertible is older than the tractor, the minivan is the oldest.
+* The truck is the second newest, meaning it is fourth oldest.
+* The bus is newer than the tractor and the convertible is older than the tractor so the bus must be newer than the convertible and newer than the tractor.
+* <fact3 style="background-color: #3357FF;">Since the truck is the second newest</fact3>, the bus must be the newest since the minivan and the convertible and tractor are all older than the truck.
+
+This gives us the age order from oldest to newest: minivan, convertible, tractor, truck, bus.  The second oldest vehicle is the convertible. Therefore, the answer is {E}.<br><br><strong>GT:</strong>E</div></div>
+<div class='container'><div class='cot_answer'><strong>217/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: mangoes, kiwis, plums, pears, and watermelons. The kiwis are less expensive than the plums. The pears are the third-most expensive. The kiwis are the second-cheapest. The watermelons are the most expensive.
+Options:
+(A) The mangoes are the second-most expensive
+(B) The kiwis are the second-most expensive
+(C) The plums are the second-most expensive
+(D) The pears are the second-most expensive
+(E) The watermelons are the second-most expensive<br><br><strong>Answer:</strong>Here's how we can deduce the price order:
+
+1. **Watermelons are the most expensive:** This puts watermelons at the top of the price list.
+
+2. **Pears are the third-most expensive:** This places pears in the middle of the price list.
+
+3. **Kiwis are the second-cheapest:**  This means kiwis are just one step up from the cheapest fruit.
+
+4. **Kiwis are less expensive than plums:** This tells us plums are more expensive than kiwis.
+
+Now let's put it together. We know watermelons are the most expensive, and pears are third.  Since kiwis are second-cheapest and less expensive than plums, the order so far is:
+
+* Most Expensive: Watermelons
+* ?: ?
+* Third Most Expensive: Pears
+* ?: Plums
+* Second Cheapest: Kiwis
+
+This leaves mangoes to fill the second most expensive slot.
+
+Answer: {A}
+</div><div class='hot_answer'><strong>217/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: mangoes, kiwis, plums, pears, and watermelons. <fact1 style="background-color: #FF5733;">The kiwis are less expensive than the plums</fact1>. <fact2 style="background-color: #33FF57;">The pears are the third-most expensive</fact2>. <fact3 style="background-color: #3357FF;">The kiwis are the second-cheapest</fact3>. <fact4 style="background-color: #FF33A1;">The watermelons are the most expensive</fact4>. Options: (A) The mangoes are the second-most expensive (B) The kiwis are the second-most expensive (C) The plums are the second-most expensive (D) The pears are the second-most expensive (E) The watermelons are the second-most expensive<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Let's analyze the given information:
+1. <fact4 style="background-color: #FF33A1;">Watermelons are the most expensive</fact4>.
+2. <fact2 style="background-color: #33FF57;">Pears are the third most expensive</fact2>.
+3. <fact3 style="background-color: #3357FF;">Kiwis are the second cheapest</fact3>.  Since there are five fruits, the second cheapest is the same as the fourth most expensive.
+4. <fact1 style="background-color: #FF5733;">Kiwis are less expensive than plums</fact1>.  This means plums are more expensive than kiwis.
+
+Now, let's arrange the fruits from most expensive to least expensive:
+1. Watermelons (<fact4 style="background-color: #FF33A1;">)
+2.  (Unknown - This is what we need to find)
+3. Pears (<fact2 style="background-color: #33FF57;">)
+4. Kiwis (<fact3 style="background-color: #3357FF;">)
+5. (Unknown)
+
+Since kiwis are less expensive than plums (<fact1 style="background-color: #FF5733;">), plums must be more expensive than kiwis and can only occupy the second position on the list.  Therefore, plums are the second most expensive. Mangoes must then be the cheapest.
+
+Final Arrangement (Most to Least Expensive):
+1. Watermelons
+2. Plums
+3. Pears
+4. Kiwis
+5. Mangoes
+
+The question asks which fruit is the second-most expensive. Based on our analysis, plums are the second most expensive. The answer is {C}.<br><br><strong>GT:</strong>C</div></div>
+<div class='container'><div class='cot_answer'><strong>236/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are five books: a brown book, a yellow book, an orange book, a green book, and a gray book. The green book is to the left of the gray book. The brown book is the third from the left. The gray book is the second from the right. The yellow book is to the left of the green book.
+Options:
+(A) The brown book is the leftmost
+(B) The yellow book is the leftmost
+(C) The orange book is the leftmost
+(D) The green book is the leftmost
+(E) The gray book is the leftmost<br><br><strong>Answer:</strong>Here's how we can determine the order of the books:
+
+1. **The brown book is the third from the left:** This gives us: _ _ Brown _ _
+
+2. **The gray book is the second from the right:** This gives us: _ _ _ Gray _
+
+3. **The green book is to the left of the gray book:**  Since the gray book is second from the right, the green book must be directly to its left: _ _ _ Green Gray _
+
+4. **The yellow book is to the left of the green book:** This means the yellow book comes before the green book. Since the third position is occupied by the brown book, the yellow book must come before it: _ Yellow _ Green Gray _
+
+5. **The only remaining book is the orange book:**  This must occupy the last remaining spot, at the very left: Orange Yellow _ Green Gray _
+
+Therefore, the order of the books is: Orange, Yellow, Brown, Green, Gray. The leftmost book is the orange book.
+
+Answer: {C}
+</div><div class='hot_answer'><strong>236/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are five books: a brown book, a yellow book, an orange book, a green book, and a gray book. <fact1 style="background-color: #FF5733;">The green book is to the left of the gray book</fact1>. <fact2 style="background-color: #33FF57;">The brown book is the third from the left</fact2>. <fact3 style="background-color: #3357FF;">The gray book is the second from the right</fact3>. <fact4 style="background-color: #FF33A1;">The yellow book is to the left of the green book</fact4>. Options: (A) The brown book is the leftmost (B) The yellow book is the leftmost (C) The orange book is the leftmost (D) The green book is the leftmost (E) The gray book is the leftmost<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Let's analyze the facts to determine the order of the books:
+
+1. <fact2 style="background-color: #33FF57;">The brown book is the third from the left</fact2>. This means we can represent the order so far as _ _ Brown _ _.
+
+2. <fact3 style="background-color: #3357FF;">The gray book is the second from the right</fact3>. This means the gray book is fourth from the left. Now our order looks like _ _ Brown _ Gray.
+
+3. <fact1 style="background-color: #FF5733;">The green book is to the left of the gray book</fact1>. Since the brown book is third from the left and the gray book is fourth, the green book must be second from the left. The order is now _ Green Brown _ Gray.
+
+4. <fact4 style="background-color: #FF33A1;">The yellow book is to the left of the green book</fact4>. This means the yellow book must be the leftmost book. Our order is now Yellow Green Brown _ Gray.
+
+The only remaining spot is for the orange book, which goes between the brown and gray books. The final order is Yellow Green Brown Orange Gray.
+
+Since the question asks which book is the leftmost, and we deduced that the yellow book is leftmost, the answer is {B}.<br><br><strong>GT:</strong>B</div></div>
+<div class='container'><div class='cot_answer'><strong>239/ Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were five golfers: Eve, Amy, Ada, Rob, and Joe. Amy finished second-to-last. Rob finished below Eve. Ada finished above Joe. Joe finished second.
+Options:
+(A) Eve finished first
+(B) Amy finished first
+(C) Ada finished first
+(D) Rob finished first
+(E) Joe finished first<br><br><strong>Answer:</strong>Here's how we can deduce the finishing order:
+
+1. **Joe finished second:** This gives us a fixed point to work with.
+2. **Amy finished second-to-last:**  This means Amy finished fourth.
+3. **Ada finished above Joe:** Since Joe is second, Ada must be first.
+4. **Rob finished below Eve:** This tells us their relative positions, but not their exact placements.
+
+Now let's piece it together:
+
+* **1st: Ada** (Above Joe)
+* **2nd: Joe** (Given)
+* **3rd: Eve** (Rob is below Eve, and the remaining spots are 3rd and 5th. Rob can't be 5th as Amy is already 4th)
+* **4th: Amy** (Second to last)
+* **5th: Rob** (Below Eve)
+
+Therefore, Eve finished first.
+
+Answer: {A}
+</div><div class='hot_answer'><strong>239/ Reformatted Question:</strong> The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were five golfers: Eve, Amy, Ada, Rob, and Joe. <fact1 style="background-color: #FF5733;">Amy finished second-to-last</fact1>. <fact2 style="background-color: #33FF57;">Rob finished below Eve</fact2>. <fact3 style="background-color: #3357FF;">Ada finished above Joe</fact3>. <fact4 style="background-color: #FF33A1;">Joe finished second</fact4>. Options: (A) Eve finished first (B) Amy finished first (C) Ada finished first (D) Rob finished first (E) Joe finished first<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Let's analyze the given facts to determine the finishing order:
+
+1. <fact4 style="background-color: #FF33A1;">Joe finished second</fact4>: This establishes Joe's position.
+
+2. <fact1 style="background-color: #FF5733;">Amy finished second-to-last</fact1>:  In a group of five, second-to-last is fourth place.
+
+3. <fact3 style="background-color: #3357FF;">Ada finished above Joe</fact3>: Since Joe is in second, Ada must be in first.
+
+4. <fact2 style="background-color: #33FF57;">Rob finished below Eve</fact2>: This tells us Eve finished ahead of Rob.  Since the only remaining positions are third and fifth, and Eve is ahead of Rob, Eve must be third and Rob fifth.
+
+Therefore, the order is: 1st: Ada, 2nd: Joe, 3rd: Eve, 4th: Amy, 5th: Rob.  Since <fact3 style="background-color: #3357FF;">Ada finished above Joe</fact3> and <fact4 style="background-color: #FF33A1;">Joe finished second</fact4>, Ada must have finished first. The answer is {C}.<br><br><strong>GT:</strong>C</div></div>
+
+    </body>
+    </html>
+    

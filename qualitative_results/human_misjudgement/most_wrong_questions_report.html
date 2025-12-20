@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Study Analysis - Most Wrong Questions</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --border-color: #30363d;
+            --accent-red: #f85149;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-yellow: #d29922;
+            --accent-purple: #a371f7;
+            --accent-orange: #db6d28;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-value.green { color: var(--accent-green); }
+        .stat-value.red { color: var(--accent-red); }
+        .stat-value.blue { color: var(--accent-blue); }
+        .stat-value.yellow { color: var(--accent-yellow); }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 2px;
+        }
+        
+        .question-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .question-header {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .question-rank {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .rank-badge {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+        }
+        
+        .question-id {
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            background: var(--bg-primary);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+        }
+        
+        .question-stats {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .stat-icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        
+        .stat-icon.wrong { background: var(--accent-red); }
+        .stat-icon.total { background: var(--accent-blue); }
+        .stat-icon.rate { background: var(--accent-yellow); }
+        .stat-icon.truth { background: var(--accent-green); }
+        
+        .question-body {
+            padding: 1.5rem;
+        }
+        
+        .question-content {
+            background: var(--bg-primary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .question-part {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        .answer-part {
+            color: var(--text-secondary);
+        }
+        
+        .fact {
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .fact-1 { background: rgba(88, 166, 255, 0.2); color: var(--accent-blue); }
+        .fact-2 { background: rgba(163, 113, 247, 0.2); color: var(--accent-purple); }
+        .fact-3 { background: rgba(63, 185, 80, 0.2); color: var(--accent-green); }
+        .fact-4 { background: rgba(210, 153, 34, 0.2); color: var(--accent-yellow); }
+        
+        .ground-truth {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .gt-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .gt-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent-green);
+        }
+        
+        .gt-status {
+            margin-left: auto;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .gt-status.correct {
+            background: rgba(63, 185, 80, 0.15);
+            color: var(--accent-green);
+        }
+        
+        .gt-status.incorrect {
+            background: rgba(248, 81, 73, 0.15);
+            color: var(--accent-red);
+        }
+        
+        .dataset-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background: var(--bg-primary);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        
+        .summary-table th,
+        .summary-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .summary-table th {
+            background: var(--bg-tertiary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }
+        
+        .summary-table tr:hover {
+            background: var(--bg-tertiary);
+        }
+        
+        .error-bar {
+            width: 100px;
+            height: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .error-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-yellow), var(--accent-red));
+            border-radius: 4px;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Human Study Analysis</h1>
+            <p class="subtitle">Questions Most People Got Wrong - Identifying AI Errors</p>
+        </header>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value blue">595</div>
+                <div class="stat-label">Total Responses</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value green">444</div>
+                <div class="stat-label">Correct (74.6%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value red">151</div>
+                <div class="stat-label">Incorrect (25.4%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value yellow">55.9s</div>
+                <div class="stat-label">Avg Time/Question</div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Top 20 Hardest Questions</h2>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#1</span>
+                    <span class="question-id">1755</span>
+                    <span class="dataset-badge">symbolic</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>2</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>2</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>100.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Arash is raising money for a music festival. He has applied for help from the <span class="fact fact-1">youth club, which has decided to cover 1/5 of the cost of the music festival</span>. How much money is Arash missing if he has <span class="fact fact-2">¥90</span> and the music festival costs <span class="fact fact-3">¥420</span>?
+
+</div><div class="answer-part"><strong>Answer:</strong> The youth club will cover <span class="fact fact-1">1/5</span> of the cost of the music festival, which is <span class="fact fact-1">1/5</span> * <span class="fact fact-3">¥420</span> = ¥84. Arash has <span class="fact fact-2">¥90</span>, so he has ¥90 - ¥84 = ¥6 more than the amount covered by the youth club. Since the music festival costs ¥420, Arash is missing ¥420 - ¥90 = ¥330.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">246.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#2</span>
+                    <span class="question-id">history_1954_2c054bf0-1177-4f44-865c-a6e02d20494e</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>6</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>7</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>85.7%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> As of the census of 2000, there were 19,234 people, 7,473 households, and 4,954 families residing in the village. The population density was 10,337.3 people per square mile (3,992.6/km²). There were 7,650 housing units at an average density of 4,111.5/sq mi (1,588.0/km²). The racial makeup of the village was 82.39% White (U.S. Census), 1.03% African American (U.S. Census), 0.29% Native American (U.S. Census), 4.52% Asian (U.S. Census), 0.04% Pacific Islander (U.S. Census), 3.93% from Race (United States Census), and 3.79% from two or more races. 13.03% of the population is Hispanic (U.S. Census) or Latino (U.S. Census) of any race. How many more people, in terms of percentage, were in the two biggest racial groups combined compared to the two smallest groups combined?
+
+</div><div class="answer-part"><strong>Answer:</strong> According to the passage, the two biggest racial groups are White (82.39%) and Asian (4.52%), and the two smallest groups are Pacific Islander (0.04%) and Native American (0.29%). The sum of the two biggest groups is 82.39% + 4.52% = 86.91%, and the sum of the two smallest groups is 0.04% + 0.29% = 0.33%. The difference between the two sums is 86.91% - 0.33% = 86.58%. So the answer is {86.58}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">95.09</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#3</span>
+                    <span class="question-id">326</span>
+                    <span class="dataset-badge">symbolic</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>3</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>4</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>75.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Umar has 70 square meters of banana field. There are 31 bananas per square meter. Umar can harvest his bananas every 4 months. How many bananas can Umar harvest within a year?
+</div><div class="answer-part"><strong>Answer:</strong> Since Umar can harvest his bananas every 4 months, he can harvest bananas 4 times a year. Each time he harvests, he gets 31 bananas per square meter * 70 square meters = 2170 bananas. Therefore, Umar can harvest a total of 4 * 2170 = 8680 bananas within a year.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">6510.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#4</span>
+                    <span class="question-id">644</span>
+                    <span class="dataset-badge">symbolic</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>2</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>3</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>66.7%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Leilani and Mateo have 192 minutes to walk to the mall together starting from their home. It takes them 13 minutes to get to the corner where the gym is. It takes them another 42 minutes to get to the library. When they reach the library, they remember they forgot their wallets at home, so they have to return to pick up their wallets and then walk all the way back to the library again. Once they reach the library for the second time, how much longer do they have to get to the mall without being late?
+
+</div><div class="answer-part"><strong>Answer:</strong> It takes them 13 minutes + 42 minutes = 55 minutes to get to the library. Since they have to return home and then walk back to the library, they spend 55 * 2 = 110 minutes walking to the library and back. They have 192 minutes - 110 minutes = 82 minutes left to get to the mall without being late.
+The answer is {82}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">27.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#5</span>
+                    <span class="question-id">history_1408_7b6e7625-a8ba-4cde-8496-1f6c222b2bc9</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>2</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>3</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>66.7%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> From 1623 to 1624 the Dutch had been at war over the Pescadores, and in 1633 clashed with a fleet led by Zheng Zhilong in the Battle of Liaoluo Bay, ending in another Dutch defeat. By 1632 the Dutch had established a post on a peninsula named Tayoan , which was separated from the main part of Formosa by a shallow lagoon historically referred to as the Taikang inland sea . The Dutch fortifications consisted of two forts along the bay: the first and main fortification was the multiple-walled Fort Zeelandia, situated at the entrance to the bay, while the second was the smaller Fort Provintia, a walled administrative office. Frederick Coyett, the governor of Taiwan for the Dutch East India Company, was stationed in Fort Zeelandia with 1,800 men, while his subordinate, Valentyn, was in charge of Fort Provintia and its garrison of 500 men. In 1659, after an unsuccessful attempt to capture Nanjing, Koxinga, son of Zheng Zhilong and leader of the Ming loyalist remnants, felt that the Qing Empire had consolidated their position in China sufficiently, while his troops needed more supplies and manpower. He began searching for a suitable location as his base of operations, and soon a Chinese man named He Bin , who was working for the Dutch East India Company in Formosa , fled to Koxinga's base in Xiamen and provided him with a map of Taiwan. How many years were the Dutch at war over the Pescadores?
+</div><div class="answer-part"><strong>Answer:</strong> According to the passage, the Dutch were at war over the Pescadores from 1623 to 1624. 1624 - 1623 = 1. So the answer is {1}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">2.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#6</span>
+                    <span class="question-id">4478</span>
+                    <span class="dataset-badge">symbolic</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>5</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>8</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>62.5%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Luis hires a boat from 4 PM to 10 PM. He gets 2 hours free. The first paid hour is ₺12 and each hour after that is twice the cost. How much did he pay?
+
+</div><div class="answer-part"><strong>Answer:</strong> Luis hires the boat for 6 hours. Since he gets 2 hours free, he has to pay for 6 - 2 = 4 hours. The first paid hour is ₺12. Each hour after that is twice the cost, so the second paid hour is ₺12 * 2 = ₺24, the third paid hour is ₺24 * 2 = ₺48, and the fourth paid hour is ₺48 * 2 = ₺96. Therefore, the total amount Luis paid is ₺12 + ₺24 + ₺48 + ₺96 = ₺180.
+The answer is {180}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">84.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#7</span>
+                    <span class="question-id">99</span>
+                    <span class="dataset-badge">symbolic</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>5</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>8</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>62.5%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> A fog bank rolls in from the ocean to cover a city. <span class="fact fact-1">It takes 241 minutes to cover every 5 miles of the city</span>. If <span class="fact fact-2">the city is 85 miles across from the oceanfront to the opposite inland edge</span>, how many minutes will it take for the fog bank to cover the whole city?
+
+</div><div class="answer-part"><strong>Answer:</strong> To find the total time it will take for the fog bank to cover the whole city, we need to divide the total distance across the city by the distance covered in the given time and then multiply by the given time. The total distance across the city is <span class="fact fact-2">85 miles</span> and the distance covered in the given time is <span class="fact fact-1">5 miles</span>. So, the number of times the given distance fits into the total distance is <span class="fact fact-2">85</span>/<span class="fact fact-1">5</span> = 17. Now, we multiply this by the given time, which is <span class="fact fact-1">241 minutes</span>. Therefore, the total time it will take for the fog bank to cover the whole city is 17 * <span class="fact fact-1">241 minutes</span> = 4100 minutes, but since 85 is not perfectly divisible by 5, we should calculate the remaining distance and add the time it takes to cover that distance. The remaining distance is 85 - (17 * 5) = 0 miles, so we don't need to add any extra time.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">4097.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#8</span>
+                    <span class="question-id">history_241_0ac9c4ec-9ef4-429b-970a-9af43bdb672b</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>7</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>12</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>58.3%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part">Reformatted <strong>Question:</strong> The popular uprising included large areas of <span class="fact fact-1">Lower Bavaria</span>, <span class="fact fact-2">the Innviertel</span> and <span class="fact fact-3">eastern Bavaria</span>. The lands adjoining towns and strongholds were captured by the rebels and the peasant uprising spread to <span class="fact fact-4">the Bavarian Forest</span>, parts of <span class="fact fact-5">the Upper Palatinate</span> and <span class="fact fact-6">Kelheim on the Danube</span>. A Braunau Parliament meeting was held in December 1705 in the then-Bavarian Braunau. Long before the French Revolution and early German parliamentarianism the meeting was held on 21 December 1705 in an inn belonging to the Baron von Paumgarten; representatives met of the four estates in Bavaria: aristocracy, clergy, burghers and peasants. The Braunau Parliament  is the name of the congress on the defence of the state of Bavaria held at Braunau am Inn convened on 21 December 1705. Following the initial uprising in November 1705, there was little response from the Austrians for nearly two months. However, that changed following an attempt by the rebels to capture the Bavarian capital, Munich. Following their unsuccessful attack, the night of 25 December 1705 saw an Austrian column encounter the peasant army near Sendling outside of Munich.  The battle was known as Sendling's Night of Murder  or the Sendling Christmas Day Massacre. The insurgents from the Bavarian Oberland were defeated and completely routed by Emperor Joseph I's troops. The number of deaths on the Bavarian side in this battle is estimated at around 1,100 men, but the Austrians lost only about 40. Some of the insurgents were killed after they had already surrendered.  About two weeks later, on 8 January 1706, the Battle of Aidenbach ended with the utter defeat of the insurgents and about 4,000 casualties on the Bavarian side. That led to the collapse of the uprising against Austria. How many regions did the popular uprising start in?
+
+</div><div class="answer-part"><strong>Answer:</strong> According to the passage, the popular uprising started in <span class="fact fact-1">Lower Bavaria</span>, <span class="fact fact-2">the Innviertel</span>, and <span class="fact fact-3">eastern Bavaria</span> initially, then spread to <span class="fact fact-4">the Bavarian Forest</span>, <span class="fact fact-5">the Upper Palatinate</span>, and <span class="fact fact-6">Kelheim on the Danube</span>. So the answer is {6}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">3.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#9</span>
+                    <span class="question-id">nfl_1962_0ad88258-9b24-4733-bb73-1e32d639bec6</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>5</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>9</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>55.6%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Coming off their home win over the Vikings, the Saints flew to Candlestick Park for a Week 2 Monday Night duel with the San Francisco 49ers.  New Orleans would deliver the opening punch in the first quarter as 49ers center David Baas' high snap deep within San Francisco territory went out of the back of the endzone for a safety.  The Saints would add onto their lead as quarterback Drew Brees hooked up with running back Reggie Bush on a 6-yard touchdown pass.  The 49ers would answer in the second quarter as quarterback Alex Smith found running back Frank Gore on a 12-yard touchdown pass. San Francisco would take the lead with running back Anthony Dixon's 2-yard touchdown run, yet New Orleans would respond with Brees' 3-yard touchdown pass to tight end David Thomas.  <span class="fact fact-1">The Saints would add onto their lead in the fourth quarter as kicker Garrett Hartley made a 46-yard and a 19-yard field goal.</span>  The 49ers would strike back as Gore got a 7-yard touchdown run, followed by Smith's 2-point conversion pass to tight end Vernon Davis.  In the end, New Orleans got the last laugh as Hartley booted the game-ending 37-yard field goal. How many field goals did Garrett Hartley kick in the fourth quarter?
+
+
+</div><div class="answer-part"><strong>Answer:</strong> The passage states that <span class="fact fact-1">in the fourth quarter, Garrett Hartley kicked a 46-yard and a 19-yard field goal</span>. This means he kicked two field goals in the fourth quarter. So the answer is {2}.
+</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">3.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#10</span>
+                    <span class="question-id">nfl_1829_b42a61fe-1d34-48dd-9806-4f552248f6ef</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>5</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>10</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>50.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Hoping to rebound from their season-opening loss to the Jaguars, the Broncos played on home ground for an interconference duel with the Seattle Seahawks. In the first quarter, the Broncos took the early lead, as quarterback Kyle Orton completed a 13-yard touchdown pass to wide receiver Eddie Royal, followed in the second quarter by a 1-yard touchdown run from running back Correll Buckhalter and a 20-yard field goal by placekicker Matt Prater. The Seahawks got on the board in the third quarter, when quarterback Matt Hasselbeck completed an 11-yard touchdown pass to wide receiver Ben Obomanu, but the Broncos replied with a 1-yard touchdown run from running back Knowshon Moreno. The Broncos increased their lead in the fourth quarter, when Orton threw a 21-yard touchdown pass to wide receiver Demaryius Thomas. The Seahawks replied, with Hasselbeck scrambling 20 yards for a touchdown, but the Broncos' lead was too much for Seattle to overcome. How many total yards of rushing touchdowns were scored?
+
+</div><div class="answer-part"><strong>Answer:</strong> According to the passage, Correll Buckhalter had a 1-yard touchdown run, and Knowshon Moreno had a 1-yard touchdown run.  1 + 1 = 2. So the answer is {2}.
+</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">22.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#11</span>
+                    <span class="question-id">history_254_69f0add7-09b8-4def-86f8-f196003f0159</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>4</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>8</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>50.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> In 1997, Russia and Ukraine signed the Partition Treaty, establishing two independent national fleets and dividing armaments and bases between them. Ukraine also agreed to lease major parts of its facilities to the Russian Black Sea Fleet <span class="fact fact-1">until 2017</span>. However, the treaty appeared to be far from perfect: permanent tensions on the lease details control continued. The Fleet's main base is still situated in the Crimean port city of Sevastopol. In 2009 the Yushchenko Ukrainian government declared that the lease would not be extended and that the fleet would have to leave Sevastopol <span class="fact fact-1">by 2017</span>.  In <span class="fact fact-2">2010</span> the Russian leasehold was renegotiated with an extension <span class="fact fact-3">until 2042</span> and an option for an additional five years <span class="fact fact-4">until 2047</span>. How many years was the leasehold renegotiated for?
+
+</div><div class="answer-part"><strong>Answer:</strong> The passage says the lease was renegotiated in <span class="fact fact-2">2010</span> and extended <span class="fact fact-3">until 2042</span>, with an option for 5 more years <span class="fact fact-4">until 2047</span>.  2042 - 2010 = 32 years. Including the optional 5 years, the renegotiated lease was for 32 + 5 = 37 years. Since the question asks "How many years *was* the leasehold renegotiated for", this implies the initial agreement, not including the optional extension. Therefore the answer is {32}.
+</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">25.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#12</span>
+                    <span class="question-id">history_1995_175cbf4d-e1c3-4752-90fa-75e32baaa16d</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>3</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>6</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>50.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> The number of entrants has increased greatly in recent years. In the FA Cup 2004-05 season, 660 clubs entered the competition, beating the long-standing record of 656 from the 1921-22 season. In 2005-06 FA Cup this increased to 674 entrants, in 2006-07 FA Cup to 687, in 2007-08 FA Cup to 731 clubs, and for the <span class="fact fact-1">2008-09 FA Cup</span> and 2009-10 FA Cup competitions it reached 762. The number has varied slightly but remained roughly stable since then, with <span class="fact fact-2">759 clubs participating in 2010-11 FA Cup</span>, a record <span class="fact fact-3">763 in 2011-12 FA Cup</span>, 758 for 2012-13 FA Cup, 737 for 2013-14 FA Cup and 736 for 2014-15 FA Cup. By comparison, the other major English domestic cup, the EFL Cup, involves only the 92 members of the Premier League and Football League. How many times after <span class="fact fact-1">2008-09 FA Cup</span> and before <span class="fact fact-3">the 2011-12 FA Cup</span> was there an entrance of over 760 clubs?
+
+
+</div><div class="answer-part"><strong>Answer:</strong> We are looking for the number of times the entrant count exceeded 760 between the <span class="fact fact-1">2008-09</span> and <span class="fact fact-3">2011-12</span> FA Cups.  The passage tells us there were <span class="fact fact-2">759 entrants in the 2010-11 FA Cup</span>.  Since 759 is not over 760, there were zero seasons with more than 760 entrants between 2008-09 and 2011-12.  Therefore, the answer is {0}.
+</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">1.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#13</span>
+                    <span class="question-id">1108</span>
+                    <span class="dataset-badge">symbolic</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>2</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>4</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>50.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Ananya was preparing for a lunch party at her house, where she intended to serve shrimp scampi. She noticed that she was out of plastic plates, so she bought a new package of plates. Later, her husband also bought a package of 17 new plates and gave them to Ananya. While Ananya was making the shrimp scampi, she used seven of the plates to sample her shrimp scampi. Later, when she went to set the table, she had a total of 31 plates. How many plates were in the package that Ananya bought?
+
+</div><div class="answer-part"><strong>Answer:</strong> Ananya had a total of 31 plates at the end. She used 7 of the plates to sample her shrimp scampi. So, the number of plates she had left is 31 - 7 = 24 plates.
+She got 17 new plates from her husband. So, the number of plates she bought originally is 24 - 17 = 7 plates.
+The answer is {7}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">21.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#14</span>
+                    <span class="question-id">2164</span>
+                    <span class="dataset-badge">symbolic</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>2</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>4</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>50.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Thiago went to their orchard to pick some strawberries and found 2/3 as many grasshoppers as wasps in the garden. If there were 144 wasps, calculate the total number of insects in the garden.
+
+</div><div class="answer-part"><strong>Answer:</strong> To find the number of grasshoppers, we need to multiply the number of wasps by 2/3. So, the number of grasshoppers is 144 * 2/3 = 96. The total number of insects in the garden is the sum of the number of wasps and grasshoppers, which is 144 + 96 = 240.
+The answer is {240}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">240.0</div>
+                    </div>
+                    <span class="gt-status correct">AI Answer is CORRECT</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#15</span>
+                    <span class="question-id">3543</span>
+                    <span class="dataset-badge">symbolic</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>2</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>4</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>50.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> A plumber works for 3 weeks every month and for 6 days every week. If he gets paid $180 every day, how much does he earn if he works for a year?
+
+</div><div class="answer-part"><strong>Answer:</strong> Since the plumber works for 3 weeks every month and there are approximately 4 weeks in a month, he works for approximately 3/4 of the month. Since he works for 6 days every week and there are 7 days in a week, he works for 6/7 of the week. Since there are 52 weeks in a year, the plumber works for approximately (3/4) * (6/7) * 52 = 3 * 6 * 13/7 = 234/7 * 6 = 1404/7 = 200.57 weeks, or approximately 200.57 * (6/7) * 7 = 200.57 * 6 = 1203.42 days, in a year. Since he gets paid $180 every day, he earns approximately 1203.42 * 180 = 216,615.6 or $216,616 per year (rounding up from 216,615.6 to 216,616).</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">38880.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#16</span>
+                    <span class="question-id">906</span>
+                    <span class="dataset-badge">symbolic</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>2</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>4</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>50.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Mateo went to buy some school supplies. He bought 6 pencils which cost $5.0 each, 8 markers which cost $16.75 each, and a rim of bond paper which cost $13. How much did Mateo spend on everything?
+</div><div class="answer-part"><strong>Answer:</strong> To find out how much Mateo spent on everything, we need to calculate the total cost of the pencils, markers, and bond paper. First, we find the total cost of the pencils: 6 pencils * $5.0 each = $30. Next, we find the total cost of the markers: 8 markers * $16.75 each = $133.80. Then, we add the cost of the bond paper: $133.80 + $13 = $146.80. Therefore, Mateo spent a total of $146.80 on everything.
+
+The answer is {146.80}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">177.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#17</span>
+                    <span class="question-id">history_1450_cf455cf1-0221-45c3-88ed-b0c768ed82c5</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>2</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>4</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>50.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> The Guatemalan authorities were unaware of ongoing contacts between the colonial authorities in Yucatán and the Itza. In the second half of 1695 President Barrios began planning another expedition against the Itza from Verapaz, following harsh criticism of Juan Díaz de Velasco's retreat from near Lake Petén Itzá in April of that year. Barrios died in November, and oidor José de Escals became acting head of the Guatemalan colonial administration. He appointed oidor Bartolomé de Amésqueta to lead the next expedition against the Itza. Amésqueta marched his men through torrential rain from Cahabón to Mopán, arriving on 25 February 1696; the Guatemalans were still unaware of the clashes between García's forces and the Itza. Amésqueta's expedition was suffering from shortages of native labour and supplies. Twenty-five of his 150 men were sick, and his advance stalled as the force rested up at Mopán. Captain Díaz de Velasco volunteered to lead a party of <span class="fact fact-1">25 men</span> ahead to the lake; he was accompanied by Dominican friars Cristóbal de Prada and Jacinto de Vargas. He was also accompanied by AjK'ixaw, the Itza nobleman who had been taken prisoner on Díaz's previous expedition, who served as a trusted guide, scout and translator. They set out from Mopán on 7 March and left some sick soldiers with some supplies after five days, they then caught up with an <span class="fact fact-2">advance party of roadbuilders and their military escort</span> at Río Chakal. The two forces combined, giving Díaz a force of <span class="fact fact-3">49 soldiers</span> and <span class="fact fact-4">34 porters and archers from Verapaz</span>. Once they arrived at IxB'ol, near the shore of Lake Petén Itzá, AjK'ixaw was sent ahead as an emissary to Nojpetén. How many different military forces combined did Diaz have?
+</div><div class="answer-part"><strong>Answer:</strong> According to the passage, Diaz initially had <span class="fact fact-1">25 men</span>, then combined with <span class="fact fact-2">an advance party of roadbuilders and their military escort</span> to have a total force of <span class="fact fact-3">49 soldiers</span> and <span class="fact fact-4">34 porters and archers from Verapaz</span>. Since the porters and archers from Verapaz are also considered a military force, the total number of different military forces combined is 3. So the answer is {3}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">2.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#18</span>
+                    <span class="question-id">history_2170_77ec7d38-739a-4ca5-9bc2-b63670f435f6</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>1</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>2</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>50.0%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> In the census of 2010, there were 66,135 people, 26,265 (2000 data) households, and 14,051 (2000 data) families residing in the city. The population density was 6,096.7 people per square mile (2,199.9/km²). There were 30,272 (2000 data) housing units at an average density of 2,790.6 per square mile (1,077.2/km²). The racial makeup of the city was 59.38% (52.31% Non-Hispanic) (7.07 White-Hispanic) White (U.S. Census), 24.19% African American (U.S. Census), 14.47% Hispanic (U.S. Census) or Latin (U.S. Census)) of any race, 8.24% from Race (United States Census), 5.74% from two or more races, 2.62% Asian (U.S. Census), 0.69%  Native American (U.S.Census), and 0.14% Pacific Islander (U.S. Census). There is a growing Guyana population in the area. The top ancestries self-identified by people on the census are <span class="fact fact-1">Italian (13.6%)</span>, <span class="fact fact-2">Guyanese (12.3%)</span>, <span class="fact fact-3">Irish (12.1%)</span>, Puerto Rican (10.1%), German (8.7%), English (6.0%), <span class="fact fact-4">Polish (5.4%)</span>, French (4.4%). These reflect historic and early 20th-century immigration, as well as that since the late 20th century. How many percent more people were in the the second largest group compared to the second smallest?
+
+</div><div class="answer-part"><strong>Answer:</strong> The question asks the difference between the second largest and second smallest ancestry groups.  The passage lists ancestries in descending order.
+<span class="fact fact-2">The second largest group is Guyanese at 12.3%</span>.
+<span class="fact fact-4">The second smallest group listed is Polish at 5.4%</span>.
+
+12.3% - 5.4% = 6.9%
+
+So the answer is {6.9}.
+</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">23.5</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#19</span>
+                    <span class="question-id">history_1853_176835fe-042f-4085-af4a-945ef3f1f903</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>4</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>9</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>44.4%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> With the end of the "crack epidemic" in the mid-1990s and with the initiation of aggressive policing under mayors David Dinkins and subsequently  Rudolph Giuliani, crime in Harlem plummeted. In <span class="fact fact-1">1981</span>, <span class="fact fact-2">6,500 robberies</span> were reported in Harlem; robberies dropped to 4,800 in 1990 during David Dinkins mayoralty. By <span class="fact fact-3">2000</span>, only 1,700 robberies were reported, and by 2010, only 1,100 were reported. There have been similar changes in all categories of crimes tracked by the New York City Police Department. In the 32nd Precinct, which services Central Harlem above 127th Street, for example, between 1990 and 2013, the murder rate dropped 89.4%, the rape rate dropped 67.5%, the robbery rate dropped 74.2%, burglary dropped 93.4%, and the total number of crime complaints dropped 77.6%. How many years since <span class="fact fact-1">1981</span> did the robberies drop?
+</div><div class="answer-part"><strong>Answer:</strong> According to the passage, the robberies dropped by <span class="fact fact-3">2000</span>. <span class="fact fact-3">2000</span> - <span class="fact fact-1">1981</span> = 19. So the answer is {19}.</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">9.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <div class="question-rank">
+                    <span class="rank-badge">#20</span>
+                    <span class="question-id">history_1258_0711bebd-38ac-482f-878e-1f5aa9382897</span>
+                    <span class="dataset-badge">DROP</span>
+                </div>
+                <div class="question-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon wrong"></span>
+                        <span><strong>3</strong> wrong</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon total"></span>
+                        <span><strong>7</strong> total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon rate"></span>
+                        <span><strong>42.9%</strong> error rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-body">
+                <div class="question-content">
+                    <div class="question-part"><strong>Question:</strong> Charles V returned to Spain on July 16, 1522.  Acts of repression and retaliation against former comuneros did occur, but only sporadically.  Embarrassingly large numbers of important people had supported the comuneros, or at least were suspiciously slow to declare allegiance to the king, and Charles thought it unwise to press the issue too much. Back in Valladolid, Charles declared a general pardon on November 1.  The pardon gave amnesty to everyone involved in the revolt with the exception of 293 comuneros, a small figure given the huge number of rebels.  Both Pacheco and Bishop Acuña were among the 293 excluded from the pardon.  More pardons were issued later, after pressure from the Cortes; by 1527, the repression was completely at end.  Of the 293, 23 were executed, 20 died in prison, 50 purchased amnesty, and 100 were pardoned later.  The fates of the rest are unknown. How many of the 293 prisoners were not pardoned, purchased amnesty or were executed?
+
+</div><div class="answer-part"><strong>Answer:</strong> The passage states that out of the 293 comuneros excluded from the initial pardon, 23 were executed, 20 died in prison, 50 purchased amnesty, and 100 were pardoned later.  This accounts for 23 + 20 + 50 + 100 = 193 comuneros.  Since there were 293 total, the number whose fates are unknown is 293 - 193 = 100.  So the answer is {100}.
+</div>
+                </div>
+                <div class="ground-truth">
+                    <div>
+                        <div class="gt-label">Ground Truth Answer</div>
+                        <div class="gt-value">120.0</div>
+                    </div>
+                    <span class="gt-status incorrect">AI Answer is WRONG</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 3rem;">Complete Rankings Summary</h2>
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Question ID</th>
+                    <th>Wrong</th>
+                    <th>Total</th>
+                    <th>Error Rate</th>
+                    <th>AI Status</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><strong>#1</strong></td>
+                    <td><code>1755</code></td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 100.0%"></div>
+                            </div>
+                            <span>100.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#2</strong></td>
+                    <td><code>history_1954_2c054bf0-1177-4f44-865c-a6e...</code></td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 85.71%"></div>
+                            </div>
+                            <span>85.7%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#3</strong></td>
+                    <td><code>326</code></td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 75.0%"></div>
+                            </div>
+                            <span>75.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#4</strong></td>
+                    <td><code>644</code></td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 66.67%"></div>
+                            </div>
+                            <span>66.7%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#5</strong></td>
+                    <td><code>history_1408_7b6e7625-a8ba-4cde-8496-1f6...</code></td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 66.67%"></div>
+                            </div>
+                            <span>66.7%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#6</strong></td>
+                    <td><code>4478</code></td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 62.5%"></div>
+                            </div>
+                            <span>62.5%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#7</strong></td>
+                    <td><code>99</code></td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 62.5%"></div>
+                            </div>
+                            <span>62.5%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#8</strong></td>
+                    <td><code>history_241_0ac9c4ec-9ef4-429b-970a-9af4...</code></td>
+                    <td>7</td>
+                    <td>12</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 58.33%"></div>
+                            </div>
+                            <span>58.3%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#9</strong></td>
+                    <td><code>nfl_1962_0ad88258-9b24-4733-bb73-1e32d63...</code></td>
+                    <td>5</td>
+                    <td>9</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 55.56%"></div>
+                            </div>
+                            <span>55.6%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#10</strong></td>
+                    <td><code>nfl_1829_b42a61fe-1d34-48dd-9806-4f55224...</code></td>
+                    <td>5</td>
+                    <td>10</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 50.0%"></div>
+                            </div>
+                            <span>50.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#11</strong></td>
+                    <td><code>history_254_69f0add7-09b8-4def-86f8-f196...</code></td>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 50.0%"></div>
+                            </div>
+                            <span>50.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#12</strong></td>
+                    <td><code>history_1995_175cbf4d-e1c3-4752-90fa-75e...</code></td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 50.0%"></div>
+                            </div>
+                            <span>50.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#13</strong></td>
+                    <td><code>1108</code></td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 50.0%"></div>
+                            </div>
+                            <span>50.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#14</strong></td>
+                    <td><code>2164</code></td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 50.0%"></div>
+                            </div>
+                            <span>50.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status correct">✓ Correct</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#15</strong></td>
+                    <td><code>3543</code></td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 50.0%"></div>
+                            </div>
+                            <span>50.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#16</strong></td>
+                    <td><code>906</code></td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 50.0%"></div>
+                            </div>
+                            <span>50.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#17</strong></td>
+                    <td><code>history_1450_cf455cf1-0221-45c3-88ed-b0c...</code></td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 50.0%"></div>
+                            </div>
+                            <span>50.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#18</strong></td>
+                    <td><code>history_2170_77ec7d38-739a-4ca5-9bc2-b63...</code></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 50.0%"></div>
+                            </div>
+                            <span>50.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#19</strong></td>
+                    <td><code>history_1853_176835fe-042f-4085-af4a-945...</code></td>
+                    <td>4</td>
+                    <td>9</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 44.44%"></div>
+                            </div>
+                            <span>44.4%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#20</strong></td>
+                    <td><code>history_1258_0711bebd-38ac-482f-878e-1f5...</code></td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 42.86%"></div>
+                            </div>
+                            <span>42.9%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#21</strong></td>
+                    <td><code>nfl_2125_92420219-58dd-4c72-87cb-8804cbb...</code></td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 42.86%"></div>
+                            </div>
+                            <span>42.9%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#22</strong></td>
+                    <td><code>1954</code></td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 40.0%"></div>
+                            </div>
+                            <span>40.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#23</strong></td>
+                    <td><code>2861</code></td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 40.0%"></div>
+                            </div>
+                            <span>40.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status correct">✓ Correct</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#24</strong></td>
+                    <td><code>nfl_1471_fadb0169-392d-4f10-939d-83e5890...</code></td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 40.0%"></div>
+                            </div>
+                            <span>40.0%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#25</strong></td>
+                    <td><code>nfl_1670_e3aa621b-9f06-4e8a-8981-39dcf0b...</code></td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 37.5%"></div>
+                            </div>
+                            <span>37.5%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status correct">✓ Correct</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#26</strong></td>
+                    <td><code>history_254_3896aca7-5cf9-4c8d-913e-c0f6...</code></td>
+                    <td>4</td>
+                    <td>11</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 36.36%"></div>
+                            </div>
+                            <span>36.4%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status correct">✓ Correct</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#27</strong></td>
+                    <td><code>history_1450_8be3e663-e0a6-41c6-9f2b-55f...</code></td>
+                    <td>3</td>
+                    <td>9</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 33.33%"></div>
+                            </div>
+                            <span>33.3%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status correct">✓ Correct</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#28</strong></td>
+                    <td><code>1564</code></td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 33.33%"></div>
+                            </div>
+                            <span>33.3%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status correct">✓ Correct</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#29</strong></td>
+                    <td><code>2360</code></td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 33.33%"></div>
+                            </div>
+                            <span>33.3%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status correct">✓ Correct</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>#30</strong></td>
+                    <td><code>history_1418_da95efc1-0a9d-4232-9af5-68d...</code></td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="error-bar">
+                                <div class="error-bar-fill" style="width: 33.33%"></div>
+                            </div>
+                            <span>33.3%</span>
+                        </div>
+                    </td>
+                    <td><span class="gt-status incorrect">✗ Wrong</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+        
+        <footer>
+            <p>Generated from Human Study Data • Questions with isTrue=False indicate the AI made an error</p>
+        </footer>
+    </div>
+</body>
+</html>

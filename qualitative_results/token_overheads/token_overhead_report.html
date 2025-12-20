@@ -1,0 +1,300 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Token Overhead Analysis</title>
+        <style>
+            :root {
+                --bg-primary: #0d1117;
+                --bg-secondary: #161b22;
+                --text-primary: #c9d1d9;
+                --text-secondary: #8b949e;
+                --accent-blue: #58a6ff;
+                --accent-green: #3fb950;
+                --accent-red: #f85149;
+                --border-color: #30363d;
+            }
+            body {
+                font-family: 'Segoe UI', sans-serif;
+                background: var(--bg-primary);
+                color: var(--text-primary);
+                padding: 20px;
+                margin: 0;
+            }
+            .container { max-width: 1200px; margin: 0 auto; }
+            h1 {
+                background: linear-gradient(135deg, var(--accent-blue), #a371f7);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                background: var(--bg-secondary);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            th, td {
+                padding: 12px 15px;
+                text-align: right;
+                border-bottom: 1px solid var(--border-color);
+            }
+            th {
+                background: var(--bg-primary);
+                color: var(--accent-blue);
+                font-weight: 600;
+            }
+            td:first-child, th:first-child {
+                text-align: left;
+            }
+            tr:hover { background: #21262d; }
+            .ratio-high { color: var(--accent-red); }
+            .ratio-medium { color: #d29922; }
+            .ratio-low { color: var(--accent-green); }
+            .summary-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+                margin: 20px 0;
+            }
+            .card {
+                background: var(--bg-secondary);
+                padding: 20px;
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
+            }
+            .card h3 {
+                color: var(--text-secondary);
+                font-size: 0.9em;
+                margin: 0 0 10px 0;
+            }
+            .card .value {
+                font-size: 2em;
+                font-weight: bold;
+                color: var(--accent-blue);
+            }
+            .bar-container {
+                width: 100%;
+                height: 20px;
+                background: var(--bg-primary);
+                border-radius: 4px;
+                overflow: hidden;
+                margin: 5px 0;
+            }
+            .bar-cot {
+                height: 100%;
+                background: var(--accent-blue);
+            }
+            .bar-hot-answer {
+                height: 100%;
+                background: var(--accent-green);
+                display: inline-block;
+            }
+            .bar-hot-reformat {
+                height: 100%;
+                background: #d29922;
+                display: inline-block;
+            }
+            .legend {
+                display: flex;
+                gap: 20px;
+                margin: 10px 0;
+                font-size: 0.9em;
+            }
+            .legend-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            .legend-color {
+                width: 15px;
+                height: 15px;
+                border-radius: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>📊 Token Overhead Analysis: HoT vs CoT</h1>
+            <p style="color: var(--text-secondary);">
+                Comparing token usage between Chain-of-Thought (CoT) and Hypothetical-Optimal-Thinking (HoT) responses.
+            </p>
+    
+            <div class="summary-cards">
+                <div class="card">
+                    <h3>Datasets Analyzed</h3>
+                    <div class="value">5</div>
+                </div>
+                <div class="card">
+                    <h3>Avg Input (Question) Tokens</h3>
+                    <div class="value" style="color: #a371f7">1140</div>
+                </div>
+                <div class="card">
+                    <h3>Avg HoT/CoT Ratio</h3>
+                    <div class="value">4.01x</div>
+                </div>
+                <div class="card">
+                    <h3>Avg Reformatted Q Overhead</h3>
+                    <div class="value">61.8%</div>
+                </div>
+            </div>
+        
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--accent-blue)"></div>
+                    <span>CoT Tokens</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--accent-green)"></div>
+                    <span>HoT Answer Tokens</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d29922"></div>
+                    <span>HoT Reformatted Question Tokens</span>
+                </div>
+            </div>
+    
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dataset</th>
+                        <th>Model</th>
+                        <th>Question (Input)</th>
+                        <th>CoT Avg</th>
+                        <th>HoT Total</th>
+                        <th>HoT Reformat Q</th>
+                        <th>HoT Answer</th>
+                        <th>Ratio</th>
+                        <th>Overhead %</th>
+                        <th>Token Distribution</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong>drop_cencus</strong></td>
+                        <td style="font-size: 0.8em; color: var(--text-secondary)">g-pro-002</td>
+                        <td>343</td>
+                        <td>62</td>
+                        <td>469</td>
+                        <td>361</td>
+                        <td>105</td>
+                        <td class="ratio-high">7.56x</td>
+                        <td>77.1%</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar-cot" style="width: 13.2201528150277%"></div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-hot-answer" style="width: 22.29734413240414%"></div>
+                                <div class="bar-hot-reformat" style="width: 77.09694103344762%"></div>
+                            </div>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>drop_break</strong></td>
+                        <td style="font-size: 0.8em; color: var(--text-secondary)">g-pro-002</td>
+                        <td>345</td>
+                        <td>72</td>
+                        <td>481</td>
+                        <td>371</td>
+                        <td>108</td>
+                        <td class="ratio-high">6.68x</td>
+                        <td>77.0%</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar-cot" style="width: 14.959096221269967%"></div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-hot-answer" style="width: 22.507206856252434%"></div>
+                                <div class="bar-hot-reformat" style="width: 77.0242825607064%"></div>
+                            </div>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>bbeh_spatial_reasoning</strong></td>
+                        <td style="font-size: 0.8em; color: var(--text-secondary)">n-llama405b</td>
+                        <td>1445</td>
+                        <td>594</td>
+                        <td>1810</td>
+                        <td>1200</td>
+                        <td>608</td>
+                        <td class="ratio-high">3.05x</td>
+                        <td>66.3%</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar-cot" style="width: 32.83053993437262%"></div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-hot-answer" style="width: 33.57962015666604%"></div>
+                                <div class="bar-hot-reformat" style="width: 66.29719039674735%"></div>
+                            </div>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>bbeh_time_arithmetic</strong></td>
+                        <td style="font-size: 0.8em; color: var(--text-secondary)">g-pro-002</td>
+                        <td>324</td>
+                        <td>498</td>
+                        <td>796</td>
+                        <td>256</td>
+                        <td>537</td>
+                        <td class="ratio-medium">1.60x</td>
+                        <td>32.2%</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar-cot" style="width: 62.54615326652099%"></div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-hot-answer" style="width: 67.48235500967021%"></div>
+                                <div class="bar-hot-reformat" style="width: 32.190490543289876%"></div>
+                            </div>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>bbeh_shuffle_objects</strong></td>
+                        <td style="font-size: 0.8em; color: var(--text-secondary)">g-pro-002</td>
+                        <td>3244</td>
+                        <td>911</td>
+                        <td>1073</td>
+                        <td>608</td>
+                        <td>462</td>
+                        <td class="ratio-low">1.18x</td>
+                        <td>56.6%</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar-cot" style="width: 84.8576766984908%"></div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-hot-answer" style="width: 43.084191839416256%"></div>
+                                <div class="bar-hot-reformat" style="width: 56.62039819771966%"></div>
+                            </div>
+                        </td>
+                    </tr>
+        
+                    <tr style="background: var(--bg-tertiary); font-weight: bold; border-top: 2px solid var(--accent-blue);">
+                        <td>Mean ± Std</td>
+                        <td>-</td>
+                        <td>1140 ± 1136</td>
+                        <td>427 ± 324</td>
+                        <td>926 ± 495</td>
+                        <td>559 ± 340</td>
+                        <td>364 ± 215</td>
+                        <td style="color: var(--accent-yellow)">4.01x ± 2.63</td>
+                        <td>61.8% ± 16.7</td>
+                        <td>-</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </body>
+    </html>
+    

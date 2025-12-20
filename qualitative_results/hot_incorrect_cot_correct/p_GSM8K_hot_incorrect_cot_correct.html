@@ -1,0 +1,108 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question and Answer Highlights</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .highlight {
+                background-color: #FFFF00; /* Yellow background for visibility */
+                font-weight: bold; /* Bold text for emphasis */
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .question, .answer {
+                flex: 1;
+                padding: 10px;
+            }
+            .container {
+                display: flex;
+            }
+
+            .container > div {
+                flex: 1;  /* Each div will take equal amount of space */
+            }
+
+            /* Optional styles for better visualization */
+            .div1 { background-color: lightblue; }
+            .div2 { background-color: lightgreen; }
+        </style>
+    </head>
+    <body>
+    <div class='container'><div class='cot_answer'><strong>20/ Question:</strong> On a busy Saturday morning, a hotel was completely booked with 100 guests.  24 guests elected an early checkout and 15 elected for a late checkout.  7 more people checked in after dinner was served.  In the afternoon twice as many people checked in as those who opted for a late checkout.  How many guests does the hotel have after dinner?<br><br><strong>Answer:</strong>Explanation:
+The hotel had 100 - 24 = 76 guests after the early checkout.
+30 guests checked in the afternoon, which is twice the number of people who opted for a late checkout (15 x 2 = 30).
+So there were 76 + 30 = 106 guests before the late checkout.
+After the late checkout, 106 - 15 = 91 guests remained.
+After dinner, 91 + 7 = 98 guests were present in the hotel. 
+Answer: {98}</div><div class='hot_answer'><strong>20/ Reformatted Question:</strong> <br><br><strong>Answer:</strong>                    Reformatted Question:                         Answer:
+
+
+ <br><br>On a busy Saturday morning, a hotel was completely booked with <fact1 style="background-color: #FF5733;">100 guests</fact1>.  <fact2 style="background-color: #33FF57;">24 guests elected an early checkout</fact2> and <fact3 style="background-color: #3357FF;">15 elected for a late checkout</fact3>.  <fact4 style="background-color: #FF33A1;">7 more people checked in after dinner was served</fact4>.  In the afternoon <fact5 style="background-color: #FFA533;">twice as many people checked in as those who opted for a late checkout</fact5>.  How many guests does the hotel have after dinner?
+
+Here, the key information is the number of guests at the start, guests who left, and guests who arrived.
+
+
+Starting guests: <fact1 style="background-color: #FF5733;">100</fact1>
+Guests who left early: <fact2 style="background-color: #33FF57;">24</fact2>
+Guests remaining before new arrivals: <fact1 style="background-color: #FF5733;">100</fact1> - <fact2 style="background-color: #33FF57;">24</fact2> = 76
+Guests arriving in the afternoon: <fact3 style="background-color: #3357FF;">15</fact3> * 2 = <fact5 style="background-color: #FFA533;">30</fact5>
+Guests before dinner: 76 + <fact5 style="background-color: #FFA533;">30</fact5> = 106
+Guests arriving after dinner: <fact4 style="background-color: #FF33A1;">7</fact4>
+Total guests after dinner: 106 + <fact4 style="background-color: #FF33A1;">7</fact4> = 113
+
+The answer is {113}.<br><br><strong>GT:</strong>98.0</div></div>
+<div class='container'><div class='cot_answer'><strong>69/ Question:</strong> A blog article takes an average of 4 hours to research and write about. Meredith is a freelance blogger who writes about health topics and submits to clients each day as her permanent job. Last week, on Wednesday, she wrote twice the number of articles she wrote on Tuesday. She wrote 5 articles on Monday and 2/5 times more articles on Tuesday than on Monday. Calculate the total number of hours she spent writing articles in the three days.<br><br><strong>Answer:</strong>Here's how to solve the problem:
+
+* **Tuesday's Articles:** Meredith wrote 2/5 * 5 articles = 2 more articles on Tuesday than Monday.
+* **Total Articles on Tuesday:** She wrote a total of 5 articles + 2 articles = 7 articles on Tuesday.
+* **Total Articles on Wednesday:** On Wednesday, she wrote 2 * 7 articles = 14 articles.
+* **Total Articles:** In total, she wrote 5 articles + 7 articles + 14 articles = 26 articles.
+* **Total Time Spent:** Meredith spent 26 articles * 4 hours/article = 104 hours writing.
+
+**Answer: {104}** 
+</div><div class='hot_answer'><strong>69/ Reformatted Question:</strong> <br><br><strong>Answer:</strong>                    Reformatted Question:                         Answer:
+
+
+ <br><br>A blog article takes an average of <fact1 style="background-color: #FF5733;">4 hours</fact1> to research and write about. Meredith is a freelance blogger who writes about health topics and submits to clients each day as her permanent job. Last week, on Wednesday, she wrote <fact2 style="background-color: #33FF57;">twice</fact2> the number of articles she wrote on Tuesday. She wrote <fact3 style="background-color: #3357FF;">5 articles</fact3> on Monday and <fact4 style="background-color: #FF33A1;">2/5 times</fact4> more articles on Tuesday than on Monday. Calculate the <fact5 style="background-color: #FFA533;">total number of hours</fact5> she spent writing articles in the <fact6 style="background-color: #33FFF3;">three days</fact6>.
+
+
+The number of articles Meredith wrote on Tuesday is calculated by multiplying the number of articles she wrote on Monday (<fact3 style="background-color: #3357FF;">5</fact3>) by <fact4 style="background-color: #FF33A1;">2/5</fact4>: 5 * (2/5) = 2 articles.
+
+On Wednesday, Meredith wrote <fact2 style="background-color: #33FF57;">twice</fact2> the number of articles she wrote on Tuesday, which is 2 * 2 = 4 articles.
+
+The total number of articles written over the <fact6 style="background-color: #33FFF3;">three days</fact6> is the sum of articles written on Monday (<fact3 style="background-color: #3357FF;">5</fact3>), Tuesday (2), and Wednesday (4): 5 + 2 + 4 = 11 articles.
+
+Since each article takes <fact1 style="background-color: #FF5733;">4 hours</fact1> to write, the <fact5 style="background-color: #FFA533;">total number of hours</fact5> spent writing is 11 * 4 = 44 hours.
+
+
+Therefore, Meredith spent a total of 44 hours writing articles in the three days.
+
+
+{44}<br><br><strong>GT:</strong>104.0</div></div>
+<div class='container'><div class='cot_answer'><strong>126/ Question:</strong> Mr. Smith has two farms, Farm X and Farm Y. He sold 10 goats from Farm X and twice as many goats from Farm Y. He has 55 goats in Farm X and 45 goats in Farm Y. How many goats are left in the two farms altogether?<br><br><strong>Answer:</strong>Explanation: 
+He sold 10 x 2 = 20 goats from Farm Y.
+So, there are 55 - 10 = 45 goats left in Farm X.
+And 45 - 20 = 25 goats left in Farm Y.
+Therefore, there are a total of 45 + 25 = 70 goats left in the two farms.
+Answer: {70} 
+</div><div class='hot_answer'><strong>126/ Reformatted Question:</strong> **
+
+Mr. Smith has two farms, Farm X and Farm Y. He sold <fact1 style="background-color: #FF5733;">10 goats</fact1> from Farm X and <fact2 style="background-color: #33FF57;">twice as many goats</fact2> from Farm Y. He <fact3 style="background-color: #3357FF;">has 55 goats in Farm X</fact3> and <fact4 style="background-color: #FF33A1;">45 goats in Farm Y</fact4>. How many goats are left in the two farms altogether?
+
+
+**<br><br><strong>Answer:</strong>**Reformatted Question:Answer:
+ <br><br>**
+
+Mr. Smith sold <fact2 style="background-color: #33FF57;">twice as many goats</fact2> from Farm Y as from Farm X, meaning he sold <fact1 style="background-color: #FF5733;">10</fact1> * 2 = 20 goats from Farm Y.  Currently, he <fact3 style="background-color: #3357FF;">has 55 goats in Farm X</fact3> and <fact4 style="background-color: #FF33A1;">45 goats in Farm Y</fact4>. Therefore, the total number of goats left in both farms is <fact3 style="background-color: #3357FF;">55</fact3> + <fact4 style="background-color: #FF33A1;">45</fact4> = 100 goats. The answer is {100}.<br><br><strong>GT:</strong>70.0</div></div>
+
+    </body>
+    </html>
+    

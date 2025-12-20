@@ -1,0 +1,136 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question and Answer Highlights</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .highlight {
+                background-color: #FFFF00; /* Yellow background for visibility */
+                font-weight: bold; /* Bold text for emphasis */
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .question, .answer {
+                flex: 1;
+                padding: 10px;
+            }
+            .container {
+                display: flex;
+            }
+
+            .container > div {
+                flex: 1;  /* Each div will take equal amount of space */
+            }
+
+            /* Optional styles for better visualization */
+            .div1 { background-color: lightblue; }
+            .div2 { background-color: lightgreen; }
+        </style>
+    </head>
+    <body>
+    <div class='container'><div class='cot_answer'><strong>36/ Question:</strong> After eating a hearty meal they went to see the Buckingham palace. There, Rachel learned that 703 visitors came to the Buckingham palace on the previous day. If there were 246 visitors on that day, how many visited the Buckingham palace within 25 days?<br><br><strong>Answer:</strong>Rachel learned there were 703 visitors the previous day, and there were 246 visitors *that* day.  The question asks how many visited within 25 days, but we only have information for two days. We'll assume they're asking for the total visitors over those two days.
+Total visitors = 703 (previous day) + 246 (current day) = 949 visitors.
+
+Answer: {949}
+</div><div class='hot_answer'><strong>36/ Reformatted Question:</strong> After eating a hearty meal, they went to see the Buckingham palace. There, Rachel learned that <fact1 style="background-color: #FF5733;">703 visitors came to the Buckingham palace on the previous day</fact1>. If there were <fact2 style="background-color: #33FF57;">246 visitors on that day</fact2>, how many visited the Buckingham palace within <fact3 style="background-color: #3357FF;">25 days</fact3>?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>The question is asking for the number of visitors within <fact3 style="background-color: #3357FF;">25 days</fact3>, but the provided information relates to daily visitor numbers (<fact2 style="background-color: #33FF57;">246 visitors on that day</fact2>).  The information about the previous day's visitors (<fact1 style="background-color: #FF5733;">703 visitors</fact1>) is irrelevant.  Therefore, if there were <fact2 style="background-color: #33FF57;">246 visitors on that day</fact2>, and assuming this is the average daily number of visitors, then over <fact3 style="background-color: #3357FF;">25 days</fact3> there would be <fact2 style="background-color: #33FF57;">246</fact2> * <fact3 style="background-color: #3357FF;">25</fact3> = 6150 visitors. The answer is {6150}.<br><br><strong>GT:</strong>949.0</div></div>
+<div class='container'><div class='cot_answer'><strong>112/ Question:</strong> There were 16 roses and 3 orchids in the vase. Jessica cut some more roses and orchids from her flower garden. There are now 7 orchids and 13 roses in the vase. How many orchids did she cut?<br><br><strong>Answer:</strong>There were 3 orchids initially and now there are 7. This means Jessica cut 7 - 3 = 4 orchids.
+
+Answer: {4}
+</div><div class='hot_answer'><strong>112/ Reformatted Question:</strong> There were <fact1 style="background-color: #FF5733;">16 roses</fact1> and <fact2 style="background-color: #33FF57;">3 orchids</fact2> in the vase. Jessica cut some more roses and orchids from her flower garden. There are now <fact3 style="background-color: #3357FF;">7 orchids</fact3> and <fact4 style="background-color: #FF33A1;">13 roses</fact4> in the vase. How many orchids did she cut?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>There were initially <fact2 style="background-color: #33FF57;">3 orchids</fact2> and now there are <fact3 style="background-color: #3357FF;">7 orchids</fact3>.  This means Jessica added 7 - 3 = 4 orchids. The question asks how many she *cut*. Since she *added* orchids, she cut 0 orchids.  It seems like there's an error in the question itself, as it implies she cut some, but the numbers suggest she added some. If she added 4, she cut 0. The answer is {0}.<br><br><strong>GT:</strong>4.0</div></div>
+<div class='container'><div class='cot_answer'><strong>227/ Question:</strong> Matthew had 14 crackers and 21 cakes. If Matthew gave equal numbers of crackers and cakes to his 7 friends, how many crackers and cakes did each person eat?<br><br><strong>Answer:</strong>Matthew had 14 crackers and divided them equally among 7 friends. Each friend received 14 / 7 = 2 crackers. Matthew had 21 cakes and divided them equally among 7 friends. Each friend received 21 / 7 = 3 cakes.  Each person ate 2 crackers + 3 cakes = 5 crackers and cakes.
+
+Answer: {5}
+</div><div class='hot_answer'><strong>227/ Reformatted Question:</strong> Matthew had <fact1 style="background-color: #FF5733;">14 crackers</fact1> and <fact2 style="background-color: #33FF57;">21 cakes</fact2>. If Matthew gave equal numbers of crackers and cakes to his <fact3 style="background-color: #3357FF;">7 friends</fact3>, how many crackers and cakes did each person eat?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>Matthew had <fact1 style="background-color: #FF5733;">14 crackers</fact1> and shared them equally among his <fact3 style="background-color: #3357FF;">7 friends</fact3>.  So each friend received <fact1 style="background-color: #FF5733;">14</fact1>/<fact3 style="background-color: #3357FF;">7</fact3> = 2 crackers. He also had <fact2 style="background-color: #33FF57;">21 cakes</fact2> and shared them equally among his <fact3 style="background-color: #3357FF;">7 friends</fact3>. So each friend received <fact2 style="background-color: #33FF57;">21</fact2>/<fact3 style="background-color: #3357FF;">7</fact3> = 3 cakes.  Therefore, each person ate 2 crackers and 3 cakes. The answer is {2,3}.<br><br><strong>GT:</strong>5.0</div></div>
+<div class='container'><div class='cot_answer'><strong>285/ Question:</strong> For the walls of the house he would use 12 large planks of wood and 10 small planks. If large planks together need 15 pieces of nails to be secured and small planks together need 5 nails. How many nails does John need for the house wall?<br><br><strong>Answer:</strong>John needs 15 nails for the 12 large planks and 5 nails for the 10 small planks.  Therefore, he needs a total of 15 + 5 = 20 nails.
+
+Answer: {20}
+</div><div class='hot_answer'><strong>285/ Reformatted Question:</strong> For the walls of the house, he would use <fact1 style="background-color: #FF5733;">12 large planks of wood</fact1> and <fact2 style="background-color: #33FF57;">10 small planks</fact2>. If <fact3 style="background-color: #3357FF;">large planks together need 15 pieces of nails</fact3> to be secured and <fact4 style="background-color: #FF33A1;">small planks together need 5 nails</fact4>. How many nails does John need for the house wall?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>John uses <fact1 style="background-color: #FF5733;">12 large planks</fact1> which require <fact3 style="background-color: #3357FF;">15 nails each</fact3>, totaling 12 * 15 = 180 nails. He also uses <fact2 style="background-color: #33FF57;">10 small planks</fact2> needing <fact4 style="background-color: #FF33A1;">5 nails total</fact4>.  Therefore, he needs 180 + 5 = 185 nails in total. The answer is {185}.<br><br><strong>GT:</strong>20.0</div></div>
+<div class='container'><div class='cot_answer'><strong>289/ Question:</strong> After eating a hearty meal they went to see the Buckingham palace. There were 71 paintings in the Buckingham palace. There, Rachel learned that 557 visitors came to the Buckingham palace that day. If there were 188 visitors the previous day, how many visited the Buckingham palace within 57 days?<br><br><strong>Answer:</strong>Explanation:
+The question asks for the number of visitors to Buckingham Palace within 57 days. However, we're only given the number of visitors for two days. We don't have enough information to determine the number of visitors over 57 days. The information about the number of paintings is irrelevant.
+
+Assuming the question meant to ask about the total visitors over the two days mentioned:
+Day 1: 188 visitors
+Day 2: 557 visitors
+Total visitors over the two days: 188 + 557 = 745 visitors
+
+
+Answer: {745}
+</div><div class='hot_answer'><strong>289/ Reformatted Question:</strong> After eating a hearty meal, they went to see the Buckingham palace. There were <fact1 style="background-color: #FF5733;">71 paintings</fact1> in the Buckingham palace. There, Rachel learned that <fact2 style="background-color: #33FF57;">557 visitors came to the Buckingham palace that day</fact2>. If there were <fact3 style="background-color: #3357FF;">188 visitors the previous day</fact3>, how many visited the Buckingham palace within <fact4 style="background-color: #FF33A1;">57 days</fact4>?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>The question asks for the number of visitors within <fact4 style="background-color: #FF33A1;">57 days</fact4>.  The provided information about <fact1 style="background-color: #FF5733;">71 paintings</fact1> and <fact3 style="background-color: #3357FF;">188 visitors the previous day</fact3> is irrelevant to calculating the number of visitors within 57 days. The question also does not specify if the <fact2 style="background-color: #33FF57;">557 visitors that day</fact2> is part of the 57-day period. Therefore, the question cannot be answered with the information provided.  We only know the number of visitors on a single specific day (<fact2 style="background-color: #33FF57;">557</fact2>). We need more information about the visitor numbers on the other days within that <fact4 style="background-color: #FF33A1;">57 day</fact4> period to calculate the total.<br><br><strong>GT:</strong>745.0</div></div>
+<div class='container'><div class='cot_answer'><strong>348/ Question:</strong> Marco and his dad went strawberry picking. Together they collected strawberries that weighed 22 pounds. On the way back Marco ' dad found 30 more pounds of strawberries. Marco's strawberries now weighed 36 pounds. How much did his dad's strawberries weigh now?<br><br><strong>Answer:</strong>Marco and his dad initially collected 22 pounds of strawberries.  Let's say Marco collected 'x' pounds and his dad collected 'y' pounds. So, x + y = 22.
+
+Marco's dad found 30 more pounds. These 30 pounds were added to his dad's collection.
+Marco's total weight became 36 pounds. This means he gained 36 - x pounds.
+
+Since the total weight initially was 22 pounds, and Marco's dad found 30 more pounds, the new total weight is 22 + 30 = 52 pounds.
+
+We know Marco now has 36 pounds, so his dad must have the remaining weight.
+Dad's weight = Total weight - Marco's weight
+Dad's weight = 52 - 36 = 16 pounds.
+
+Answer: {16}
+</div><div class='hot_answer'><strong>348/ Reformatted Question:</strong> Marco and his dad went strawberry picking. Together they collected strawberries that weighed <fact1 style="background-color: #FF5733;">22 pounds</fact1>. On the way back, Marco's dad found <fact2 style="background-color: #33FF57;">30 more pounds</fact2> of strawberries. <fact3 style="background-color: #3357FF;">Marco's strawberries now weighed 36 pounds</fact3>. How much did his dad's strawberries weigh now?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>Together, Marco and his dad initially picked <fact1 style="background-color: #FF5733;">22 pounds</fact1> of strawberries.  Since <fact3 style="background-color: #3357FF;">Marco now has 36 pounds</fact3>, his dad must have given him 36 - <fact1 style="background-color: #FF5733;">22</fact1> = 14 pounds. This means the dad originally had <fact1 style="background-color: #FF5733;">22</fact1> - (36-<fact1 style="background-color: #FF5733;">22</fact1>) = 8 pounds.  Then he found <fact2 style="background-color: #33FF57;">30 more pounds</fact2>.  So now his dad has 8 + <fact2 style="background-color: #33FF57;">30</fact2> = 38 pounds of strawberries. The answer is {38}.<br><br><strong>GT:</strong>16.0</div></div>
+<div class='container'><div class='cot_answer'><strong>469/ Question:</strong> Zachary did 15 push-ups in gym class today. David did 39 more push-ups than Zachary. John did 9 push-ups less than David. How many more push-ups did Zachary do than John?<br><br><strong>Answer:</strong>David did 15 + 39 = 54 push-ups.
+John did 54 - 9 = 45 push-ups.
+Zachary did 15 push-ups and John did 45 push-ups.
+Zachary did 45 - 15 = 30 fewer push-ups than John, or John did 30 more push-ups than Zachary.
+
+Answer: {30}
+</div><div class='hot_answer'><strong>469/ Reformatted Question:</strong> Zachary did <fact1 style="background-color: #FF5733;">15 push-ups</fact1> in gym class today. David did <fact2 style="background-color: #33FF57;">39 more push-ups than Zachary</fact2>. John did <fact3 style="background-color: #3357FF;">9 push-ups less than David</fact3>. How many more push-ups did Zachary do than John?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer:
+
+ <br><br>David did <fact2 style="background-color: #33FF57;">39 more push-ups than Zachary</fact2>, who did <fact1 style="background-color: #FF5733;">15 push-ups</fact1>, so David did <fact1 style="background-color: #FF5733;">15</fact1> + <fact2 style="background-color: #33FF57;">39</fact2> = 54 push-ups. John did <fact3 style="background-color: #3357FF;">9 push-ups less than David</fact3>, so John did 54 - <fact3 style="background-color: #3357FF;">9</fact3> = 45 push-ups.  Zachary did <fact1 style="background-color: #FF5733;">15 push-ups</fact1> and John did 45, so Zachary did 45 - <fact1 style="background-color: #FF5733;">15</fact1> = 30 fewer push-ups than John (or John did 30 more than Zachary).  Since the question asks how many *more* Zachary did than John, and John did more, the answer is -30.  The answer is {-30}.<br><br><strong>GT:</strong>30.0</div></div>
+<div class='container'><div class='cot_answer'><strong>764/ Question:</strong> If the cave is 919 feet deep and they need to travel 1307 feet, how far is the end of the cave?<br><br><strong>Answer:</strong>Explanation: The question asks for the distance from the starting point (where the explorers entered the cave) to the end of the cave.  Since the cave descends 919 feet down, and then goes horizontally for another 1307 feet, those two distances added together will give us the total distance from the entrance to the end.
+
+Answer: {2226}
+</div><div class='hot_answer'><strong>764/ Reformatted Question:</strong> If the cave is <fact1 style="background-color: #FF5733;">919 feet deep</fact1> and they need to travel <fact2 style="background-color: #33FF57;">1307 feet</fact2>, how far is the end of the cave?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>This question seems to be asking how much further they need to travel to reach the end of the cave.  They need to travel a total of <fact2 style="background-color: #33FF57;">1307 feet</fact2>, and the cave is <fact1 style="background-color: #FF5733;">919 feet deep</fact1>.  This means the end of the cave is <fact2 style="background-color: #33FF57;">1307</fact2> - <fact1 style="background-color: #FF5733;">919</fact1> = 388 feet further. The answer is {388}.<br><br><strong>GT:</strong>2226.0</div></div>
+<div class='container'><div class='cot_answer'><strong>862/ Question:</strong> They decided to hold the party in their backyard. They have 2 sets of tables, each having the same number of chairs. If there are a total of 12 chairs in the backyard, how many chairs are there for each table?<br><br><strong>Answer:</strong>They have 2 sets of tables. Let 'x' be the number of chairs per table. Since there are 2 sets of tables, there are 2 * x chairs in total.  We are given that there are 12 chairs in total. Therefore, 2 * x = 12. Dividing both sides by 2 gives x = 6.  So, there are 6 chairs for each table.
+
+Answer: {6}
+</div><div class='hot_answer'><strong>862/ Reformatted Question:</strong> They decided to hold the party in their backyard. They have <fact1 style="background-color: #FF5733;">2 sets of tables</fact1>, each having the same number of chairs. If there are a <fact2 style="background-color: #33FF57;">total of 12 chairs</fact2> in the backyard, how many chairs are there for each table?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>There are <fact2 style="background-color: #33FF57;">12 chairs total</fact2> and <fact1 style="background-color: #FF5733;">2 sets of tables</fact1>. Since each set has the same number of chairs, there are 12 / 2 = 6 chairs per set of tables.  The question asks how many chairs are at *each* table, implying each *individual* table.  Since the problem doesn't specify how many tables are in a set, we can't determine how many chairs are at each table.  We only know there are 6 chairs per *set* of tables.  The answer cannot be determined from the given information.<br><br><strong>GT:</strong>6.0</div></div>
+<div class='container'><div class='cot_answer'><strong>893/ Question:</strong> There were 13 roses and 84 orchids in the vase. Jessica cut some more roses and orchids from her flower garden. There are now 91 orchids and 14 roses in the vase. How many roses did she cut?<br><br><strong>Answer:</strong>There were 13 roses initially, and now there are 14 roses. This means Jessica cut 14 - 13 = 1 rose.
+
+Answer: {1}
+</div><div class='hot_answer'><strong>893/ Reformatted Question:</strong> There were <fact1 style="background-color: #FF5733;">13 roses</fact1> and <fact2 style="background-color: #33FF57;">84 orchids</fact2> in the vase. Jessica cut some more roses and orchids from her flower garden. There are now <fact3 style="background-color: #3357FF;">91 orchids</fact3> and <fact4 style="background-color: #FF33A1;">14 roses</fact4> in the vase. How many roses did she cut?<br><br><strong>Answer:</strong>Reformatted Question: 
+
+Answer: 
+ <br><br>There were initially <fact1 style="background-color: #FF5733;">13 roses</fact1> in the vase.  After Jessica cut more, there are now <fact4 style="background-color: #FF33A1;">14 roses</fact4>. This means she added <fact4 style="background-color: #FF33A1;">14</fact4> - <fact1 style="background-color: #FF5733;">13</fact1> = 1 rose. The question asks how many she *cut*, and since she *added* roses, she cut 0 roses.  The answer is {0}. It seems there might be an error in the problem itself.<br><br><strong>GT:</strong>1.0</div></div>
+
+    </body>
+    </html>
+    
